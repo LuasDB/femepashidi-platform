@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion FEMEPASHIDI</title>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/gestion.css">
+    <style>
+      .modal-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(128, 128, 128,0.5);
+        z-index: 100;
+      }
+      .modal{
+        position: relative;
+        background-color: aliceblue;
+        top: 0;
+        left: 0;
+        z-index: 105;
+      }
+      .header-modal{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .header-modal span{
+        cursor: pointer;
+      }
+
+    </style>
+
+</head>
+
+<body>
+  <aside class="card ">
+      <figure>
+        <img src="https://femepashidi.netlify.app/img/galery/LOGO%20FEDE%20BLANCO.png" alt="">
+      </figure>
+      <nav>
+        <ul>
+          <li class="card" id="patinadores">
+              <span class="material-symbols-outlined">
+              ice_skating
+              </span>
+              <a href="#">Patinadores</a></li>
+          <li class="card" id="asociaciones">
+            <span class="material-symbols-outlined">
+              groups
+              </span>
+              <a href="#">Asociaciones</a></li>
+
+          <li class="card" id="solicitudes"><span class="material-symbols-outlined">
+              app_registration
+              </span>
+              <a href="#">Solicitudes</a>
+          </li>
+          <li class="card" id="eventos">
+              <span class="material-symbols-outlined">
+                  emoji_events
+                  </span>
+              <a href="#">Eventos</a>
+          </li>
+          <li class="card" id="comunicados"><span class="material-symbols-outlined">
+              newspaper
+              </span>
+              <a href="#">Comunicados</a>
+          </li>
+          <li class="card" id="galeria"><span class="material-symbols-outlined">
+              photo_library
+              </span>
+              <a href="#">Galería</a>
+          </li>
+        </ul>
+      </nav>
+  </aside>
+  <div class="modal-bg hidden" id="modal_bg">
+  </div>
+  <main>
+
+    <!-- <section class="card modal">
+      <div class="header-modal">
+        <h3>Titulo</h3>
+        <span class="material-symbols-outlined red" id="close_modal">
+          close_fullscreen
+          </span>
+      </div>
+      <div class="flex-container-input">
+        <label for="">CURP
+          <p>FUBM901026HDFNRR07</p>
+        </label>
+      </div>
+      <div class="flex-container-input">
+        <label for="">NOMBRE
+          <p>Mario Saul De la fuente Barrueta</p>
+        </label>
+        <label for="">FECHA DE NACIMIENTO
+          <p>26 DE OCTUBRE DE 1990</p>
+        </label>
+        <label for="">LUGAR DE NACIMIENTO
+          <p>MÉXICO D.F.</p>
+        </label>
+        <label for="">SEXO
+          <p>MASCULINO</p>
+        </label>
+      </div>
+      <div class="flex-container-input">
+        <label for="">CORREO
+          <p>saul@correo.com</p>
+        </label>
+        <label for="">TELEFONO/WHATSAPP
+          <p>5533262860</p>
+        </label>
+      </div>
+      <div class="flex-container-input">
+        <label for="">ASOCIACION A LA QUE PERTENECE
+          <p>ASOCIACIÓN 1</p>
+        </label>
+        <label for="">NIVEL ACTUAL
+          <p>NIVEL 1</p>
+        </label>
+      </div>
+
+    </section> -->
+
+
+
+
+
+    <!-- <section class="card container-form">
+      <h3>Datos del comunicado</h3>
+
+        <div class="flex-container-input">
+          <label for="titulo">
+            Titulo
+            <input type="text" id="titulo" class="envioDb">
+          </label>
+        </div>
+        <div class="flex-container-input">
+          <label for="descripcion">
+            Breve descripción
+            <input type="text" id="descripcion" class="envioDb">
+          </label>
+        </div>
+        <div class="flex-container-input">
+          <label for="img">
+            Imagen
+            <input type="file" id="img" class="envioDb">
+          </label>
+        </div>
+        <div class="flex-container-input">
+          <label for="status">
+            Status
+            <select name="status" id="status" class="envioDb">
+              <option value="Activo">Activo</option>
+              <option value="Baja">Baja</option>
+            </select>
+          </label>
+        </div>
+        <button id="guardar">Guardar</button>
+    </section> -->
+  </main>
+
+
+
+
+<script src="./index.js"></script>
+<script src="./formularios.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+</body>
+</html>

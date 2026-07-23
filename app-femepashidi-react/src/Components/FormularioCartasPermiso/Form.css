@@ -1,0 +1,8 @@
+.span{
+    color: #4e60ac;
+    font-weight: 800;
+}
+.input-error{
+    border-color: red;
+    border: 1px solid red !important;
+}

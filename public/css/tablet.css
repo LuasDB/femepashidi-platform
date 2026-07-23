@@ -1,0 +1,100 @@
+/*
+Franja intermedia (tablet): 768px - 1023px.
+El menú y la estructura general siguen siendo las de celular (definidas
+mobile-first en style.css); aquí solo se aprovecha el espacio extra.
+Por debajo de 768px y por encima de 1024px esto no aplica.
+*/
+@media (min-width: 768px) and (max-width: 1023.98px){
+
+  .container-section{
+    width: 85%;
+  }
+  .w-70{
+    width: 75%;
+  }
+  .article__about{
+    font-size: 1.6rem;
+  }
+
+  header#menu{
+    width: 320px;
+  }
+
+  .hero .bg{
+    min-height: 42rem;
+  }
+  .info{
+    width: 75%;
+    margin: 0 auto;
+  }
+  .info h2{
+    font-size: 2.4rem;
+  }
+  .info p{
+    font-size: 1.6rem;
+  }
+
+  .about-section .col-2{
+    flex-direction: column;
+  }
+  .images-logos{
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .logo-2{
+    gap: 2rem;
+  }
+  .about-section .img-about{
+    width: 45%;
+  }
+
+  .directory-section{
+    flex-direction: column-reverse;
+  }
+  .element-directory{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .card--profile{
+    width: 70%;
+    margin: 0 auto 2rem;
+  }
+
+  .events-section{
+    min-height: 90vh;
+  }
+  .carrusel-item{
+    flex: 0 0 60%;
+    width: 60%;
+  }
+
+  .communications-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery{
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  }
+  .gallery-horizontal{
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  }
+
+  .container-antidoping{
+    margin: 2rem 8%;
+  }
+  .image-antidoping img{
+    max-height: 45vh;
+    object-fit: cover;
+  }
+
+  footer{
+    margin-top: 8rem;
+  }
+  .container-footer{
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

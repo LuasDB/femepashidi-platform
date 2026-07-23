@@ -1,0 +1,10 @@
+.title-results{
+    position: absolute;
+    display: flex;
+    margin-bottom: 3rem;
+    justify-content: center;
+    width: 100%;
+    color: blue;
+    top: 12vh;
+    font-size: 2.5rem;
+  }

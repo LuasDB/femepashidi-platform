@@ -1,0 +1,14 @@
+.title-results{
+    position: absolute;
+    display: flex;
+    margin-bottom: 3rem;
+    justify-content: center;
+    width: 100%;
+    color: blue;
+    top: 12vh;
+    font-size: 2.5rem;
+  }
+
+  .gradient-background {
+    background: linear-gradient(to right, #e1e9f8, #d1def4, #7ca1de, #5d81d4, #394794);
+  }

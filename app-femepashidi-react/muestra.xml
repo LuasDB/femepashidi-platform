@@ -1,0 +1,3873 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Setups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation=".\SetupDefinition.xsd"
+        Title = "Femepashidi24"
+        Version ="5.0.0">
+  <Year Value="2425">
+    <CustomDifficulties>
+      <CustomDifficulty>
+        <Name>Debutantes1 PreInf A</Name>
+        <ShortName>DEB1 PREINF A</ShortName>
+        <RscCode>DE1PIA</RscCode>
+        <MapIndex>1</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes1 PreInf B</Name>
+        <ShortName>DEB1 PREINF B</ShortName>
+        <RscCode>DE1PIB</RscCode>
+        <MapIndex>2</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes1 Inf A</Name>
+        <ShortName>DEB1 INF A</ShortName>
+        <RscCode>DE1INA</RscCode>
+        <MapIndex>3</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes1 Inf B</Name>
+        <ShortName>DEB1 INF B</ShortName>
+        <RscCode>DE1INB</RscCode>
+        <MapIndex>4</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes1 Inf C</Name>
+        <ShortName>DEB1 INF C</ShortName>
+        <RscCode>DE1INC</RscCode>
+        <MapIndex>5</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes1 Juv A</Name>
+        <ShortName>DEB1 JUV A</ShortName>
+        <RscCode>DE1JUA</RscCode>
+        <MapIndex>6</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes1 Juv B</Name>
+        <ShortName>DEB1 JUV B</ShortName>
+        <RscCode>DE1JUB</RscCode>
+        <MapIndex>7</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes1 Juv C</Name>
+        <ShortName>DEB1 JUV C</ShortName>
+        <RscCode>DE1JUC</RscCode>
+        <MapIndex>8</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes1 Mayor</Name>
+        <ShortName>DEB1 MAYOR</ShortName>
+        <RscCode>DE1MAY</RscCode>
+        <MapIndex>9</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes2 PreInf A</Name>
+        <ShortName>DEB2 PREINF A</ShortName>
+        <RscCode>DE2PIA</RscCode>
+        <MapIndex>10</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes2 PreInf B</Name>
+        <ShortName>DEB2 PREINF B</ShortName>
+        <RscCode>DE2PIB</RscCode>
+        <MapIndex>11</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes2 Inf A</Name>
+        <ShortName>DEB2 INF A</ShortName>
+        <RscCode>DE2INA</RscCode>
+        <MapIndex>12</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes2 Inf B</Name>
+        <ShortName>DEB2 INF B</ShortName>
+        <RscCode>DE2INB</RscCode>
+        <MapIndex>13</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes2 Inf C</Name>
+        <ShortName>DEB2 INF C</ShortName>
+        <RscCode>DE2INC</RscCode>
+        <MapIndex>14</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes2 Juv A</Name>
+        <ShortName>DEB2 JUV A</ShortName>
+        <RscCode>DE2JUA</RscCode>
+        <MapIndex>15</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes2 Juv B</Name>
+        <ShortName>DEB2 JUV B</ShortName>
+        <RscCode>DE2JUB</RscCode>
+        <MapIndex>16</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Debutantes2Especial Juv B</Name>
+        <ShortName>DEB2 ESP JUV B</ShortName>
+        <RscCode>D2EJUB</RscCode>
+        <MapIndex>17</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes2 Juv C</Name>
+        <ShortName>DEB2 JUV C</ShortName>
+        <RscCode>DE2JUC</RscCode>
+        <MapIndex>18</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Debutantes2 Mayor</Name>
+        <ShortName>DEB2 MAYOR</ShortName>
+        <RscCode>DE2MAY</RscCode>
+        <MapIndex>19</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Debutantes2Especial Mayor</Name>
+        <ShortName>DEB2 ESP MAYOR</ShortName>
+        <RscCode>D2EMAY</RscCode>
+        <MapIndex>19</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PreBasicos PreInf A</Name>
+        <ShortName>PREBAS PREINF A</ShortName>
+        <RscCode>PRBPIA</RscCode>
+        <MapIndex>20</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>PreBasicos PreInf B</Name>
+        <ShortName>PREBAS PREINF B</ShortName>
+        <RscCode>PRBPIB</RscCode>
+        <MapIndex>21</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>PreBasicos Inf A</Name>
+        <ShortName>PREBAS INF A</ShortName>
+        <RscCode>PRBINA</RscCode>
+        <MapIndex>22</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>PreBasicos Inf B</Name>
+        <ShortName>PREBAS INF B</ShortName>
+        <RscCode>PRBINB</RscCode>
+        <MapIndex>23</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>PreBasicos Inf C</Name>
+        <ShortName>PREBAS INF C</ShortName>
+        <RscCode>PRBINC</RscCode>
+        <MapIndex>24</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>PreBasicos Juv A</Name>
+        <ShortName>PREBAS JUV A</ShortName>
+        <RscCode>PRBJUA</RscCode>
+        <MapIndex>25</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>PreBasicos Juv B</Name>
+        <ShortName>PREBAS JUV B</ShortName>
+        <RscCode>PRBJUB</RscCode>
+        <MapIndex>26</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>PreBasicos Juv C</Name>
+        <ShortName>PREBAS JUV C</ShortName>
+        <RscCode>PRBJUC</RscCode>
+        <MapIndex>27</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>PreBasicos Mayor</Name>
+        <ShortName>PREBAS MAYOR</ShortName>
+        <RscCode>PRBMAY</RscCode>
+        <MapIndex>28</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PreBasicos Especial Adulto</Name>
+        <ShortName>PREBAS ESP ADULTO</ShortName>
+        <RscCode>PREADU</RscCode>
+        <MapIndex>29</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PreBasicos Adulto</Name>
+        <ShortName>PREBAS ADULTO</ShortName>
+        <RscCode>PRBADU</RscCode>
+        <MapIndex>29</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos PreInf A</Name>
+        <ShortName>BAS PREINF A</ShortName>
+        <RscCode>BASPIA</RscCode>
+        <MapIndex>30</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos PreInf B</Name>
+        <ShortName>BAS PREINF B</ShortName>
+        <RscCode>BASPIB</RscCode>
+        <MapIndex>31</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos Inf A</Name>
+        <ShortName>BAS INF A</ShortName>
+        <RscCode>BASINA</RscCode>
+        <MapIndex>32</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos Inf B</Name>
+        <ShortName>BAS INF B</ShortName>
+        <RscCode>BASINB</RscCode>
+        <MapIndex>33</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos Inf C</Name>
+        <ShortName>BAS INF C</ShortName>
+        <RscCode>BASINC</RscCode>
+        <MapIndex>34</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos Juv A</Name>
+        <ShortName>BAS JUV A</ShortName>
+        <RscCode>BASJUA</RscCode>
+        <MapIndex>35</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos Juv B</Name>
+        <ShortName>BAS JUV B</ShortName>
+        <RscCode>BASJUB</RscCode>
+        <MapIndex>36</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos Juv C</Name>
+        <ShortName>BAS JUV C</ShortName>
+        <RscCode>BASJUC</RscCode>
+        <MapIndex>37</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos Especial Juv C</Name>
+        <ShortName>BAS ESP JUV C</ShortName>
+        <RscCode>BAEJUC</RscCode>
+        <MapIndex>38</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos Mayor</Name>
+        <ShortName>BAS MAYOR</ShortName>
+        <RscCode>BASMAY</RscCode>
+        <MapIndex>39</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Basicos Especial Mayor</Name>
+        <ShortName>BAS ESP MAYOR</ShortName>
+        <RscCode>BAEMAY</RscCode>
+        <MapIndex>40</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PrePreliminar PreInf A</Name>
+        <ShortName>PREPRE PREINF A</ShortName>
+        <RscCode>PPRPIA</RscCode>
+        <MapIndex>41</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PrePreliminar PreInf B</Name>
+        <ShortName>PREPRE PREINF B</ShortName>
+        <RscCode>PPRPIB</RscCode>
+        <MapIndex>42</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PrePreliminar Inf A</Name>
+        <ShortName>PREPRE INF A</ShortName>
+        <RscCode>PPRINA</RscCode>
+        <MapIndex>43</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PrePreliminar Inf B</Name>
+        <ShortName>PREPRE INF B</ShortName>
+        <RscCode>PPRINB</RscCode>
+        <MapIndex>44</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PrePreliminar Inf C</Name>
+        <ShortName>PREPRE INF C</ShortName>
+        <RscCode>PPRINC</RscCode>
+        <MapIndex>45</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PrePreliminar Juv A</Name>
+        <ShortName>PREPRE JUV A</ShortName>
+        <RscCode>PPRJUA</RscCode>
+        <MapIndex>46</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PrePreliminar Juv B</Name>
+        <ShortName>PREPRE JUV B</ShortName>
+        <RscCode>PPRJUB</RscCode>
+        <MapIndex>47</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PrePreliminar Juv C</Name>
+        <ShortName>PREPRE JUV C</ShortName>
+        <RscCode>PPRJUC</RscCode>
+        <MapIndex>48</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>PrePreliminar Mayor</Name>
+        <ShortName>PREPRE MAYOR</ShortName>
+        <RscCode>PPRMAY</RscCode>
+        <MapIndex>49</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	   <CustomDifficulty>
+        <Name>PrePreliminar Especial Mayor</Name>
+        <ShortName>PREPRE ESP MAYOR</ShortName>
+        <RscCode>PPEMAY</RscCode>
+        <MapIndex>50</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Preliminar PreInf A</Name>
+        <ShortName>PRELIM PREINF A</ShortName>
+        <RscCode>PREPIA</RscCode>
+        <MapIndex>51</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Preliminar PreInf B</Name>
+        <ShortName>PRELIM PREINF B</ShortName>
+        <RscCode>PREPIB</RscCode>
+        <MapIndex>52</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Preliminar Inf A</Name>
+        <ShortName>PRELIM INF A</ShortName>
+        <RscCode>PREINA</RscCode>
+        <MapIndex>53</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Preliminar Inf B</Name>
+        <ShortName>PRELIM INF B</ShortName>
+        <RscCode>PREINB</RscCode>
+        <MapIndex>54</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Preliminar Inf C</Name>
+        <ShortName>PRELIM INF C</ShortName>
+        <RscCode>PREINC</RscCode>
+        <MapIndex>55</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Preliminar Juv A</Name>
+        <ShortName>PRELIM JUV A</ShortName>
+        <RscCode>PREJUA</RscCode>
+        <MapIndex>56</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Preliminar Juv B</Name>
+        <ShortName>PRELIM JUV B</ShortName>
+        <RscCode>PREJUB</RscCode>
+        <MapIndex>57</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Preliminar Juv C</Name>
+        <ShortName>PRELIM JUV C</ShortName>
+        <RscCode>PREJUC</RscCode>
+        <MapIndex>58</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>Preliminar Mayor</Name>
+        <ShortName>PRELIM MAYOR</ShortName>
+        <RscCode>PREMAY</RscCode>
+        <MapIndex>59</MapIndex>
+        <CalculateFallDeduction>true</CalculateFallDeduction>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios1 Inf A</Name>
+        <ShortName>INTER1 INF A</ShortName>
+        <RscCode>IN1INA</RscCode>
+        <MapIndex>60</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios1 Inf B</Name>
+        <ShortName>INTER1 INF B</ShortName>
+        <RscCode>IN1INB</RscCode>
+        <MapIndex>61</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios1 Inf C</Name>
+        <ShortName>INTER1 INF C</ShortName>
+        <RscCode>IN1INC</RscCode>
+        <MapIndex>62</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios1 Juv A</Name>
+        <ShortName>INTER1 JUV A</ShortName>
+        <RscCode>IN1JUA</RscCode>
+        <MapIndex>63</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios1 Juv B</Name>
+        <ShortName>INTER1 JUV B</ShortName>
+        <RscCode>IN1JUB</RscCode>
+        <MapIndex>64</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios1 Juv C</Name>
+        <ShortName>INTER1 JUV C</ShortName>
+        <RscCode>IN1JUC</RscCode>
+        <MapIndex>65</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios1 Mayor</Name>
+        <ShortName>INTER1 MAYOR</ShortName>
+        <RscCode>IN1MAY</RscCode>
+        <MapIndex>66</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios2 Inf A</Name>
+        <ShortName>INTER2 INF A</ShortName>
+        <RscCode>IN2INA</RscCode>
+        <MapIndex>67</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios2 Inf B</Name>
+        <ShortName>INTER2 INF B</ShortName>
+        <RscCode>IN2INB</RscCode>
+        <MapIndex>68</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios2 Inf C</Name>
+        <ShortName>INTER2 INF C</ShortName>
+        <RscCode>IN2INC</RscCode>
+        <MapIndex>69</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios2 Juv A</Name>
+        <ShortName>INTER2 JUV A</ShortName>
+        <RscCode>IN2JUA</RscCode>
+        <MapIndex>70</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios2 Juv B</Name>
+        <ShortName>INTER2 JUV B</ShortName>
+        <RscCode>IN2JUB</RscCode>
+        <MapIndex>71</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios2 Juv C</Name>
+        <ShortName>INTER2 JUV C</ShortName>
+        <RscCode>IN2JUC</RscCode>
+        <MapIndex>72</MapIndex>
+      </CustomDifficulty>
+      <CustomDifficulty>
+        <Name>Intermedios2 Mayor</Name>
+        <ShortName>INTER2 MAYOR</ShortName>
+        <RscCode>IN2MAY</RscCode>
+        <MapIndex>73</MapIndex>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>AdultoBronceTecnicaClaseI</Name>
+        <ShortName>Bronce Tecnica CI</ShortName>
+        <RscCode>BRTCL1</RscCode>
+        <MapIndex>74</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoBronceTecnicaClaseII</Name>
+        <ShortName>Bronce Tecnica CII</ShortName>
+        <RscCode>BRTCL2</RscCode>
+        <MapIndex>75</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoBronceTecnicaClaseIII</Name>
+        <ShortName>Bronce Tecnica CIII</ShortName>
+        <RscCode>BRTCL3</RscCode>
+        <MapIndex>76</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoBronceTecnicaClaseIV</Name>
+        <ShortName>Bronce Tecnica CIV</ShortName>
+        <RscCode>BRTCL4</RscCode>
+        <MapIndex>77</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoBronceArtisticaClaseI</Name>
+        <ShortName>Bronce Artistica CI</ShortName>
+        <RscCode>BRACL1</RscCode>
+        <MapIndex>78</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoBronceArtisticaClaseII</Name>
+        <ShortName>Bronce Artistica CII</ShortName>
+        <RscCode>BRACL2</RscCode>
+        <MapIndex>79</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoBronceArtisticaClaseIII</Name>
+        <ShortName>Bronce Artistica CIII</ShortName>
+        <RscCode>BRACL3</RscCode>
+        <MapIndex>80</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoBronceArtisticaClaseIV</Name>
+        <ShortName>Bronce Artistica CIV</ShortName>
+        <RscCode>BRACL4</RscCode>
+        <MapIndex>81</MapIndex>
+      </CustomDifficulty>
+	  <CustomDifficulty>
+        <Name>AdultoBronceEspecialArtistica</Name>
+        <ShortName>Bronce Especial Artistica</ShortName>
+        <RscCode>BRESAR</RscCode>
+        <MapIndex>81</MapIndex>
+      </CustomDifficulty>    
+	<CustomDifficulty>
+        <Name>AdultoPlataTecnicaClaseI</Name>
+        <ShortName>Plata Tecnica CI</ShortName>
+        <RscCode>SITCL1</RscCode>
+        <MapIndex>82</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoPlataTecnicaClaseII</Name>
+        <ShortName>Plata Tecnica CII</ShortName>
+        <RscCode>SITCL2</RscCode>
+        <MapIndex>83</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoPlataTecnicaClaseIII</Name>
+        <ShortName>Plata Tecnica CIII</ShortName>
+        <RscCode>SITCL3</RscCode>
+        <MapIndex>84</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoPlataArtisticaClaseI</Name>
+        <ShortName>Plata Artistica CI</ShortName>
+        <RscCode>SIACL1</RscCode>
+        <MapIndex>85</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoPlataArtisticaClaseII</Name>
+        <ShortName>Plata Artistica CII</ShortName>
+        <RscCode>SIACL2</RscCode>
+        <MapIndex>86</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoPlataArtisticaClaseIII</Name>
+        <ShortName>Plata Artistica CIII</ShortName>
+        <RscCode>SIACL3</RscCode>
+        <MapIndex>87</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoOroTecnicaClaseI</Name>
+        <ShortName>Oro Tecnica Clase1</ShortName>
+        <RscCode>GOTCL1</RscCode>
+        <MapIndex>88</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoOroTecnicaClaseII</Name>
+        <ShortName>Oro Tecnica Clase2</ShortName>
+        <RscCode>GOTCL2</RscCode>
+        <MapIndex>89</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoOroTecnicaClaseIII</Name>
+        <ShortName>Oro Tecnica Clase3</ShortName>
+        <RscCode>GOTCL3</RscCode>
+        <MapIndex>90</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoOroArtisticaClaseI</Name>
+        <ShortName>Oro Artistica Clase1</ShortName>
+        <RscCode>GOACL1</RscCode>
+        <MapIndex>91</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoOroArtisticaClaseII</Name>
+        <ShortName>Oro Artistica Clase2</ShortName>
+        <RscCode>GOACL2</RscCode>
+        <MapIndex>92</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoOroArtisticaClaseIII</Name>
+        <ShortName>Oro Artistica Clase3</ShortName>
+        <RscCode>GOACL3</RscCode>
+        <MapIndex>93</MapIndex>
+      </CustomDifficulty>          
+	<CustomDifficulty>
+        <Name>AdultoMasterTecnicaClaseI</Name>
+        <ShortName>Master Tecnica Clase1</ShortName>
+        <RscCode>MATCL1</RscCode>
+        <MapIndex>94</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoMasterTecnicaClaseII</Name>
+        <ShortName>Master Tecnica Clase2</ShortName>
+        <RscCode>MATCL2</RscCode>
+        <MapIndex>95</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoMasterTecnicaClaseIII</Name>
+        <ShortName>Master Tecnica Clase3</ShortName>
+        <RscCode>MATCL3</RscCode>
+        <MapIndex>96</MapIndex>
+      </CustomDifficulty> 
+	<CustomDifficulty>
+        <Name>AdultoMasterArtisticaClaseI</Name>
+        <ShortName>Master Artistica Clase1</ShortName>
+        <RscCode>MAACL1</RscCode>
+        <MapIndex>97</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoMasterArtisticaClaseII</Name>
+        <ShortName>Master Artistica Clase2</ShortName>
+        <RscCode>MAACL2</RscCode>
+        <MapIndex>98</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoMasterArtisticaClaseIII</Name>
+        <ShortName>Master Artistica Clase3</ShortName>
+        <RscCode>MAACL3</RscCode>
+        <MapIndex>99</MapIndex>
+      </CustomDifficulty>         
+	<CustomDifficulty>
+        <Name>AdultoEliteMasterTecnicaClaseI</Name>
+        <ShortName>Elite Master Tecnica C1</ShortName>
+        <RscCode>ELTCL1</RscCode>
+        <MapIndex>100</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoEliteMasterTecnicaClaseII</Name>
+        <ShortName>Elite Master Tecnica C2</ShortName>
+        <RscCode>ELTCL2</RscCode>
+        <MapIndex>101</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoEliteMasterTecnicaClaseIII</Name>
+        <ShortName>Elite Master Tecnica C3</ShortName>
+        <RscCode>ELTCL3</RscCode>
+        <MapIndex>102</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoEliteMasterArtisticaClaseI</Name>
+        <ShortName>Elite Master Artistica C1</ShortName>
+        <RscCode>ELACL1</RscCode>
+        <MapIndex>103</MapIndex>
+      </CustomDifficulty>
+    <CustomDifficulty>
+        <Name>AdultoEliteMasterArtisticaClaseII</Name>
+        <ShortName>Elite Master Artistica C2</ShortName>
+        <RscCode>ELACL2</RscCode>
+        <MapIndex>104</MapIndex>
+      </CustomDifficulty>
+	<CustomDifficulty>
+        <Name>AdultoEliteMasterArtisticaClaseIII</Name>
+        <ShortName>Elite Master Artistica C3</ShortName>
+        <RscCode>ELACL3</RscCode>
+        <MapIndex>105</MapIndex>
+      </CustomDifficulty>  
+    </CustomDifficulties>
+	  <Competition>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes1 PreInf A">
+			  <Name>DEBUTANTES 1 PREINF A</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb1 PreInf A</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.00</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes1 PreInf B">
+			  <Name>DEBUTANTES 1 PREINF B</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb1 PreInf B</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.00</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes1 Inf A">
+			  <Name>DEBUTANTES 1 INF A</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb1 Inf A</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.00</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes1 Inf B">
+			  <Name>DEBUTANTES 1 INF B</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb1 Inf B</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.00</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes1 Inf C">
+			  <Name>DEBUTANTES 1 INF C</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb1 Inf C</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.00</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes1 Juv A">
+			  <Name>DEBUTANTES 1 JUV A</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb1 Juv A</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.00</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes1 Juv B">
+			  <Name>DEBUTANTES 1 JUV B</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb1 Juv B</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.00</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes1 Juv C">
+			  <Name>DEBUTANTES 1 JUV C</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb1 Juv C</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.00</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes1 Mayor">
+			  <Name>DEBUTANTES 1 MAYOR</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb1 Mayor</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.00</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2 PreInf A">
+			  <Name>DEBUTANTES 2 PREINF A</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2 PreInf A</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.5</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2 PreInf B">
+			  <Name>DEBUTANTES 2 PREINF B</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2 PreInf B</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2 Inf A">
+			  <Name>DEBUTANTES 2 INF A</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2 Inf A</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2 Inf B">
+			  <Name>DEBUTANTES 2 INF B</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2 Inf B</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2 Inf C">
+			  <Name>DEBUTANTES 2 INF C</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2 Inf C</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2 Juv A">
+			  <Name>DEBUTANTES 2 JUV A</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2 Juv A</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2 Juv B">
+			  <Name>DEBUTANTES 2 JUV B</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2 Juv B</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2Especial Juv B">
+			  <Name>DEBUTANTES 2 ESPECIAL JUV B</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2E Juv B</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2 Juv C">
+			  <Name>DEBUTANTES 2 JUV C</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2 Juv C</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2 Mayor">
+			  <Name>DEBUTANTES 2 MAYOR</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2 Mayor</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="Debutantes2 Mayor">
+			  <Name>DEBUTANTES 2 ESPECIAL MAYOR</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>Deb2E May</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M30S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.75</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>1.50</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -0.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="PreBasicos PreInf A">
+			  <Name>PREBASICOS PREINF A</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>PreBas PreInf A</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M40S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="PreBasicos PreInf B">
+			  <Name>PREBASICOS PREINF B</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>PreBas PreInf B</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M40S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="PreBasicos Inf A">
+			  <Name>PREBASICOS INF A</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>PreBas Inf A</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M40S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="PreBasicos Inf B">
+			  <Name>PREBASICOS INF B</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>PreBas Inf B</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M40S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="PreBasicos Inf C">
+			  <Name>PREBASICOS INF C</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>PreBas Inf C</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M40S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>4</MapIndex>
+						  <Name>Skating Skills</Name>
+						  <ShortName>SK</ShortName>
+						  <Type>4</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>1</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>1</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>0</Factor>
+						  <MapIndex>3</MapIndex>
+						  <Name />
+						  <ShortName />
+						  <Type>3</Type>
+					  </ComponentFactor>
+				  </ComponentFactors>
+				  <DeductionFactors>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>1</MapIndex>
+						  <Name>Time violation</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>2</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>3</MapIndex>
+						  <Name>Illegal element/movement</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>4</Type>
+						  <Value>0 -2 -4 -6</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>0.5</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>4</MapIndex>
+						  <Name>Falls</Name>
+						  <Responsible>TechnicalPanel</Responsible>
+						  <Type>10</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>5</MapIndex>
+						  <Name>Interruption in excess</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>5</Type>
+						  <Value>0 -.5 -1 -1.5 -2 -2.5 -3</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>6</MapIndex>
+						  <Name>Interruption with allowance</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>26</Type>
+						  <Value>0 -2.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>9</MapIndex>
+						  <Name>Costume failure</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>21</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>false</IsMajorityDeduction>
+						  <MapIndex>10</MapIndex>
+						  <Name>Late start</Name>
+						  <Responsible>Referee</Responsible>
+						  <Type>19</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+					  <DeductionFactor>
+						  <Factor>1.0</Factor>
+						  <IsMajorityDeduction>true</IsMajorityDeduction>
+						  <MapIndex>0</MapIndex>
+						  <Name>Costume/Prop violation</Name>
+						  <Responsible>Majority</Responsible>
+						  <Type>1</Type>
+						  <Value>0 -.5</Value>
+					  </DeductionFactor>
+				  </DeductionFactors>
+			  </Segment>
+		  </Category>
+		  <Category Type="Ladies" Difficulty="Custom" CustomDifficulty="PreBasicos Juv A">
+			  <Name>PREBASICOS JUV A</Name>
+			  <Segment Type="Free">
+				  <Name>FREE SKATE</Name>
+				  <ShortName>PreBas Juv A</ShortName>
+				  <AdditionalTime>Max</AdditionalTime>
+				  <CreditForHighlight>1</CreditForHighlight>
+				  <GeneralComponentFactor>1</GeneralComponentFactor>
+				  <GeneralSegmentFactor>1</GeneralSegmentFactor>
+				  <Priority>ProgramComponentScoreDecides</Priority>
+				  <PerformanceTime>PT1M40S</PerformanceTime>
+				  <StartSecondHalf>PT0S</StartSecondHalf>
+				  <ComponentFactors>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>0</MapIndex>
+						  <Name>Composition</Name>
+						  <ShortName>CO</ShortName>
+						  <Type>0</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+						  <Factor>2.13</Factor>
+						  <MapIndex>2</MapIndex>
+						  <Name>Presentation</Name>
+						  <ShortName>PR</ShortName>
+						  <Type>2</Type>
+					  </ComponentFactor>
+					  <ComponentFactor>
+			

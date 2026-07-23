@@ -1,0 +1,11 @@
+.custom-checkbox {
+    width: 20px;  /* Aumenta el tamaño del checkbox */
+    height: 20px; /* Aumenta el tamaño del checkbox */
+    accent-color: green; /* Cambia el color del checkbox a verde */
+    cursor: pointer;
+  }
+  
+  /* También puedes añadir un estilo para cuando el checkbox esté marcado */
+  .custom-checkbox:checked {
+    accent-color: green;
+  }

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Competencia</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/gestion.css">
+
+  <style>
+    :root{
+      --primary-color-r:#268dee;
+      --background-input:#f0f0f0;
+      --font-input:#333;
+    }
+    span,p{
+      font-weight: bold;
+    }
+
+    .search-curp{
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+
+      height: 100%;
+      overflow: hidden;
+
+      background-color: white;
+    }
+    .search-curp-active{
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+      height: 100%;
+      overflow: hidden;
+
+      background-color: white;
+    }
+    .search-curp label{
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .search-curp-active label{
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .search-curp input{
+      width: 70%;
+      font-size: 1.2rem;
+
+      border-radius: 10px;
+      border: none;
+      background-color:rgb(112, 171, 247,0.3);
+      padding: 0.5rem;
+    }
+    .search-curp-active input{
+      width: 80%;
+
+      font-size: 0.7rem;
+      border-radius: 10px;
+      border: none;
+      /* background-color:rgb(112, 171, 247,0.3); */
+      background-color:var(--background-input);
+      padding: 0.5rem;
+    }
+    .search-curp-active form{
+      width: 100%;
+    }
+    .item-center{
+      align-self: center;
+      text-align: center;
+      width: 25%;
+    }
+    .toggle-container{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      background-color: var(--primary-color-r);
+      height: 100%;
+      width: 50%;
+      border-radius: 10rem 0rem 0 10rem;
+      overflow: hidden;
+      color: white;
+      transition: all 0.5s ease-in-out;
+      z-index: 100;
+    }
+    .toogle-left{
+      width: 90%;
+      position: relative;
+      top: 10%;
+      left: 5%;
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+    .toogle-left p{
+      margin: 10px;
+      text-align: center;
+    }
+    .toogle-left img{
+      width: 30%;
+    }
+    .toogle-right{
+      position: relative;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+
+      left: 5%;
+      height: 100%;
+
+    }
+    .active{
+      transform: translateX(-100%);
+      border-radius: 0 10rem 10rem 0;
+      left: 35%;
+    }
+
+    .active-form{
+      left: 35%;
+    }
+    .hidden{
+      display: none;
+    }
+    .container-right{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+
+      padding-left: 35%;
+    }
+    .container-right p{
+      margin: 0;
+      text-align: left;
+
+    }
+    /* formulario de registro */
+    .col-2{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      justify-content: center;
+      align-items: center;
+      margin: 1rem;
+    }
+    figure{
+      display: flex;
+      justify-content: flex-end;
+      border-radius: 50%;
+
+
+    }
+    figure img{
+      margin-right: 11%;
+    }
+    figure div label{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .col-3{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      justify-content: center;
+      margin: 1rem;
+    }
+     label{
+      display: flex;
+      flex-direction: column;
+      color: var(--primary-color-r);
+
+    }
+    select{
+      width: 70%;
+      font-size: 0.7rem;
+      padding: 0.5rem;
+      border: none;
+      background-color:var(--background-input);
+      border-radius: 1rem;
+    }
+    option {
+      /* Estilos para los option */
+      padding: 10px; /* Padding para los option */
+      font-size: 14px; /* Tamaño de fuente para los option */
+      color: #333; /* Color de texto para los option */
+      background-color: #fff; /* Color de fondo para los option */
+        }
+    /* Estilo para el option seleccionado */
+    option:checked {
+      background-color: var(--primary-color-r) /* Color de fondo para el option seleccionado */
+    }
+
+    .search-curp form{
+      width: 100%;
+
+    }
+    .btn-form{
+      width: 100px;
+      height: 10px;
+      padding: 1rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+
+      background-color:rgb(72, 147, 247) ;
+      color: white;
+      cursor: pointer;
+    }
+    .btn-foto{
+      background-color:rgb(112, 171, 247,0.3);
+      color: rgb(72, 147, 247);
+      cursor: pointer;
+      text-align: center;
+      height: 100%;
+    }
+    .link{
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .img-user{
+      border-radius: 50%;
+      width: 100%;
+      max-width: 80px;
+      max-height: 80px;
+    }
+    .image-skating{
+      position: absolute;
+      bottom:5%;
+      left: 2%;
+      width: 20%;
+      z-index: 100;
+    }
+    .aceptacion{
+      display: flex;
+      flex-direction: row;
+     align-items: center;
+     cursor: pointer;
+    }
+    .aceptacion input{
+      width: 50px;
+    }
+
+
+    @media only screen and (max-width: 768px){
+    .search-curp{
+      width: 100%;
+      height: 50%;
+      top: 0;
+      left: 0;
+
+    }
+    .toggle-container {
+      width: 100%;
+      height: 50%;
+      top:50%;
+      left: 0;
+      border-radius: 10rem 10rem 0rem 0rem;
+
+    }
+    .image-skating{
+      position: absolute;
+      top:5%;
+      left: 2%;
+      width: 20%;
+      z-index: 100;
+    }
+    .search-curp-active{
+      position: absolute;
+      top: 40%;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background-color: white;
+    }
+    .toogle-right {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0%;
+      align-items: center;
+
+    }
+    .container-right{
+      padding: 0;
+      width: 80%;
+      font-size: small;
+    }
+    .active{
+      transform: translateY(0);
+      border-radius: 0 0rem 10rem 10rem;
+      top:0;
+      height: 30%;
+    }
+    form{
+      display: block;
+      justify-content: none;
+    }
+  }
+/* versión mobile  */
+  @media only screen and (max-width: 680px){
+    .search-curp{
+      width: 100%;
+      height: 50%;
+      top: 0;
+      left: 0;
+
+    }
+    .toggle-container {
+      width: 100%;
+      height: 50%;
+      top:50%;
+      left: 0;
+      border-radius:5rem 5rem 0rem 0rem;
+
+    }
+    .toogle-left{
+      font-size: 1rem;
+    }
+    .toogle-left img{
+      width: 40%;
+    }
+    .image-skating{
+      position: absolute;
+      top:5%;
+      left: 2%;
+      width: 25%;
+      z-index: 100;
+    }
+    .search-curp-active{
+      position: relative;
+      top: 50%;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+
+      background-color: white;
+    }
+    .toogle-right {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0%;
+      align-items: center;
+
+    }
+    .container-right{
+      padding: 0;
+      width: 80%;
+      font-size: 0.65rem;
+
+    }
+    .active{
+      transform: translateY(0);
+      border-radius: 0 0rem 5rem 5rem;
+      top:0;
+      height: 30%;
+    }
+    .col-2,.col-3{
+
+      display: flex;
+      flex-direction: column;
+
+    }
+    .search-curp-active label{
+      font-size: 0.9rem;
+      width: 100%;
+      margin: 1rem auto;
+    }
+    .registro-section{
+      display: block;
+
+      margin-top: 60%;
+    }
+    section{
+      position: static;
+      height: auto;
+
+    }
+
+  }
+
+
+  </style>
+</head>
+<body>
+  <main id="monitor">
+  <!-- FORMULARIO REGISTRO -->
+   <!-- <section class="card">
+    <div class="search-curp-active  area-form active-form">
+      <form >
+        <div class="col-3">
+          <label for="curp">NOMBRE(S)
+            <input type="text" placeholder="Tu nombre" >
+          </label>
+          <label for="curp">APELLIDO PATERNO
+            <input type="text" placeholder="APELLIDO PATERNO" >
+          </label>
+          <label for="curp">APELLIDO MATERNO
+            <input type="text" placeholder="APELLIDO PATERNO" >
+          </label>
+        </div>
+        <div class="col-3">
+          <label for="curp">FECHA DE NACIMIENTO
+            <input type="date">
+          </label>
+          <label for="curp">SEXO
+            <select name="" id="">
+              <option value="MASCULINO">MASCULINO</option>
+              <option value="FEMENINO">FEMENINO</option>
+            </select>
+          </label>
+          <label for="curp">LUGAR DE NACIMIENTO
+            <select name="" id="">
+              <option value="1">CDMX</option>
+              <option value="2">EDO.DE MÉXICO</option>
+            </select>
+          </label>
+        </div>
+        <div class="col-3">
+          <label for="curp">NIVEL ACTUAL
+            <select name="" id="">
+              <option value="1">NIVEL 1</option>
+              <option value="2">NIVEL 2</option>
+            </select>
+          </label>
+          <label for="curp">ASOCIACIÓN
+            <select name="" id="">
+              <option value="MASCULINO">MASCULINO</option>
+              <option value="FEMENINO">FEMENINO</option>
+            </select>
+          </label>
+          <img class="img-user" src="../img/images/pista.jpg" alt="User">
+        </div>
+        <div class="col-3">
+          <label for="curp">TELEFONO
+           <input type="phone">
+          </label>
+          <label for="curp">CORREO
+            <input type="email">
+          </label>
+          <label for="curp">FOTOGRAFIA
+            <input type="file" style="display: none;" id="file_input">
+            <a id="foto" class="btn-foto">Haz click aqui</a>
+            <span id="nombre_archivo"></span>
+          </label>
+        </div>
+        <a class="btn-form">Enviar</a>
+
+
+
+      </form>
+    </div>
+    <div class="toggle-container area-description active ">
+      <div class="toogle-left ">
+        <div class="container-right">
+          <h4>Registro</h4>
+          <p>Completa el siguiente formulario</p>
+          <p>Debes tener a la mano:</p>
+          <p>* CURP</p>
+          <p>* Fotografia en formato .png o .jpg</p>
+          <p>Al registrarte se te enviara </p>
+            <p>un correo deconfirmación </p>
+            <p>para posteriormente poder acceder al</p>
+             <p>registro de competencias</p>
+
+
+        </div>
+      </div>
+
+      </div>
+    </div>
+   </section> -->
+
+   <!-- FORMULARIO COMPETENCIA -->
+   <!-- <section class="card">
+    <div class="search-curp-active  area-form active-form">
+      <form >
+        <div class="col-3">
+          <label for="curp">NOMBRE(S)
+            <input type="text" placeholder="Tu nombre" value="JUAN CARLOS">
+          </label>
+          <label for="curp">APELLIDO PATERNO
+            <input type="text" placeholder="APELLIDO PATERNO" value="AMADOR">
+          </label>
+          <label for="curp">APELLIDO MATERNO
+            <input type="text" placeholder="APELLIDO PATERNO" value="SANCHEZ">
+          </label>
+        </div>
+        <div class="col-3">
+          <label for="curp">FECHA DE NACIMIENTO
+            <input type="date" value="1990-10-26">
+          </label>
+          <label for="curp">SEXO
+            <select name="" id="">
+              <option value="MASCULINO">MASCULINO</option>
+              <option value="FEMENINO">FEMENINO</option>
+            </select>
+          </label>
+          <label for="curp">LUGAR DE NACIMIENTO
+            <select name="" id="">
+              <option value="1">CDMX</option>
+              <option value="2">EDO.DE MÉXICO</option>
+            </select>
+          </label>
+        </div>
+        <div class="col-3">
+          <label for="curp">NIVEL ACTUAL
+            <select name="" id="">
+              <option value="1">NIVEL 1</option>
+              <option value="2">NIVEL 2</option>
+            </select>
+          </label>
+          <label for="curp">ASOCIACIÓN
+            <select name="" id="">
+              <option value="MASCULINO">CDMX</option>
+              <option value="FEMENINO">FEMENINO</option>
+            </select>
+          </label>
+          <label for="curp">TELEFONO
+            <input type="phone" value="5533262861">
+           </label>
+        </div>
+        <div class="col-3">
+
+          <label for="curp">CORREO
+            <input type="email" value="carlos@correo.com">
+          </label>
+
+        </div>
+        <div class="">
+
+          <label for="curp">COMPETENCIA A LA QUE TE INSCRIBES
+            <select name="" id="">
+              <option value="MASCULINO">CDMX COMPETENCIA 1</option>
+              <option value="FEMENINO">MTY COMPETENCIA 2</option>
+            </select>
+          </label>
+
+        </div>
+        <a class="btn-form">Enviar</a>
+
+
+
+      </form>
+    </div>
+    <div class="toggle-container area-description active ">
+      <div class="toogle-left ">
+        <div class="container-right">
+          <h4>Registro a competencia</h4>
+          <p>Selecciona la competencia</p>
+          <p>a la que deseas inscribirte</p>
+          <br>
+          <p>Se te enviara un correo de </p>
+          <p>notificación cuando tu solicitud</p>
+          <p>haya sido aprobada.</p>
+          <br>
+          <p>Te sugerimos estar atento</p>
+
+
+        </div>
+      </div>
+    </div>
+   </section> -->
+
+
+    <section class="card registro-section">
+      <div class="search-curp  area-form">
+<!--
+        <label for="curp">CURP</label>
+        <input type="text" placeholder="Tu CURP" id="curp">
+        <button class="btn-form item-center" id="buscar_curp">Buscar</button> -->
+
+        <a id="nuevo_registro" class="link btn-form item-center"">Registrarme</a>
+      </div>
+      <div class="toggle-container area-description ">
+        <div class="toogle-left ">
+          <img src="../img/galery/LOGO FEDE BLANCO.png" alt="LOGO FEMEPASHIDI">
+          <h2>Bienvenido</h2>
+          <p>Si ya te has registrado antes ingresa tu CURP </p>
+          <p>para poder inscribirte a  las competencias vigentes</p>
+        </div>
+        <div class="toogle-right hidden">
+          <div class="container-right">
+            <h2>Completa el siguiente formulario</h2>
+            <p>Para registrarte te pedimos que llenes el siguiente formuario.</p>
+            <p>Debes tener a la mano tu <span>CURP</span> y una fotografia no mayor a 10MB</p>
+          </div>
+        </div>
+      </div>
+      <img src="../img/icon/patinadores.svg" alt="Patinadores" class="image-skating">
+    </section>
+  </main>
+  <script src="./registro.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+
+
+</body>
+</html>

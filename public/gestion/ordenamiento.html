@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion FEMEPASHIDI</title>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/gestion.css">
+    <style>
+      .modal-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(128, 128, 128,0.5);
+        z-index: 100;
+      }
+      .modal{
+        position: relative;
+        background-color: aliceblue;
+        top: 0;
+        left: 0;
+        z-index: 105;
+      }
+      .header-modal{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .header-modal span{
+        cursor: pointer;
+      }
+
+    </style>
+
+</head>
+
+<body>
+  <main>
+
+
+
+  </main>
+
+<script>
+  const server = 'http://localhost:3000/api/v1/register';
+
+  async function registros(){
+  const api =await fetch(server);
+
+  const res = await api.json();
+  console.log(res);
+  const listado = res.documents;
+  let conteo={}
+  let clave ='';
+  listado.forEach(element => {
+    clave=`${element.data.status},${element.data.user.categoria},${element.data.user.nivel_actual},${element.data.user.sexo},`;
+    if(!conteo[clave]){
+      conteo[clave] = { total:0, participantes:{}}
+    }
+    conteo[clave].total +=1;
+
+  });
+
+
+  console.log(conteo);
+  for (const clave in conteo) {
+    if (conteo.hasOwnProperty(clave)) {
+      const { status, categoria, nivel,sexo }= clave.split(',');
+      listado.forEach(element =>{
+        let claveElement = `${element.data.status},${element.data.user.categoria},${element.data.user.nivel_actual},${element.data.user.sexo},`;
+        if( clave === claveElement){
+          let listado = `${element.data.user.nombre},${element.data.user.categoria},${element.data.user.nivel_actual},${element.data.user.sexo},${element.data.association.abreviacion}`;
+          console.log(listado);
+        }
+
+      });
+
+    }
+  }
+
+
+  }
+  registros();
+</script>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+</body>
+</html>

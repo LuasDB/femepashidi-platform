@@ -1,0 +1,954 @@
+{
+  "events": [
+		{
+			"id": "HCP4MT3czIdtAiYFUy8W",
+			"fecha_fin": "2024-05-18",
+			"texto": "Competencia Internacional Abierta de Patinaje Sobre Hielo ",
+			"updatedAt": "2025-03-17T18:28:09.270Z",
+			"tipo_competencia": "Nacional",
+			"fecha_inicio": "2024-05-13",
+			"nombre": "8th MEXICAN OPEN SKATING COMPETITION 2024",
+			"status": "Baja",
+			"lugar": "QUERETARO, MEX",
+			"fecha_larga": "30 DE MARZO DE 2024 ",
+			"fecha_corta": [
+				"2024-05-13",
+				"2024-05-18"
+			]
+		},
+		{
+			"status": "Baja",
+			"nombre": "XXII HIELOJUEGOS NACIONALES 2024",
+			"lugar": "PUEBLA, ICE ARENA",
+			"fecha_inicio": "2024-09-23",
+			"fecha_fin": "2024-09-29",
+			"id": "NHmW3g6ERNrq3mblxQfF",
+			"tipo_competencia": "Nacional",
+			"texto": "COMPETENCIA A NIVEL NACIONAL EN LA CUAL PUEDES CONSEGUIR LOS "
+		},
+		{
+			"nombre": "XXXVIII CAMPEONATO NACIONAL DE PATINAJE ARTISTICO SOBRE HIELO 2024",
+			"texto": "CAMPEONATO NACIONAL",
+			"fecha_fin": "2024-11-24",
+			"tipo_competencia": "Nacional",
+			"lugar": "METEPEC, ESTADO DE MEXICO",
+			"status": "Baja",
+			"fecha_inicio": "2024-11-18",
+			"id": "mOeKrPWEA0irJvlovuij",
+			"createdAt": "2024-10-03T20:23:51.071Z"
+		},
+		{
+			"fecha_inicio class=": "2024-05-13",
+			"status": "Baja",
+			"updatedAt": "2025-03-17T18:29:02.653Z",
+			"id": "uXZcmNvQtXcutZFPklqG",
+			"lugar": "Querétaro. Mexico",
+			"fecha_inicio": "2024-05-15",
+			"nombre": "MEXICO CUP 2024",
+			"fecha_larga": "3 DE ABRIL DE 2024 ",
+			"fecha_corta": [
+				"2024-05-13",
+				"2024-05-19"
+			],
+			"fecha_fin": "2024-05-18",
+			"tipo_competencia": "Internacional",
+			"texto": "Competencia Internacional reconocida por la ISU"
+		},
+		{
+			"nombre": "PRUEBA NACIONAL",
+			"lugar": "TLALNEPANTLA",
+			"fecha_inicio": "2025-03-24",
+			"fecha_fin": "2025-03-28",
+			"texto": "ESTA ES NACIONAL",
+			"tipo_competencia": "Nacional",
+			"status": "Baja",
+			"createdAt": "2025-03-19T03:34:56.435Z",
+			"id": "MiDEQ7hfwplrTl8L8h4x",
+			"updatedAt": "2025-03-20T17:46:39.559Z"
+		},
+		{
+			"nombre": "PRUEBA OPEN INTERNACIONAL",
+			"lugar": "CDMX",
+			"fecha_inicio": "2025-03-31",
+			"fecha_fin": "2025-04-03",
+			"texto": "PRUEBA DE OPEN INTERNACIONAL",
+			"tipo_competencia": "Open Internacional",
+			"status": "Baja",
+			"createdAt": "2025-03-19T03:35:43.993Z",
+			"id": "c8GXxxqExeB1Lo3WAikO",
+			"updatedAt": "2025-03-21T19:09:13.829Z"
+		},
+		{
+			"nombre": "PRUEBA INTERNACIONAL ISU",
+			"lugar": "CDMX",
+			"fecha_inicio": "2025-03-17",
+			"fecha_fin": "2025-03-22",
+			"texto": "PRUEBA DE  INTERNACIONAL ISU",
+			"tipo_competencia": "⁠Internacional ISU",
+			"status": "Baja",
+			"createdAt": "2025-03-19T03:36:19.165Z",
+			"id": "x2XkrJSaE9HWd48ULhiW",
+			"updatedAt": "2025-03-20T17:47:01.466Z"
+		},
+		{
+			"nombre": "9th Mexican Open Skating Competition 2025",
+			"lugar": "QUERETARO, MEXICO",
+			"fecha_inicio": "2025-05-12",
+			"fecha_fin": "2025-05-18",
+			"texto": "Competencia Internacional Abierta para todos los niveles no ISU",
+			"tipo_competencia": "Open Internacional",
+			"status": "Baja",
+			"createdAt": "2025-03-21T20:20:37.153Z",
+			"id": "4xWKZ7Un9Xy9HqtHw8Wf",
+			"updatedAt": "2025-04-19T19:28:19.878Z"
+		},
+		{
+			"nombre": "MEXICO CUP 2025",
+			"lugar": "QUERETARO, MEXICO",
+			"fecha_inicio": "2025-05-13",
+			"fecha_fin": "2025-05-17",
+			"texto": "Competenica Internacional Niveles ISU",
+			"tipo_competencia": "⁠Internacional ISU",
+			"status": "Baja",
+			"createdAt": "2025-03-21T20:26:34.625Z",
+			"id": "kEQ1BXl9fbpnKRnianLP",
+			"updatedAt": "2025-04-14T23:09:44.812Z"
+		},
+		{
+			"nombre": "PRUEBA JULIO 2025",
+			"lugar": "CDMX",
+			"fecha_inicio": "2025-07-21",
+			"fecha_fin": "2025-07-25",
+			"texto": "PRUEBA DE PATINAJE",
+			"tipo_competencia": "Nacional",
+			"status": "Activo",
+			"createdAt": "2025-07-21T22:00:25.586Z",
+			"id": "0pxHpDtf3CpkY2KHuNM2"
+		},
+		{
+			"nombre": "PRUEBA DE JULIO INTERNACIONAL",
+			"lugar": "CDMX",
+			"fecha_inicio": "2025-07-21",
+			"fecha_fin": "2025-07-25",
+			"texto": "PRUEBA DE PATINAJE",
+			"tipo_competencia": "Open Internacional",
+			"status": "Activo",
+			"createdAt": "2025-07-21T22:24:43.621Z",
+			"id": "TXsm9V3qEDEVH8DaPGD0",
+			"updatedAt": "2025-07-21T22:47:30.065Z"
+		}
+	],
+  "skaters": [
+		{
+			"id": "03N5PSorKV05P70K58IX",
+			"img": "1712879256985-IMG_2247.jpeg",
+			"categoria": "INFANTIL C",
+			"fecha_nacimiento": "2013-08-30",
+			"lugar_nacimiento": "Tabasco",
+			"asociacion": {
+				"representante": "Rosa Elena Murillo Murillo",
+				"correo": "adipat@femepashidi.com.mx",
+				"abreviacion": "TAB",
+				"nombre": "Asociación de Patinaje Artístico y Deportes Invernales de Tabasco, A.C.",
+				"status": "Activo"
+			},
+			"nombre": "Zoé Crystell ",
+			"nivel_actual": "Pre-Básicos",
+			"id_asociacion": "yTTEj1KGhUYdRxY9sb2f",
+			"correo": "crysarji@outlook.com",
+			"apellido_paterno": "Ramírez ",
+			"apellido_materno": "Arias ",
+			"sexo": "FEMENINO",
+			"telefono": "9934003703",
+			"curp": "RAAZ130830MTCMRXA3",
+			"verificacion": true
+		},
+		{
+			"id": "06n6lRcf8f9w73Z6qS5n",
+			"archivo": "archivo_1724970196922-227690952.jpg",
+			"categoria": "JUVENIL B",
+			"fecha_nacimiento": "2009-10-27",
+			"lugar_nacimiento": "Nuevo León",
+			"asociacion": {
+				"representante": "Hannia Huerta",
+				"correo": "adienl@femepashidi.com.mx",
+				"abreviacion": "NL",
+				"id": "w3is9rDTIpy0xzIHt5z7",
+				"nombre": "Asociación de Deportes Invernales del Estado de Nuevo León, A.C.",
+				"status": "Activo"
+			},
+			"nombre": "Denisse",
+			"nivel_actual": "Básicos",
+			"id_asociacion": "w3is9rDTIpy0xzIHt5z7",
+			"correo": "denisseochoa@hotmail.com",
+			"apellido_paterno": "Fernandez",
+			"apellido_materno": "Ochoa",
+			"sexo": "FEMENINO",
+			"telefono": "8119102585",
+			"curp": "FEOD091027MNLRCNA5",
+			"verificacion": "true"
+		},
+		{
+			"id": "09dPM10VOFfT0nwCXpWX",
+			"archivo": "archivo_1725055987217-300990569.jfif",
+			"categoria": "INFANTIL A",
+			"fecha_nacimiento": "2016-06-01",
+			"lugar_nacimiento": "Ciudad de México",
+			"asociacion": {
+				"abreviacion": "CMX",
+				"correo": "apashcdmx@femepashidi.com.mx",
+				"updatedAt": "2025-02-26T02:47:45.197Z",
+				"representante": "Lourdes Barrera",
+				"status": "Activo",
+				"id": "p1692DzNajHqEFccNHed",
+				"nombre": "Asociación de Patinaje Artístico y Deportes de Invierno CDMX, A.C."
+			},
+			"nombre": "Katerina ",
+			"nivel_actual": "Preliminar",
+			"id_asociacion": "p1692DzNajHqEFccNHed",
+			"correo": "iuliiakhaliman@gmail.com",
+			"apellido_paterno": "Khaliman ",
+			"apellido_materno": "Khaliman",
+			"sexo": "FEMENINO",
+			"telefono": "5523397475",
+			"curp": "KAXK160601MDFHXTB9",
+			"verificacion": "true"
+		},
+		{
+			"id": "09iPPE9822c9R05WfikM",
+			"img": "1712770804275-IMG_7248.jpeg",
+			"categoria": "INFANTIL B",
+			"fecha_nacimiento": "2014-11-26",
+			"lugar_nacimiento": "Tabasco",
+			"asociacion": {
+				"representante": "Rosa Elena Murillo Murillo",
+				"correo": "adipat@femepashidi.com.mx",
+				"abreviacion": "TAB",
+				"nombre": "Asociación de Patinaje Artístico y Deportes Invernales de Tabasco, A.C.",
+				"status": "Activo"
+			},
+			"nombre": "Hannah",
+			"nivel_actual": "Básicos",
+			"id_asociacion": "yTTEj1KGhUYdRxY9sb2f",
+			"correo": "haenniruizh@hotmail.com",
+			"apellido_paterno": "Romero",
+			"apellido_materno": "Ruiz",
+			"sexo": "FEMENINO",
+			"telefono": "9933111934",
+			"curp": "RORH141126MTCMZNA4",
+			"verificacion": true
+		},
+		{
+			"id": "0T5XTZyurH9N1IVdmHf2",
+			"archivo": "archivo_1724440883253-330627545.jpg",
+			"categoria": "MAYOR",
+			"fecha_nacimiento": "2000-05-31",
+			"lugar_nacimiento": "Nuevo León",
+			"asociacion": {
+				"representante": "Hannia Huerta",
+				"correo": "adienl@femepashidi.com.mx",
+				"abreviacion": "NL",
+				"id": "w3is9rDTIpy0xzIHt5z7",
+				"nombre": "Asociación de Deportes Invernales del Estado de Nuevo León, A.C.",
+				"status": "Activo"
+			},
+			"nombre": "GABRIELA",
+			"nivel_actual": "Básicos",
+			"id_asociacion": "w3is9rDTIpy0xzIHt5z7",
+			"correo": "gabyfloresgarza31@gmail.com",
+			"apellido_paterno": "FLORES",
+			"apellido_materno": "GARZA",
+			"sexo": "FEMENINO",
+			"telefono": "8112152438",
+			"curp": "FOGG000531MNLLRBA2",
+			"verificacion": "true"
+		},
+		{
+			"id": "0UbJIryrnkIQSSiBL7iV",
+			"archivo": "archivo_1725153481548-979749347.jpeg",
+			"categoria": "MAYOR",
+			"fecha_nacimiento": "2004-09-03",
+			"lugar_nacimiento": "Ciudad de México",
+			"asociacion": {
+				"representante": "Lourdes Barrera",
+				"correo": "apashcdmx@femepashidi.com.mx",
+				"abreviacion": "CDMX",
+				"id": "p1692DzNajHqEFccNHed",
+				"nombre": "Asociación de Patinaje Artístico y Deportes de Invierno CDMX, A.C.",
+				"status": "Activo"
+			},
+			"nombre": "Marian Michelle ",
+			"nivel_actual": "Pre-Básicos",
+			"id_asociacion": "p1692DzNajHqEFccNHed",
+			"correo": "marian.aguirre0709@gmail.com",
+			"apellido_paterno": "Díaz ",
+			"apellido_materno": "Aguirre ",
+			"sexo": "FEMENINO",
+			"telefono": "5553499920",
+			"curp": "DIAM040903MDFZGRA7",
+			"verificacion": "true"
+		},
+		{
+			"id": "0Yv2tYRMyfoVvKW6i1OX",
+			"img": "1712808476348-WhatsApp Image 2024-04-10 at 12.14.50.jpeg",
+			"categoria": "INFANTIL A",
+			"fecha_nacimiento": "2017-01-24",
+			"lugar_nacimiento": "Ciudad de México",
+			"asociacion": {
+				"id": "bT3QDd4IpOajihrH6kUW",
+				"representante": "Ana Luisa Aguilar Gamero",
+				"abreviacion": "EMX",
+				"status": "Activo",
+				"updatedAt": "2025-02-26T02:46:06.221Z",
+				"correo": "adiem@femepashidi.com.mx",
+				"nombre": "Asociación de Deportes Invernales del Estado de México, A.C."
+			},
+			"nombre": "MARIA RENATA",
+			"nivel_actual": "Básicos",
+			"id_asociacion": "bT3QDd4IpOajihrH6kUW",
+			"correo": "claudiar2905@gmail.com",
+			"apellido_paterno": "ZAMORA",
+			"apellido_materno": "REYES",
+			"sexo": "FEMENINO",
+			"telefono": "55 4014 1745",
+			"curp": "ZARR170124MDFMYNA6",
+			"verificacion": true
+		},
+		{
+			"id": "0gYd5ciEEAzkYVKhfmll",
+			"img": "1712601893973-Daniela Guasco.jpg",
+			"fecha_nacimiento": "2011-04-13",
+			"lugar_nacimiento": "Nuevo León",
+			"asociacion": {
+				"nombre": "Asociación de Deportes Invernales del Estado de Nuevo León, A.C.",
+				"correo": "adienl@femepashidi.com.mx",
+				"representante": "Hannia Huerta",
+				"updatedAt": "2025-02-26T02:46:25.531Z",
+				"id": "w3is9rDTIpy0xzIHt5z7",
+				"status": "Activo",
+				"abreviacion": "NUL"
+			},
+			"nombre": "DANIELA",
+			"id_asociacion": "w3is9rDTIpy0xzIHt5z7",
+			"correo": "florpatricia@hotmail.com",
+			"apellido_paterno": "GUASCO",
+			"apellido_materno": "ROBLES",
+			"sexo": "FEMENINO",
+			"curp": "GURD110413MNLSBNA3",
+			"categoria": "JUVENIL A",
+			"telefono": "8117980688",
+			"nivel_actual": "Novicios",
+			"verificacion": true
+		},
+		{
+			"id": "0iiUZtwl6LBL0fWtyxa4",
+			"img": "1712609868037-17126100619161927488542720775445.jpg",
+			"fecha_nacimiento": "2017-11-21",
+			"lugar_nacimiento": "Tabasco",
+			"asociacion": {
+				"representante": "Rosa Elena Murillo Murillo",
+				"correo": "adipat@femepashidi.com.mx",
+				"abreviacion": "TAB",
+				"nombre": "Asociación de Patinaje Artístico y Deportes Invernales de Tabasco, A.C.",
+				"status": "Activo"
+			},
+			"nombre": "VALERIA",
+			"id_asociacion": "yTTEj1KGhUYdRxY9sb2f",
+			"apellido_paterno": "GUZMAN",
+			"apellido_materno": "GOMEZ",
+			"sexo": "FEMENINO",
+			"telefono": "9935617691",
+			"curp": "GUGV171121MTCZMLA3",
+			"verificacion": true,
+			"categoria": "INFANTIL A",
+			"nivel_actual": "Debutantes 2",
+			"correo": "chivalita@hotmail.com"
+		}
+  ],
+  "register": [
+		{
+			"user": {
+				"id": "wUrPX8uNsPHbk4Eoclto",
+				"img": "1712606331770-IMG_4894.jpeg",
+				"fecha_nacimiento": "2010-10-10",
+				"lugar_nacimiento": "Nuevo León",
+				"asociacion": {
+					"representante": "Hannia Huerta",
+					"correo": "adienl@femepashidi.com.mx",
+					"abreviacion": "NL",
+					"nombre": "Asociación de Deportes Invernales del Estado de Nuevo León, A.C.",
+					"status": "Activo"
+				},
+				"nombre": "Laisha Luciana ",
+				"nivel_actual": "Intermedios 1",
+				"id_asociacion": "w3is9rDTIpy0xzIHt5z7",
+				"correo": "blanish@outlook.com",
+				"apellido_paterno": "Saldívar ",
+				"apellido_materno": "Cavazos ",
+				"sexo": "FEMENINO",
+				"telefono": "8121985683",
+				"curp": "SACL101010MNLLVSA2",
+				"verificacion": true,
+				"categoria": "JUVENIL A"
+			},
+			"association": {
+				"id": "w3is9rDTIpy0xzIHt5z7",
+				"nombre": "Asociación de Deportes Invernales del Estado de Nuevo León, A.C.",
+				"correo": "adienl@femepashidi.com.mx",
+				"representante": "Hannia Huerta",
+				"updatedAt": "2025-02-26T02:46:25.531Z",
+				"status": "Activo",
+				"abreviacion": "NUL"
+			},
+			"event": {
+				"id": "4xWKZ7Un9Xy9HqtHw8Wf",
+				"nombre": "9th Mexican Open Skating Competition 2025",
+				"lugar": "QUERETARO, MEXICO",
+				"fecha_inicio": "2025-05-12",
+				"fecha_fin": "2025-05-18",
+				"texto": "Competencia Internacional Abierta para todos los niveles no ISU",
+				"tipo_competencia": "Open Internacional",
+				"status": "Activo",
+				"createdAt": "2025-03-21T20:20:37.153Z"
+			},
+			"fecha_solicitud": "2025-04-01",
+			"nivel_actual": "Open Intermediate",
+			"confirmado": "confirmado",
+			"status": "aprobado",
+			"categoria": "D"
+		},
+		{
+			"nivel_actual": "PRE-PRELIMINARY",
+			"categoria": "C",
+			"association": {
+				"representante": "Fernanda",
+				"correo": "apsheg@femepashidi.com.mx",
+				"abreviacion": "GTO",
+				"nombre": "Asociación de Patinaje Sobre Hielo del Estado de Guanajuato, A.C.",
+				"status": "Activo"
+			},
+			"event": {
+				"texto": "Competencia Internacional Abierta de Patinaje Sobre Hielo ",
+				"fecha_inicio": "2024-05-13",
+				"fecha_fin": "2024-05-18",
+				"fecha_larga": "30 DE MARZO DE 2024 ",
+				"lugar": "QUERETARO, MEX",
+				"fecha_corta": [
+					"2024-05-13",
+					"2024-05-18"
+				],
+				"tipo_competencia": "Nacional",
+				"nombre": "8th MEXICAN OPEN SKATING COMPETITION 2024",
+				"status": "Activo"
+			},
+			"user": {
+				"img": "1712577744678-image.jpg",
+				"categoria": "JUVENIL 'A'",
+				"fecha_nacimiento": "2011-11-29",
+				"lugar_nacimiento": "Guanajuato",
+				"asociacion": {
+					"representante": "Fernanda",
+					"correo": "apsheg@femepashidi.com.mx",
+					"abreviacion": "GTO",
+					"nombre": "Asociación de Patinaje Sobre Hielo del Estado de Guanajuato, A.C.",
+					"status": "Activo"
+				},
+				"nombre": "Martina",
+				"nivel_actual": "Pre-preliminar",
+				"verificacion": true,
+				"id_asociacion": "HYtLEdOrCzdi2KHUpi8M",
+				"correo": "andreagloza87@gmail.com",
+				"apellido_materno": "Garcia",
+				"apellido_paterno": "Gallardo ",
+				"sexo": "FEMENINO",
+				"telefono": "4773924617",
+				"curp": "GAGM111129MGTLRRA6"
+			},
+			"fecha_solicitud": "2024-04-09",
+			"status": "aprobado"
+		},
+		{
+			"categoria": "MAYOR",
+			"association": {
+				"representante": "Ana Luisa Aguilar Gamero",
+				"correo": "adiem@femepashidi.com.mx",
+				"abreviacion": "EMEX",
+				"id": "bT3QDd4IpOajihrH6kUW",
+				"nombre": "Asociación de Deportes Invernales del Estado de México, A.C.",
+				"status": "Activo"
+			},
+			"event": {
+				"texto": "COMPETENCIA A NIVEL NACIONAL EN LA CUAL PUEDES CONSEGUIR LOS ",
+				"fecha_inicio": "2024-09-23",
+				"fecha_fin": "2024-09-29",
+				"lugar": "PUEBLA, ICE ARENA",
+				"id": "NHmW3g6ERNrq3mblxQfF",
+				"tipo_competencia": "Nacional",
+				"nombre": "XXII HIELOJUEGOS NACIONALES 2024",
+				"status": "Activo"
+			},
+			"user": {
+				"img": "1712719188533-IMG_2312 2.jpg",
+				"categoria": "MAYOR",
+				"fecha_nacimiento": "2005-05-08",
+				"lugar_nacimiento": "Jalisco",
+				"asociacion": {
+					"representante": "Ana Luisa Aguilar Gamero",
+					"correo": "adiem@femepashidi.com.mx",
+					"abreviacion": "EMEX",
+					"nombre": "Asociación de Deportes Invernales del Estado de México, A.C.",
+					"status": "Activo"
+				},
+				"nombre": "SOFÍA",
+				"nivel_actual": "Avanzados 1",
+				"verificacion": true,
+				"id_asociacion": "bT3QDd4IpOajihrH6kUW",
+				"correo": "soficab@icloud.com",
+				"apellido_paterno": "CABRERA",
+				"apellido_materno": "GONZÁLEZ",
+				"id": "nIvvPHS7HbaBwIIwbmPj",
+				"sexo": "FEMENINO",
+				"telefono": "7227916904",
+				"curp": "CAGS050508MJCBNFA8"
+			},
+			"fecha_solicitud": "2024-08-25",
+			"confirmado": "confirmado",
+			"status": "aprobado",
+			"nivel_actual": "Avazados 1"
+		},
+		{
+			"nivel_actual": "Debutantes 2",
+			"categoria": "INFANTIL A",
+			"association": {
+				"representante": "Hannia Huerta",
+				"correo": "adienl@femepashidi.com.mx",
+				"abreviacion": "NL",
+				"id": "w3is9rDTIpy0xzIHt5z7",
+				"nombre": "Asociación de Deportes Invernales del Estado de Nuevo León, A.C.",
+				"status": "Activo"
+			},
+			"event": {
+				"texto": "CAMPEONATO NACIONAL",
+				"createdAt": "2024-10-03T20:23:51.071Z",
+				"fecha_inicio": "2024-11-18",
+				"fecha_fin": "2024-11-24",
+				"lugar": "METEPEC, ESTADO DE MEXICO",
+				"id": "mOeKrPWEA0irJvlovuij",
+				"tipo_competencia": "Nacional",
+				"nombre": "XXXVIII CAMPEONATO NACIONAL DE PATINAJE ARTISTICO SOBRE HIELO 2024",
+				"status": "Activo"
+			},
+			"user": {
+				"img": "1712947380597-Imagen 1.png",
+				"categoria": "INFANTIL A",
+				"fecha_nacimiento": "2017-03-25",
+				"lugar_nacimiento": "Nuevo León",
+				"asociacion": {
+					"representante": "Hannia Huerta",
+					"correo": "adienl@femepashidi.com.mx",
+					"abreviacion": "NL",
+					"nombre": "Asociación de Deportes Invernales del Estado de Nuevo León, A.C.",
+					"status": "Activo"
+				},
+				"nombre": "MARIAN",
+				"nivel_actual": "Debutantes 2",
+				"verificacion": true,
+				"id_asociacion": "w3is9rDTIpy0xzIHt5z7",
+				"correo": "georgina_ibarra@hotmail.com",
+				"apellido_paterno": "COBO ",
+				"apellido_materno": "IBARRA",
+				"id": "k975SmuJwIYg3aK7NJgs",
+				"sexo": "FEMENINO",
+				"telefono": "8180290351",
+				"curp": "COIM170325MNLBBRA2"
+			},
+			"fecha_solicitud": "2024-10-16",
+			"confirmado": "confirmado",
+			"status": "aprobado"
+		},
+		{
+			"nivel_actual": "Pre-Básicos",
+			"categoria": "INFANTIL B",
+			"association": {
+				"representante": "Hannia Huerta",
+				"correo": "adienl@femepashidi.com.mx",
+				"abreviacion": "NL",
+				"id": "w3is9rDTIpy0xzIHt5z7",
+				"nombre": "Asociación de Deportes Invernales del Estado de Nuevo León, A.C.",
+				"status": "Activo"
+			},
+			"event": {
+				"texto": "CAMPEONATO NACIONAL",
+				"createdAt": "2024-10-03T20:23:51.071Z",
+				"fecha_inicio": "2024-11-18",
+				"fecha_fin": "2024-11-24",
+				"lugar": "METEPEC, ESTADO DE MEXICO",
+				"id": "mOeKrPWEA0irJvlovuij",
+				"tipo_competencia": "Nacional",
+				"nombre": "XXXVIII CAMPEONATO NACIONAL DE PATINAJE ARTISTICO SOBRE HIELO 2024",
+				"status": "Activo"
+			},
+			"user": {
+				"img": "1712539255364-IMG_1541.jpeg",
+				"categoria": "INFANTIL B",
+				"fecha_nacimiento": "2015-06-08",
+				"lugar_nacimiento": "Nuevo León",
+				"asociacion": {
+					"representante": "Hannia Huerta",
+					"correo": "adienl@femepashidi.com.mx",
+					"abreviacion": "NL",
+					"nombre": "Asociación de Deportes Invernales del Estado de Nuevo León, A.C.",
+					"status": "Activo"
+				},
+				"nombre": "Miranda",
+				"nivel_actual": "Pre-Básicos",
+				"verificacion": true,
+				"id_asociacion": "w3is9rDTIpy0xzIHt5z7",
+				"correo": "doctoragcortes@gmail.com",
+				"apellido_paterno": "Garza ",
+				"apellido_materno": "Gutiérrez ",
+				"id": "U5em5nj77IGMsx54D0oE",
+				"sexo": "FEMENINO",
+				"telefono": "8111299675",
+				"curp": "GAGM150608MNLRTRA2"
+			},
+			"fecha_solicitud": "2024-10-16",
+			"confirmado": "confirmado",
+			"status": "aprobado"
+		},
+		{
+			"nivel_actual": "JUVENILE",
+			"categoria": "D",
+			"association": {
+				"representante": "Miguel Angel Reyes Leyva",
+				"correo": "adipue@femepashidi.com.mx",
+				"abreviacion": "PUE",
+				"nombre": "Asociación de Deportes de Invierno de Puebla, A.C.",
+				"status": "Activo"
+			},
+			"event": {
+				"texto": "Competencia Internacional Abierta de Patinaje Sobre Hielo ",
+				"fecha_inicio": "2024-05-13",
+				"fecha_fin": "2024-05-18",
+				"lugar": "QUERETARO, MEX",
+				"fecha_larga": "30 DE MARZO DE 2024 ",
+				"fecha_corta": [
+					"2024-05-13",
+					"2024-05-18"
+				],
+				"tipo_competencia": "Nacional",
+				"nombre": "8th MEXICAN OPEN SKATING COMPETITION 2024",
+				"status": "Activo"
+			},
+			"fecha_solicitud": "2024-04-14",
+			"confirmado": "confirmado",
+			"status": "aprobado",
+			"user": {
+				"img": "1713154195826-camila.jpg",
+				"correo": "mafalda_cam@hotmail.com",
+				"apellido_paterno": "BARAJAS",
+				"apellido_materno": "SALOMON",
+				"fecha_nacimiento": "2007-10-25",
+				"lugar_nacimiento": "Puebla",
+				"sexo": "FEMENINO",
+				"telefono": "2221327708",
+				"nombre": "CAMILA",
+				"curp": "BASC071025MPLRLMA6"
+			}
+		},
+		{
+			"nivel_actual": "Avanzados 1",
+			"categoria": "JUVENIL B",
+			"association": {
+				"representante": "Ana Luisa Aguilar Gamero",
+				"correo": "adiem@femepashidi.com.mx",
+				"abreviacion": "EMEX",
+				"id": "bT3QDd4IpOajihrH6kUW",
+				"nombre": "Asociación de Deportes Invernales del Estado de México, A.C.",
+				"status": "Activo"
+			},
+			"event": {
+				"texto": "CAMPEONATO NACIONAL",
+				"createdAt": "2024-10-03T20:23:51.071Z",
+				"fecha_inicio": "2024-11-18",
+				"fecha_fin": "2024-11-24",
+				"lugar": "METEPEC, ESTADO DE MEXICO",
+				"id": "mOeKrPWEA0irJvlovuij",
+				"tipo_competencia": "Nacional",
+				"nombre": "XXXVIII CAMPEONATO NACIONAL DE PATINAJE ARTISTICO SOBRE HIELO 2024",
+				"status": "Activo"
+			},
+			"user": {
+				"img": "1712811452978-WhatsApp Image 2024-04-06 at 17.58.11.jpeg",
+				"categoria": "JUVENIL B",
+				"fecha_nacimiento": "2008-01-18",
+				"lugar_nacimiento": "Ciudad de México",
+				"asociacion": {
+					"representante": "Ana Luisa Aguilar Gamero",
+					"correo": "adiem@femepashidi.com.mx",
+					"abreviacion": "EMEX",
+					"nombre": "Asociación de Deportes Invernales del Estado de México, A.C.",
+					"status": "Activo"
+				},
+				"nombre": "VALERIA",
+				"nivel_actual": "Avanzados 1",
+				"verificacion": true,
+				"id_asociacion": "bT3QDd4IpOajihrH6kUW",
+				"correo": "araceli@aleman.com.mx",
+				"apellido_paterno": "MARTINEZ",
+				"apellido_materno": "ALEMAN",
+				"id": "RjtcD0RXTb86hcH54DcD",
+				"sexo": "FEMENINO",
+				"telefono": "5537223186",
+				"curp": "MAAV080118MDFRLLA3"
+			},
+			"fecha_solicitud": "2024-10-10",
+			"confirmado": "confirmado",
+			"status": "aprobado"
+		},
+		{
+			"user": {
+				"id": "RV1W3SYvGUg3N5HHuTx8",
+				"curp": "AUMA140527MQTGTMA6",
+				"nombre": "Aimi Marie",
+				"apellido_paterno": "Aguilar ",
+				"apellido_materno": "Motte",
+				"fecha_nacimiento": "2014-05-27",
+				"sexo": "FEMENINO",
+				"lugar_nacimiento": "Querétaro",
+				"nivel_actual": "Debutantes 2",
+				"id_asociacion": "0zQDH9xe0TvfEETOarGg",
+				"telefono": "4422742642",
+				"correo": "pau_mott@hotmail.com",
+				"archivo": "archivo_1744467756041-506486297.jpeg",
+				"asociacion": {
+					"id": "0zQDH9xe0TvfEETOarGg",
+					"status": "Activo",
+					"nombre": "Grupo Reconocido QUERETARO",
+					"correo": "queretaro@femepashidi.com.mx",
+					"representante": "",
+					"abreviacion": "QRO"
+				},
+				"categoria": "INFANTIL C",
+				"verificacion": "true"
+			},
+			"association": {
+				"id": "0zQDH9xe0TvfEETOarGg",
+				"status": "Activo",
+				"nombre": "Grupo Reconocido QUERETARO",
+				"correo": "queretaro@femepashidi.com.mx",
+				"representante": "",
+				"abreviacion": "QRO"
+			},
+			"event": {
+				"id": "4xWKZ7Un9Xy9HqtHw8Wf",
+				"nombre": "9th Mexican Open Skating Competition 2025",
+				"lugar": "QUERETARO, MEXICO",
+				"fecha_inicio": "2025-05-12",
+				"fecha_fin": "2025-05-18",
+				"texto": "Competencia Internacional Abierta para todos los niveles no ISU",
+				"tipo_competencia": "Open Internacional",
+				"status": "Activo",
+				"createdAt": "2025-03-21T20:20:37.153Z"
+			},
+			"fecha_solicitud": "2025-04-14",
+			"nivel_actual": "Debutantes 2",
+			"categoria": "C",
+			"confirmado": "confirmado",
+			"status": "aprobado"
+		},
+		{
+			"user": {
+				"id": "558TYTkauM7vBD4Otrv3",
+				"img": "1717387414959-IMG_2789.JPG",
+				"categoria": "CLASS I",
+				"fecha_nacimiento": "1997-06-15",
+				"lugar_nacimiento": "Jalisco",
+				"asociacion": {
+					"abreviacion": "JAL",
+					"representante": "Gregorio Nuñez",
+					"correo": "adiej@femepashidi.com.mx",
+					"status": "Activo",
+					"id": "eUJiTsw7nYgm13V3TiKX",
+					"nombre": "Asociación de Deportes de Invierno del Estado de Jalisco, A.C."
+				},
+				"nombre": "Claudia Lorena",
+				"nivel_actual": "Adulto Plata",
+				"id_asociacion": "eUJiTsw7nYgm13V3TiKX",
+				"correo": "clorenaclaudialorena@gmail.com",
+				"apellido_paterno": "Roman ",
+				"apellido_materno": "Plata",
+				"sexo": "FEMENINO",
+				"telefono": "3339571229",
+				"curp": "ROPC970615MJCMLL09",
+				"verificacion": true
+			},
+			"association": {
+				"id": "eUJiTsw7nYgm13V3TiKX",
+				"abreviacion": "JAL",
+				"representante": "Gregorio Nuñez",
+				"correo": "adiej@femepashidi.com.mx",
+				"status": "Activo",
+				"nombre": "Asociación de Deportes de Invierno del Estado de Jalisco, A.C."
+			},
+			"event": {
+				"id": "4xWKZ7Un9Xy9HqtHw8Wf",
+				"nombre": "9th Mexican Open Skating Competition 2025",
+				"lugar": "QUERETARO, MEXICO",
+				"fecha_inicio": "2025-05-12",
+				"fecha_fin": "2025-05-18",
+				"texto": "Competencia Internacional Abierta para todos los niveles no ISU",
+				"tipo_competencia": "Open Internacional",
+				"status": "Activo",
+				"createdAt": "2025-03-21T20:20:37.153Z"
+			},
+			"fecha_solicitud": "2025-04-16",
+			"nivel_actual": "Silver",
+			"confirmado": "confirmado",
+			"status": "aprobado",
+			"categoria": "CLASS I"
+		}
+  ],
+  "associations": [
+		{
+			"id": "0zQDH9xe0TvfEETOarGg",
+			"status": "Activo",
+			"nombre": "Grupo Reconocido QUERETARO",
+			"correo": "queretaro@femepashidi.com.mx",
+			"representante": "",
+			"abreviacion": "QRO"
+		},
+		{
+			"nombre": "Asociación Yucateca de Patinaje Sobre Hielo, A.C:",
+			"status": "Activo",
+			"representante": "Sarah Moises",
+			"correo": "ayphac@femepashidi.com.mx",
+			"id": "FjhMKap6pT2jUixwAWtS",
+			"abreviacion": "YUC"
+		},
+		{
+			"status": "Activo",
+			"representante": "Fernanda",
+			"correo": "apsheg@femepashidi.com.mx",
+			"nombre": "Asociación de Patinaje Sobre Hielo del Estado de Guanajuato, A.C.",
+			"abreviacion": "GTO",
+			"id": "HYtLEdOrCzdi2KHUpi8M"
+		},
+		{
+			"correo": "adipue@femepashidi.com.mx",
+			"status": "Activo",
+			"abreviacion": "PUE",
+			"id": "O0oiqosPkdGNlMZdTF9v",
+			"nombre": "Asociación de Deportes de Invierno de Puebla, A.C.",
+			"representante": "Miguel Angel Reyes Leyva"
+		},
+		{
+			"correo": "saul.delafuente@siradiacion.com.mx",
+			"id": "QqbTeZwGpudUusGnLbn9",
+			"representante": "Jackie CHAN",
+			"abreviacion": "JCR",
+			"updatedAt": "2025-01-05T18:20:46.298Z",
+			"status": "Activo",
+			"nombre": "Jackie Chan ASSOC"
+		},
+		{
+			"id": "bT3QDd4IpOajihrH6kUW",
+			"representante": "Ana Luisa Aguilar Gamero",
+			"abreviacion": "EMX",
+			"status": "Activo",
+			"updatedAt": "2025-02-26T02:46:06.221Z",
+			"correo": "adiem@femepashidi.com.mx",
+			"nombre": "Asociación de Deportes Invernales del Estado de México, A.C."
+		},
+		{
+			"abreviacion": "JAL",
+			"representante": "Gregorio Nuñez",
+			"correo": "adiej@femepashidi.com.mx",
+			"status": "Activo",
+			"id": "eUJiTsw7nYgm13V3TiKX",
+			"nombre": "Asociación de Deportes de Invierno del Estado de Jalisco, A.C."
+		},
+		{
+			"abreviacion": "CMX",
+			"correo": "apashcdmx@femepashidi.com.mx",
+			"updatedAt": "2025-02-26T02:47:45.197Z",
+			"representante": "Lourdes Barrera",
+			"status": "Activo",
+			"id": "p1692DzNajHqEFccNHed",
+			"nombre": "Asociación de Patinaje Artístico y Deportes de Invierno CDMX, A.C."
+		},
+		{
+			"nombre": "Asociación de Deportes Invernales del Estado de Nuevo León, A.C.",
+			"correo": "adienl@femepashidi.com.mx",
+			"representante": "Hannia Huerta",
+			"updatedAt": "2025-02-26T02:46:25.531Z",
+			"id": "w3is9rDTIpy0xzIHt5z7",
+			"status": "Activo",
+			"abreviacion": "NUL"
+		},
+		{
+			"nombre": "Asociación de Patinaje Artístico y Deportes Invernales de Tabasco, A.C.",
+			"id": "yTTEj1KGhUYdRxY9sb2f",
+			"correo": "adipat@femepashidi.com.mx",
+			"representante": "Rosa Elena Murillo Murillo",
+			"status": "Activo",
+			"abreviacion": "TAB"
+		},
+		{
+			"nombre": "Asociación de Deportes Invernales IPN, A.C.",
+			"id": "yu9QWMyLRQjtryoQZ4Vn",
+			"representante": "Cristina Martínez Mendoza",
+			"correo": "apshipn@femepashidi.com.mx",
+			"abreviacion": "IPN",
+			"status": "Activo"
+		},
+		{
+			"updatedAt": "2024-12-16T03:20:42.715Z",
+			"status": "Baja",
+			"correo": "saul.delafuenteb@gmail.com",
+			"representante": "Saul de la fuente2",
+			"createdAt": "2024-12-16T02:01:38.415Z",
+			"abreviacion": "MYT23",
+			"nombre": "SAULS ASSOCIATION2",
+			"id": "asFoOIGTRFulfJht6B91"
+		}
+	],
+  "announcements":[
+    {
+			"id": "5lf4HvSJuDB4XhBSstlI",
+			"texto3": "Recuerda llenar correctamente la información",
+			"texto2": "imprimelo y presentalo en la competencia",
+			"texto5": "",
+			"texto4": "",
+			"titulo": "Planned Program / Hoja de Elementos",
+			"texto1": "Llena y descarga el formato de hoja de Elementos",
+			"doc": "1714507378401-17120366366451.pdf",
+			"status": "Baja",
+			"img": "1714507378406-1712036636647-FORMULARIO REGISTRO.png"
+		},
+		{
+			"id": "6jral6HVOGfgzsS2PXS0",
+			"titulo": "XXXVIII CAMPEONATO NACIONAL",
+			"texto1": "DE PATINAJE ARTISTICO SOBRE HIELO",
+			"texto2": "2024",
+			"texto3": "LOS ESPERAMOS EN",
+			"texto4": "WINTER SPORTS CENTER METEPEC",
+			"doc": "doc_1730925154733-212957684.pdf",
+			"img": "img_1730925154736-177735647.jpg",
+			"createdAt": "2024-11-06T20:32:34.740Z",
+			"status": "Baja"
+		},
+		{
+			"id": "6zrleZbjylOHC8VrgWYa",
+			"titulo": "HORARIOS",
+			"texto1": "XXXVIII CAMPEONATO NACIONAL",
+			"texto2": "PATINAJE ARTISTICO SOBRE HIELO 2024",
+			"createdAt": "2024-11-06T00:42:44.510Z",
+			"img": "img_1730925066891-281152723.jpg",
+			"texto3": "LOS ESPERAMOS EN",
+			"doc": "doc_1730925066886-865439224.pdf",
+			"texto4": "WINTER SPORTS CENTER METEPEC",
+			"status": "Baja"
+		}
+  ]
+}

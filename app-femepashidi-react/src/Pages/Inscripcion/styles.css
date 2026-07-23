@@ -1,0 +1,64 @@
+.inscripcion-container {
+  @apply min-h-screen bg-gray-50 flex flex-col items-center justify-center p-2;
+}
+
+.credential-card {
+  @apply bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all duration-300 w-full;
+}
+
+.credential-header {
+  @apply bg-gradient-to-r from-gray-700 to-gray-900 text-white p-4 text-center;
+}
+
+.credential-body {
+  @apply p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.credential-photo-section {
+  @apply md:col-span-1 flex flex-col items-center justify-center;
+}
+
+.photo-container {
+  @apply w-40 h-40 md:w-48 md:h-48 rounded-full relative overflow-hidden border-4 border-white shadow-md cursor-pointer;
+}
+
+.participant-photo {
+  @apply w-full h-full object-cover;
+}
+
+.photo-upload-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-50 flex flex-col items-center justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer;
+}
+
+.credential-info-section {
+  @apply md:col-span-2;
+}
+
+.info-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4;
+}
+
+.info-grid label {
+    @apply block text-sm font-medium text-gray-500 mb-1;
+}
+
+.info-grid input {
+    @apply w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 transition;
+}
+
+.submit-button {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-lg;
+}
+/* Aumenta visibilidad del switch cuando está apagado */
+.custom-switch {
+  background-color: #6c757d; /* gris oscuro Bootstrap */
+  border-color: #6c757d;
+  transition: all 0.3s ease;
+
+}
+
+/* Estado activado (Bootstrap ya lo hace azul, pero puedes personalizarlo) */
+.custom-switch:checked {
+  background-color: #0d6efd; /* azul Bootstrap */
+  border-color: #0d6efd;
+}
