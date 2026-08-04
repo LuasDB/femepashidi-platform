@@ -1,1 +1,6 @@
 /historico
+
+# Variables de entorno (en cualquier carpeta): nunca deben subirse al repo.
+.env
+.env.*
+!.env.example

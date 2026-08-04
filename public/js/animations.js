@@ -94,7 +94,12 @@ OBSERVAR SCROLL
 
 document.addEventListener("DOMContentLoaded", function () {
 const menu = document.querySelector('#menu');
-const letras = document.querySelectorAll('#menu nav a');
+// Los links del dropdown (submenús de INICIO/EVENTOS) quedan fuera: en
+// escritorio siempre deben verse blancos sobre el panel oscuro del dropdown,
+// sin importar el color que el scroll le vaya poniendo al resto del nav.
+const letras = Array.from(document.querySelectorAll('#menu nav a')).filter(
+  (a) => !a.closest('.dropdown-content')
+);
 const nombre = document.querySelector('#menu div div');
 
 // Función para manejar el evento de scroll

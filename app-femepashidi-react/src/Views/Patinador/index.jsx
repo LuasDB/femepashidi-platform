@@ -1,4 +1,4 @@
-import {useEffect, useState } from 'react'
+import {useEffect, useState, useContext } from 'react'
 import { Card,CardHeader,Button,Label, CardTitle, CardBody, Table, CardText,Row,Col, FormGroup, Input} from "reactstrap";
 import { useParams,useNavigate,Link} from 'react-router-dom';
 import { FaEdit } from "react-icons/fa";
@@ -9,12 +9,69 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import {server} from '../../db/server'
 import { formatoFecha} from '../../Functions/funciones'
+import { AuthContext } from '../../Context/AuthContext'
 const imgUser = `${server}uploads/skaters/user.png`
 console.log(imgUser)
 
 const authHeader = () => ({
     Authorization: `Bearer ${localStorage.getItem('token')}`
 })
+
+// Solo admin (no presidente_asociacion) puede resetear la contraseña de la
+// cuenta de un patinador directamente, sin pasar por el flujo de correo.
+function ResetAccountPassword({ accountId }){
+    const [form, setForm] = useState({ newPassword:'', confirmPassword:'' })
+    const [saving, setSaving] = useState(false)
+
+    const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = async () => {
+        if(!form.newPassword || !form.confirmPassword){
+            Swal.fire('Todos los campos deben ser llenados','','warning')
+            return
+        }
+        if(form.newPassword.length < 8){
+            Swal.fire('La nueva contraseña debe tener al menos 8 caracteres','','warning')
+            return
+        }
+        if(form.newPassword !== form.confirmPassword){
+            Swal.fire('Las contraseñas no coinciden','','warning')
+            return
+        }
+        try {
+            setSaving(true)
+            const { data } = await axios.patch(
+                `${server}api/v1/auth/account/${accountId}/password`,
+                { password: form.newPassword },
+                { headers: authHeader() }
+            )
+            if(data.success){
+                Swal.fire('Contraseña actualizada','','success')
+                setForm({ newPassword:'', confirmPassword:'' })
+            }
+        } catch (error) {
+            Swal.fire('Algo salió mal', error?.response?.data?.message || error.message, 'error')
+        } finally {
+            setSaving(false)
+        }
+    }
+
+    return (
+        <FormGroup className='flex flex-col md:flex-row gap-4 md:items-end'>
+            <div className='w-full md:w-1/3'>
+                <Label>Nueva contraseña</Label>
+                <Input type="password" name="newPassword" onChange={handleChange} value={form.newPassword}/>
+            </div>
+            <div className='w-full md:w-1/3'>
+                <Label>Confirmar contraseña</Label>
+                <Input type="password" name="confirmPassword" onChange={handleChange} value={form.confirmPassword}/>
+            </div>
+            <Button disabled={saving} onClick={handleSubmit} className='bg-curious-blue-500 hover:bg-curious-blue-600'>Restablecer contraseña</Button>
+        </FormGroup>
+    )
+}
 
 export default function Servicio(){
     const { curp } = useParams()
@@ -23,6 +80,8 @@ export default function Servicio(){
     const [user,setUser] = useState({})
     const [deciding,setDeciding] = useState(false)
     const navigate = useNavigate()
+    const { user: loggedUser } = useContext(AuthContext)
+    const isAdmin = loggedUser?.role === 'admin'
 
     const fetchData = async()=>{
         try {
@@ -227,8 +286,16 @@ export default function Servicio(){
                     </FormGroup>
                 </CardHeader>
 
-
-
+                {isAdmin && (
+                    <CardHeader className="flex flex-col justify-between bg-white">
+                        <CardTitle className='font-bold text-curious-blue-900'>Cuenta y contraseña</CardTitle>
+                        {user.accountId ? (
+                            <ResetAccountPassword accountId={user.accountId} />
+                        ) : (
+                            <p className='text-sm text-gray-500'>Este patinador aún no tiene una cuenta de acceso.</p>
+                        )}
+                    </CardHeader>
+                )}
 
             </Card>
             </div>)}

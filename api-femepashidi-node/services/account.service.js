@@ -115,6 +115,63 @@ class Account {
     }
   }
 
+  // Self-service: la propia cuenta logeada cambia su contraseña, verificando
+  // la actual primero. Mismo patrón que auth.service.js changeOwnPassword.
+  async changeOwnPassword(accountId, currentPassword, newPassword) {
+    try {
+      if (!newPassword || newPassword.length < 8) {
+        throw Boom.badData('La nueva contraseña debe tener al menos 8 caracteres')
+      }
+
+      const account = await db.collection('accounts').findOne({ _id: new ObjectId(accountId) })
+      if (!account) {
+        throw Boom.notFound('La cuenta no existe')
+      }
+
+      const isValid = await bcrypt.compare(currentPassword || '', account.password)
+      if (!isValid) {
+        throw Boom.unauthorized('La contraseña actual no es correcta')
+      }
+
+      const hashedPassword = await bcrypt.hash(newPassword, 10)
+      await db.collection('accounts').updateOne(
+        { _id: account._id },
+        { $set: { password: hashedPassword, updatedAt: new Date() } }
+      )
+
+      return { updated: true }
+    } catch (error) {
+      if (Boom.isBoom(error)) throw error
+      throw Boom.badImplementation('No se pudo actualizar la contraseña', error)
+    }
+  }
+
+  // Admin fija directamente la contraseña de una cuenta (patinador/padre/
+  // asociado), sin pasar por el flujo de correo. Mismo patrón que
+  // auth.service.js updatePasswordById, pero sobre la colección `accounts`.
+  async resetPasswordById(id, newPassword) {
+    try {
+      if (!newPassword || newPassword.length < 8) {
+        throw Boom.badData('La contraseña debe tener al menos 8 caracteres')
+      }
+
+      const hashedPassword = await bcrypt.hash(newPassword, 10)
+      const result = await db.collection('accounts').updateOne(
+        { _id: new ObjectId(id) },
+        { $set: { password: hashedPassword, status: 'active', updatedAt: new Date() } }
+      )
+
+      if (result.matchedCount === 0) {
+        throw Boom.notFound('La cuenta no existe')
+      }
+
+      return { updated: true }
+    } catch (error) {
+      if (Boom.isBoom(error)) throw error
+      throw Boom.badImplementation('No se pudo actualizar la contraseña', error)
+    }
+  }
+
   async getMe(accountId) {
     try {
       const account = await db.collection('accounts').findOne(
