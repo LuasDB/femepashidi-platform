@@ -154,7 +154,7 @@ const startServer = async ()=>{
     app.use('/uploads', express.static('uploads'))
 
 
-    httpServer.listen(3000,()=>{
+    httpServer.listen(port,()=>{
       console.log(`Servidor iniciado en puerto :${port}`)
     })
 

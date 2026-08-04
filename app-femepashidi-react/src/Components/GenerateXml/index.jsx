@@ -7,7 +7,7 @@ const agruparPorCombinacion=(data)=> {
     let count = 0
   
     data.forEach(item => {
-        if(item.data[4] === 'aprobado'){
+        if(item.data[5] === 'aprobado'){
             count++
             const {  sexo } = item.content.user;
             const { nivel_actual, categoria } = item.content
@@ -32,7 +32,7 @@ const agruparPorCombinacion=(data)=> {
     let count = 0
   
     data.forEach(item => {
-        if(item.data[4] === 'aprobado'){
+        if(item.data[5] === 'aprobado'){
             count++
             const { nivel_actual} = item.content;
             // const clave = `${nivel_actual}_${item.content.user.sexo}`;
@@ -61,7 +61,7 @@ const agruparPorCombinacion=(data)=> {
     DocumentCode="FSK-------------------------------" DocumentType="DT_PARTIC" Version="0" FeedFlag="P" Date="${fechaActual()}" Time="${timestamp}" LogicalDate="${fechaActual()}"><Competition>`;
 
     grupo.forEach((item,index)=>{
-        xml += `<Participant Code="${item.count}" Parent="${item.count}" Status="ACTIVE" GivenName="${formatoNombre(item.content.user.nombre)}" FamilyName="${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()}" PrintName="${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()} ${formatoNombre(item.content.user.nombre)}" PrintInitialName="${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()}" TVName="${formatoNombre(item.content.user.nombre)} ${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()}" TVInitialName="${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()}" TVFamilyName="${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()}" Gender="${item.content.user.sexo.toLowerCase() === 'femenino' ? 'W' : 'M'}" Organisation="${item.content.association.abreviacion}" BirthDate="${item.content.user.fecha_nacimiento}" CountryofBirth="México" Nationality="MEX" MainFunctionId="AA01" Current="true" ModificationIndicator="N"><Discipline Code="FSK-------------------------------" IFId="${item.count}"><RegisteredEvent Event="${obtenerEtiqueta(item.content.nivel_actual,item.content.user.sexo.toLowerCase(),item.content.categoria)}"><EventEntry Type="ER_EXTENDED" Code="COACH" Value="" /></RegisteredEvent></Discipline></Participant>`;
+        xml += `<Participant Code="${item.content.user.numero_competidor}" Parent="${item.content.user.numero_competidor}" Status="ACTIVE" GivenName="${formatoNombre(item.content.user.nombre)}" FamilyName="${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()}" PrintName="${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()} ${formatoNombre(item.content.user.nombre)}" PrintInitialName="${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()}" TVName="${formatoNombre(item.content.user.nombre)} ${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()}" TVInitialName="${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()}" TVFamilyName="${item.content.user.apellido_paterno.toUpperCase()} ${item.content.user.apellido_materno.toUpperCase()}" Gender="${item.content.user.sexo.toLowerCase() === 'femenino' ? 'W' : 'M'}" Organisation="${item.content.association.abreviacion}" BirthDate="${item.content.user.fecha_nacimiento}" CountryofBirth="México" Nationality="MEX" MainFunctionId="AA01" Current="true" ModificationIndicator="N"><Discipline Code="FSK-------------------------------" IFId="${item.content.user.numero_competidor}"><RegisteredEvent Event="${obtenerEtiqueta(item.content.nivel_actual,item.content.user.sexo.toLowerCase(),item.content.categoria)}"><EventEntry Type="ER_EXTENDED" Code="COACH" Value="" /></RegisteredEvent></Discipline></Participant>`;
 
     })
     xml += `</Competition></OdfBody>`

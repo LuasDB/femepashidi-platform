@@ -1,6 +1,5 @@
 import { db } from '../db/mongoClient.js'
 
-const PREFIX = 'FMP'
 const PAD_LENGTH = 6
 const COUNTER_ID = 'numero_competidor'
 
@@ -13,7 +12,7 @@ const nextCompetitorNumber = async () => {
     { upsert: true, returnDocument: 'after' }
   )
 
-  return `${PREFIX}-${String(counter.seq).padStart(PAD_LENGTH, '0')}`
+  return String(counter.seq).padStart(PAD_LENGTH, '0')
 }
 
 export { nextCompetitorNumber }

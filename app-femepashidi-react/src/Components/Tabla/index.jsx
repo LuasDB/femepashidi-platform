@@ -471,8 +471,9 @@ export function TablaInscripciones(props) {
               </span>
             </div>
             <div className="mt-2 text-sm text-gray-700 grid grid-cols-1 gap-y-1">
-              <p><span className="text-gray-500">Fecha de inscripción:</span> {item.data[2]}</p>
-              <p><span className="text-gray-500">Asociación:</span> {item.data[3]}</p>
+              <p><span className="text-gray-500">No. Competidor:</span> {item.data[2]}</p>
+              <p><span className="text-gray-500">Fecha de inscripción:</span> {item.data[3]}</p>
+              <p><span className="text-gray-500">Asociación:</span> {item.data[4]}</p>
             </div>
             <div className="flex gap-2 mt-3">
               <Button className="flex-1 bg-curious-blue-500 hover:bg-curious-blue-600 text-white" size="sm" tag={Link} to={`${path}${item.id}`}>

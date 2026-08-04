@@ -50,7 +50,7 @@ const useFetchDataTables = ({collection,server})=>{
 
                 const orderArray = data.data.map(item=>({
                     id:item._id,
-                    data:[item.user.curp, `${formatoNombre(item.user.nombre)} ${item.user.apellido_paterno.toUpperCase()} ${item.user.apellido_paterno.toUpperCase()}`,item.fecha_solicitud,item.association.nombre,item.status],
+                    data:[item.user.curp, `${formatoNombre(item.user.nombre)} ${item.user.apellido_paterno.toUpperCase()} ${item.user.apellido_materno.toUpperCase()}`,item.user.numero_competidor || 'Pendiente de asignar',item.fecha_solicitud,item.association.nombre,item.status],
                     content:item
                 }))
 
@@ -103,7 +103,7 @@ export default function Inscripciones(){
             <TablaInscripciones
                 className='w-100'
                 path={'/gestion/view/inscripciones/'}
-                encabezados={['CURP','NOMBRE','FECHA DE INSCRIPCIÓN','ASOCIACION','ESTATUS']}
+                encabezados={['CURP','NOMBRE','NO. COMPETIDOR','FECHA DE INSCRIPCIÓN','ASOCIACION','ESTATUS']}
                 data={data}
                 title={'Inscripciones'}
                 collection={'users'}

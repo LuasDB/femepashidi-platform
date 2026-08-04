@@ -114,7 +114,7 @@ class Auth{
         role:user.role || 'admin',
         associationId:user.associationId || null,
       }
-      const token = jwt.sign(payload,config.jwtSecret,{ expiresIn:'1h'})
+      const token = jwt.sign(payload,config.jwtSecret,{ expiresIn:'24h'})
 
       return token
 
