@@ -41,7 +41,6 @@ export default function CartasPermiso() {
 
     const fetchData = async () => {
         try {
-            setLoading(true)
             const { data } = await axios.get(`${server}api/v1/letters`, {
                 params: { status, page, limit, search },
                 headers: authHeader()
@@ -101,28 +100,28 @@ export default function CartasPermiso() {
 
     return (
         <div className='flex flex-col basis-4 scroll-y'>
-            {loading && (<CenteredSpinner />)}
+            <CardFooter className='mb-4 flex flex-col sm:flex-row gap-3'>
+                <Input type="text" placeholder="Buscar por..." onChange={handleChangeSearch} value={search} />
+                <Input type="select" onChange={handleChangeStatus} value={status} className='sm:max-w-xs'>
+                    <option value=''>Todos</option>
+                    <option value='pendiente_asociacion'>Pendiente de asociación</option>
+                    <option value='rechazado_asociacion'>Rechazado por asociación</option>
+                    <option value='pendiente_aprobacion'>Pendiente de aprobación final</option>
+                    <option value='aprobado'>Aprobado</option>
+                    <option value='rechazado'>Rechazado</option>
+                    <option value='cancelada'>Cancelada</option>
+                </Input>
+            </CardFooter>
 
-            {!loading && (
-                <div>
-                    <CardFooter className='mb-4 flex flex-col sm:flex-row gap-3'>
-                        <Input type="text" placeholder="Buscar por..." onChange={handleChangeSearch} value={search} />
-                        <Input type="select" onChange={handleChangeStatus} value={status} className='sm:max-w-xs'>
-                            <option value=''>Todos</option>
-                            <option value='pendiente_asociacion'>Pendiente de asociación</option>
-                            <option value='rechazado_asociacion'>Rechazado por asociación</option>
-                            <option value='pendiente_aprobacion'>Pendiente de aprobación final</option>
-                            <option value='aprobado'>Aprobado</option>
-                            <option value='rechazado'>Rechazado</option>
-                            <option value='cancelada'>Cancelada</option>
-                        </Input>
-                    </CardFooter>
+            <Card className="m-2 rounded-xl shadow mt-0 mb-2">
+                <CardHeader className="flex flex-col md:flex-row justify-between items-center border-0">
+                    <Label className="text-curious-blue-950 font-bold text-center md:text-right">Cartas de Permiso</Label>
+                </CardHeader>
+                <CardBody>
+                    {loading && (<CenteredSpinner />)}
 
-                    <Card className="m-2 rounded-xl shadow mt-0 mb-2">
-                        <CardHeader className="flex flex-col md:flex-row justify-between items-center border-0">
-                            <Label className="text-curious-blue-950 font-bold text-center md:text-right">Cartas de Permiso</Label>
-                        </CardHeader>
-                        <CardBody>
+                    {!loading && (
+                        <>
                             {/* Mobile: cards */}
                             <div className="md:hidden">
                                 {letters.map((letter) => {
@@ -197,10 +196,10 @@ export default function CartasPermiso() {
                                 {letters.length === 0 && (<p className="text-center text-gray-500 py-4">Sin cartas de permiso</p>)}
                                 <Paginacion page={page} limit={limit} total={total} onPageChange={setPage} />
                             </div>
-                        </CardBody>
-                    </Card>
-                </div>
-            )}
+                        </>
+                    )}
+                </CardBody>
+            </Card>
         </div>
     )
 }

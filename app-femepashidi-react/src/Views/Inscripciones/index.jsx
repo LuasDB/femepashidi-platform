@@ -52,8 +52,6 @@ const useFetchDataTables = ({collection,server})=>{
 
     const fetchData = async()=>{
         try {
-            setLoading(true)
-
             const { data } = await axios.get(`${server}api/v1/${collection}/event/${selectedEvent}`,{
                 params:{ status, page, limit, search },
                 headers: authHeader()
