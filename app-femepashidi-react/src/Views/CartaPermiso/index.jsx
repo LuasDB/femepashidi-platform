@@ -102,14 +102,19 @@ export default function CartaPermiso() {
     if (loading) return <CenteredSpinner />
     if (!letter) return null
 
-    const pendingVerification = letter.verificacionAsociacion === undefined
-    const pendingApproval = letter.verificacionAsociacion === true && letter.aprobado === undefined
-    const canVerify = user?.role === 'admin' || user?.role === 'presidente_asociacion'
-    const canApprove = user?.role === 'admin'
+    const pendingVerification = letter.verificacionAsociacion === undefined && !letter.cancelada
+    const pendingApproval = letter.verificacionAsociacion === true && letter.aprobado === undefined && !letter.cancelada
+    const canVerify = !letter.cancelada && (user?.role === 'admin' || user?.role === 'presidente_asociacion')
+    const canApprove = !letter.cancelada && user?.role === 'admin'
 
     return (
         <Card className='m-1 rounded-xl shadow mt-0 p-8 overflow-x-auto bg-white'>
             <CardTitle className="flex font-bold">{letter.folio}</CardTitle>
+            {letter.cancelada && (
+                <div className='bg-gray-100 border-2 border-gray-300 text-gray-600 rounded-xl p-3 mb-4 text-center font-semibold'>
+                    Esta solicitud fue cancelada por el patinador.
+                </div>
+            )}
 
             <CardHeader className="flex flex-col justify-between bg-white">
                 <CardTitle className='font-bold text-curious-blue-900'>Patinador</CardTitle>

@@ -4,6 +4,7 @@ import upload from './../configurations/multer-config.js';
 import {
   authenticate,
   requireRole,
+  requireAccount,
   requireLetterAssociationAccess,
 } from '../middlewares/authenticate.js';
 
@@ -105,5 +106,30 @@ router.patch(
   }
 );
 
+// Borrado definitivo, solo admin: desaparece de la tabla del panel /gestion.
+router.delete('/:id', authenticate, requireRole(['admin']), async (req, res, next) => {
+  try {
+    await letters.delete(req.params.id)
+    res.status(200).json({
+      success:true,
+      message:'Carta eliminada',
+    })
+  } catch (error) {
+    next(error)
+  }
+});
+
+// Self-service: el propio patinador cancela su solicitud desde /cuenta/cartas-permiso.
+router.patch('/:id/cancel', authenticate, requireAccount, async (req, res, next) => {
+  try {
+    await letters.cancel(req.params.id, req.auth.accountId)
+    res.status(200).json({
+      success:true,
+      message:'Solicitud cancelada',
+    })
+  } catch (error) {
+    next(error)
+  }
+});
 
 export default router;

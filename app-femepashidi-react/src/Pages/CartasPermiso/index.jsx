@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, CardBody, CardHeader, Button, Label } from "reactstrap";
-import { FaPlus, FaDownload } from "react-icons/fa";
+import { FaPlus, FaDownload, FaBan } from "react-icons/fa";
+import Swal from "sweetalert2";
 import FormularioCartasPermiso from "../../Components/FormularioCartasPermiso";
 import SkaterAccountGate from "../../Components/SkaterAccountGate";
 import CenteredSpinner from "../../Components/CenteredSpinner";
@@ -13,6 +14,7 @@ const authHeader = () => ({
 
 // Mismo criterio que Views/CartasPermiso (panel admin/asociación).
 const letterStatus = (letter) => {
+  if (letter.cancelada) return { label: 'Cancelada', className: 'bg-gray-200 border-2 border-gray-300 text-gray-600' }
   if (letter.aprobado === true) return { label: 'Aprobado', className: 'bg-green-200 border-2 border-green-300 text-green-700' }
   if (letter.aprobado === false) return { label: 'Rechazado', className: 'bg-red-100 border-2 border-red-400 text-red-500' }
   if (letter.verificacionAsociacion === true) return { label: 'Pendiente de aprobación final', className: 'bg-yellow-100 border-2 border-yellow-400 text-yellow-600' }
@@ -43,6 +45,30 @@ export default function CartasPermiso() {
   useEffect(() => {
     if (skater) fetchLetters()
   }, [skater])
+
+  const handleCancel = (letter) => {
+    Swal.fire({
+      position: 'center',
+      icon: 'question',
+      title: '¿Cancelar esta solicitud?',
+      html: `Folio ${letter.folio}. Esto no podrá revertirse.`,
+      showConfirmButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Si, cancelar',
+      cancelButtonText: 'No, espera'
+    }).then(async (result) => {
+      if (!result.isConfirmed) return
+      try {
+        const { data } = await axios.patch(`${server}api/v1/letters/${letter._id}/cancel`, {}, { headers: authHeader() })
+        if (data.success) {
+          Swal.fire('Listo', 'Tu solicitud fue cancelada.', 'success')
+          fetchLetters()
+        }
+      } catch (error) {
+        Swal.fire('Algo salió mal', error?.response?.data?.message || error.message, 'error')
+      }
+    })
+  }
 
   return (
     <div className="flex flex-col basis-4">
@@ -88,6 +114,7 @@ export default function CartasPermiso() {
                   {letters.map((letter) => {
                     const { label, className } = letterStatus(letter)
                     const canDownload = letter.aprobado === true && letter.carta_pdf
+                    const canCancel = !letter.cancelada
                     return (
                       <Card key={letter._id} className="p-4 mb-3 shadow-sm border border-stone-200">
                         <div className="flex justify-between items-start gap-2">
@@ -101,7 +128,7 @@ export default function CartasPermiso() {
                           <p><span className="text-gray-500">Nivel:</span> {letter.nivelCompeticion}</p>
                           <p><span className="text-gray-500">Fechas:</span> {letter.fechaInicialCompetencia} al {letter.fechaFinalCompetencia}</p>
                         </div>
-                        {canDownload ? (
+                        {canDownload && (
                           <a
                             href={`${server}uploads/lettersA/${letter.carta_pdf}`}
                             target="_blank"
@@ -110,8 +137,18 @@ export default function CartasPermiso() {
                           >
                             <FaDownload /> Descargar carta
                           </a>
-                        ) : (
+                        )}
+                        {!canDownload && !letter.cancelada && (
                           <p className="mt-3 text-center text-xs text-gray-400">Aún no disponible para descargar</p>
+                        )}
+                        {canCancel && (
+                          <button
+                            type="button"
+                            onClick={() => handleCancel(letter)}
+                            className="mt-2 flex items-center justify-center gap-2 w-full text-red-500 hover:underline bg-transparent border-0 cursor-pointer text-sm"
+                          >
+                            <FaBan /> Cancelar solicitud
+                          </button>
                         )}
                       </Card>
                     )
@@ -124,7 +161,7 @@ export default function CartasPermiso() {
                   <table className="min-w-full text-sm">
                     <thead>
                       <tr>
-                        {['FOLIO', 'COMPETENCIA', 'NIVEL', 'FECHAS', 'ESTATUS', 'DESCARGAR'].map((h) => (
+                        {['FOLIO', 'COMPETENCIA', 'NIVEL', 'FECHAS', 'ESTATUS', 'DESCARGAR', 'CANCELAR'].map((h) => (
                           <th key={h} className="px-1 py-2">{h}</th>
                         ))}
                       </tr>
@@ -133,6 +170,7 @@ export default function CartasPermiso() {
                       {letters.map((letter) => {
                         const { label, className } = letterStatus(letter)
                         const canDownload = letter.aprobado === true && letter.carta_pdf
+                        const canCancel = !letter.cancelada
                         return (
                           <tr key={letter._id} className="border-b-2 border-stone-200">
                             <td className="px-1 py-2 text-[12px]">{letter.folio}</td>
@@ -151,6 +189,15 @@ export default function CartasPermiso() {
                                   rel="noreferrer"
                                 >
                                   <FaDownload />
+                                </Button>
+                              ) : (
+                                <span className="text-xs text-gray-400">—</span>
+                              )}
+                            </td>
+                            <td className="px-4 py-2">
+                              {canCancel ? (
+                                <Button className="bg-red-500 hover:bg-red-600 text-white" size="sm" onClick={() => handleCancel(letter)}>
+                                  <FaBan />
                                 </Button>
                               ) : (
                                 <span className="text-xs text-gray-400">—</span>

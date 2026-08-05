@@ -1,10 +1,7 @@
 import Boom from "@hapi/boom";
 import { db } from "../db/mongoClient.js";
 import { ObjectId } from "mongodb";
-import { sendMail } from './../utils/sendMail.js';
-import config from "../config.js";
 import fs from 'fs';
-import path from 'path';
 import * as fontkit from 'fontkit';
 
 
@@ -30,18 +27,6 @@ function formatearFecha(date) {
   console.log("Fecha formateada:", `${dia}-${mes}-${año}`);
 
   return `${dia}-${mes}-${año}`;
-}
-function edadAJulio(fecha){
-  const fechaNac = new Date(fecha);
-  const fechaActual = new Date();
-  const añoActual = fechaActual.getFullYear();
-  const mesActual = fechaActual.getMonth() + 1; // Meses van de 0 a 11
-  let edad = añoActual - fechaNac.getFullYear();
-  if (mesActual < 7 || (mesActual === 7 && fechaActual.getDate() < 1)) {
-    edad--;
-  }
-
-  return edad;
 }
 function capitalizeFirstLetter(str) {
   if (!str) return '';
@@ -193,33 +178,6 @@ class Letters {
         year: new Date().getFullYear(),
         convocatoria:files
       }
-      const dataMail ={
-          name:`${data.user.nombre} ${data.user.apellido_paterno} ${data.user.apellido_materno}`,
-          nombreCompetencia:data.nombreCompetencia,
-          nivelCompeticion:data.nivelCompeticion,
-          nombreAsociacion:data.user.asociacion.nombre,
-          dateRegister:data.date,
-          nombre:data.user.nombre,
-          apellidoPaterno:data.user.apellido_paterno,
-          apellidoMaterno:data.user.apellido_materno,
-          fechaNacimiento:data.user.fecha_nacimiento,
-          fechaActual:new Date().toLocaleDateString(),
-          year:new Date().getFullYear(),
-          edad:edadAJulio(data.user.fecha_nacimiento),
-          correo:data.user.correo,
-          abreviacionAsociacion:data.user.asociacion.abreviacion,
-          nombreCompetencia:data.nombreCompetencia,
-          domicilioCompetencia:data.domicilioCompetencia,
-          ciudadEstadoCompetencia:data.ciudadEstadoCompetencia,
-          fechaInicialCompetencia:data.fechaInicialCompetencia,
-          fechaFinalCompetencia:data.fechaFinalCompetencia,
-          nivelCompeticion:data.nivelCompeticion,
-          nivelActual:data.user.nivel_actual,
-          comentariosCompetencia:data.comentariosCompetencia,
-          folio:folio,
-          server:config.server
-      }
-
 
       // Insertar en la base de datos
       const result = await db.collection('letters').insertOne(register);
@@ -239,49 +197,7 @@ class Letters {
         link:`/gestion/view/cartas-permiso/${result.insertedId}`,
       })
 
-      const mailSkater = await sendMail({
-        to:data.user.correo,
-        from: config.emailSupport,
-        subject: 'Solicitud de Carta Permiso',
-        templateEmail: 'letters/mailSkaterStart',
-        data:dataMail,
-        attachments: [
-                  {
-                    filename: 'encabezado',
-                    path: path.join('emails/encabezado.png'),
-                    cid: 'encabezado',
-                  }
-        ],
-      })
-      console.log(mailSkater)
-      const mailAssociation = await sendMail({
-        to:data.user.asociacion.correo,
-        from: config.emailSupport,
-        subject: 'Solicitud de Carta Permiso',
-        templateEmail: 'letters/mailAsociacionStart',
-        data:{...dataMail,name:`${data.user.asociacion.representante} `,idSolicitud:result.insertedId},
-        attachments: [
-                  {
-                    filename: 'encabezado',
-                    path: path.join('emails/encabezado.png'),
-                    cid: 'encabezado',
-                  },
-                  {
-                    filename: files.originalname,
-                    path: path.join(files.path),
-                    cid: 'documento',
-                  },
-        ],
-      })
-      console.log(mailAssociation)
-      if (!mailSkater.success || !mailAssociation.success) {
-        throw Boom.badGateway('No se logró entregar el mail');
-      }
-
-
-
-
-      return {files, register,mailSkater};
+      return {files, register};
       }
     } catch (error) {
       if (error.isBoom) {
@@ -312,35 +228,6 @@ class Letters {
           })
         }
       }
-      console.log('[2]')
-
-      const dataMail ={
-          nombre:`${data.user.nombre} ${data.user.apellido_paterno} ${data.user.apellido_materno}`,
-          nombreCompetencia:data.nombreCompetencia,
-          nivelCompeticion:data.nivelCompeticion,
-          nombreAsociacion:data.user.asociacion.nombre,
-          dateRegister:data.date,
-          nombre:data.user.nombre,
-          apellidoPaterno:data.user.apellido_paterno,
-          apellidoMaterno:data.user.apellido_materno,
-          fechaNacimiento:data.user.fecha_nacimiento,
-          fechaActual:data.date,
-          year:data.year,
-          edad:edadAJulio(data.user.fecha_nacimiento),
-          correo:data.user.correo,
-          abreviacionAsociacion:data.user.asociacion.abreviacion,
-          domicilioCompetencia:data.domicilioCompetencia,
-          ciudadEstadoCompetencia:data.ciudadEstadoCompetencia,
-          fechaInicialCompetencia:data.fechaInicialCompetencia,
-          fechaFinalCompetencia:data.fechaFinalCompetencia,
-          nivelActual:data.user.nivel_actual,
-          comentariosCompetencia:data.comentariosCompetencia,
-          folio:data.folio,
-          server:config.server,
-          idSolicitud:data._id.toString()
-      }
-      console.log('[3]',dataMail)
-
       // Notifica a admin en la plataforma (campana en /gestion) en vez de
       // depender solo del correo con botones ACEPTAR/RECHAZAR sin sesión (ver
       // PATCH /letters/:id/approve, protegido por rol, admin-only).
@@ -349,41 +236,9 @@ class Letters {
         associationId:null,
         type:'letter_pending_approval',
         title:'Carta de permiso lista para aprobación final',
-        message:`${dataMail.nombre} ${dataMail.apellidoPaterno} - ${dataMail.folio}, verificada por la asociación.`,
+        message:`${data.user.nombre} ${data.user.apellido_paterno} - ${data.folio}, verificada por la asociación.`,
         link:`/gestion/view/cartas-permiso/${data._id}`,
       })
-
-      const mailPresident = await sendMail({
-        to:'analuisa@femepashidi.com.mx',
-        from: config.emailSupport,
-        subject: `Solicitud de Carta Permiso ${dataMail.folio} - ${dataMail.nombre} ${dataMail.apellidoPaterno}`,
-        templateEmail: 'letters/mailPresidencia',
-        data:dataMail,
-        attachments: [
-                  {
-                    filename: 'encabezado',
-                    path: path.join('emails/encabezado.png'),
-                    cid: 'encabezado',
-                  },
-                  {
-                    filename: data.convocatoria.originalname,
-                    path: path.join(data.convocatoria.path),
-                    cid: 'documento',
-                  },
-        ],
-      })
-      console.log(mailPresident)
-      if (!mailPresident.success) {
-        throw Boom.badGateway('No se logró entregar el mail');
-      }else{
-        fs.unlink(data.convocatoria.path, (err) => {
-          if (err) {
-            console.error('Error al eliminar el archivo:', err);
-            return;
-          }
-          console.log('Archivo eliminado con éxito');
-        });
-      }
 
       return true;
     } catch (error) {
@@ -419,31 +274,6 @@ class Letters {
         })
       }
 
-      const dataMail ={
-        name: data.user.nombre,
-        nombreCompetencia: data.nombreCompetencia,
-        nivelCompeticion: data.nivelCompeticion
-      }
-      const mailSkater = await sendMail({
-        to: data.user.correo,
-        from: config.emailSupport,
-        subject: 'Carta Permiso Aprobada',
-        templateEmail: 'letters/approveLetterSkater',
-        data: dataMail,
-        attachments: [
-          {
-            filename: `carta-${data.folio}.pdf`,
-            path: path.join(`./uploads/lettersA/carta-${data.folio}.pdf`),
-            cid: `carta-${data.folio}`
-          },
-          {
-                    filename: 'encabezado',
-                    path: path.join('emails/encabezado.png'),
-                    cid: 'encabezado',
-                  }
-        ]
-      })
-
       return true;
     } catch (error) {
       if (error.isBoom) {
@@ -466,17 +296,29 @@ class Letters {
         filtro['user.asociacion._id'] = { $in: [new ObjectId(associationId), associationId] }
       }
 
-      if (status === 'pendiente_asociacion') {
-        filtro.verificacionAsociacion = { $exists: false }
-      } else if (status === 'rechazado_asociacion') {
-        filtro.verificacionAsociacion = false
-      } else if (status === 'pendiente_aprobacion') {
-        filtro.verificacionAsociacion = true
-        filtro.aprobado = { $exists: false }
-      } else if (status === 'aprobado') {
-        filtro.aprobado = true
-      } else if (status === 'rechazado') {
-        filtro.aprobado = false
+      // 'cancelada' es independiente de las dos etapas de aprobación: un
+      // patinador puede cancelar su solicitud en cualquier momento (ver
+      // cancel()). El resto de los filtros de estatus excluyen las
+      // canceladas para no mezclarlas con lo que sigue pendiente de verdad;
+      // 'Todos' (sin status) sigue mostrándolas con su propia etiqueta.
+      if (status === 'cancelada') {
+        filtro.cancelada = true
+      } else {
+        if (status === 'pendiente_asociacion') {
+          filtro.verificacionAsociacion = { $exists: false }
+        } else if (status === 'rechazado_asociacion') {
+          filtro.verificacionAsociacion = false
+        } else if (status === 'pendiente_aprobacion') {
+          filtro.verificacionAsociacion = true
+          filtro.aprobado = { $exists: false }
+        } else if (status === 'aprobado') {
+          filtro.aprobado = true
+        } else if (status === 'rechazado') {
+          filtro.aprobado = false
+        }
+        if (status) {
+          filtro.cancelada = { $ne: true }
+        }
       }
 
       // Mismo criterio de búsqueda que skaters.service.js#getSkatersWithPagination.
@@ -541,6 +383,54 @@ class Letters {
         throw error;
       }
       throw Boom.badImplementation('No se pudo obtener la carta');
+    }
+  }
+
+  // Borrado definitivo, solo admin (ver requireRole(['admin']) en el router):
+  // desaparece de la tabla del panel /gestion.
+  async delete(id) {
+    try {
+      const result = await db.collection('letters').deleteOne({ _id: new ObjectId(id) })
+      if (result.deletedCount === 0) {
+        throw Boom.notFound('Carta no encontrada')
+      }
+      return { deleted: true }
+    } catch (error) {
+      if (Boom.isBoom(error)) {
+        throw error;
+      }
+      throw Boom.badImplementation('No se pudo eliminar la carta');
+    }
+  }
+
+  // Self-service: el propio patinador cancela su solicitud (no la borra, solo
+  // la marca) desde /cuenta/cartas-permiso. Acotado a sus propias cartas: el
+  // accountId embebido en `letter.user` (ver getAllByAccount) es el criterio
+  // de dueño, igual que en requireSkaterOwnership.
+  async cancel(id, accountId) {
+    try {
+      const letter = await db.collection('letters').findOne({ _id: new ObjectId(id) })
+      if (!letter) {
+        throw Boom.notFound('Carta no encontrada')
+      }
+      if (letter.user?.accountId !== accountId) {
+        throw Boom.forbidden('No tienes acceso a esta carta')
+      }
+      if (letter.cancelada) {
+        throw Boom.conflict('Esta solicitud ya está cancelada')
+      }
+
+      await db.collection('letters').updateOne(
+        { _id: new ObjectId(id) },
+        { $set: { cancelada: true, canceladaAt: new Date() } }
+      )
+
+      return { cancelled: true }
+    } catch (error) {
+      if (Boom.isBoom(error)) {
+        throw error;
+      }
+      throw Boom.badImplementation('No se pudo cancelar la solicitud');
     }
   }
 

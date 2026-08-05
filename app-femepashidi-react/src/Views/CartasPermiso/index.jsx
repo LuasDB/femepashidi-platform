@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Card, CardBody, CardFooter, CardHeader, Label, Input, Button } from 'reactstrap'
-import { FaRegFolderOpen } from 'react-icons/fa'
+import { FaRegFolderOpen, FaTrash } from 'react-icons/fa'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 import CenteredSpinner from '../../Components/CenteredSpinner'
 import Paginacion from '../../Components/Paginacion'
+import { AuthContext } from '../../Context/AuthContext'
 import { server } from '../../db/server'
 
 const authHeader = () => ({
@@ -13,8 +15,10 @@ const authHeader = () => ({
 
 // Estatus derivado de las dos etapas de aprobación (verificacionAsociacion,
 // luego aprobado) — mismos valores que el filtro `status` de GET /letters en
-// el backend (letters.service.js#getAll).
+// el backend (letters.service.js#getAll). 'cancelada' va primero: un
+// patinador puede cancelar en cualquier etapa (ver Pages/CartasPermiso).
 const letterStatus = (letter) => {
+    if (letter.cancelada) return { label: 'Cancelada', className: 'bg-gray-200 border-2 border-gray-300 text-gray-600' }
     if (letter.aprobado === true) return { label: 'Aprobado', className: 'bg-green-200 border-2 border-green-300 text-green-700' }
     if (letter.aprobado === false) return { label: 'Rechazado', className: 'bg-red-100 border-2 border-red-400 text-red-500' }
     if (letter.verificacionAsociacion === true) return { label: 'Pendiente de aprobación final', className: 'bg-yellow-100 border-2 border-yellow-400 text-yellow-600' }
@@ -23,6 +27,9 @@ const letterStatus = (letter) => {
 }
 
 export default function CartasPermiso() {
+    const { user } = useContext(AuthContext)
+    const isAdmin = user?.role === 'admin'
+
     const [letters, setLetters] = useState([])
     const [loading, setLoading] = useState(true)
     const [status, setStatus] = useState('')
@@ -32,28 +39,30 @@ export default function CartasPermiso() {
     const [total, setTotal] = useState(0)
     const [search, setSearch] = useState('')
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                setLoading(true)
-                const { data } = await axios.get(`${server}api/v1/letters`, {
-                    params: { status, page, limit, search },
-                    headers: authHeader()
-                })
-                if (data.success) {
-                    setLetters(data.data)
-                    setTotal(data.total)
-                } else {
-                    setLetters([])
-                    setTotal(0)
-                }
-            } catch (error) {
-                console.error(error)
-            } finally {
-                setLoading(false)
+    const fetchData = async () => {
+        try {
+            setLoading(true)
+            const { data } = await axios.get(`${server}api/v1/letters`, {
+                params: { status, page, limit, search },
+                headers: authHeader()
+            })
+            if (data.success) {
+                setLetters(data.data)
+                setTotal(data.total)
+            } else {
+                setLetters([])
+                setTotal(0)
             }
+        } catch (error) {
+            console.error(error)
+        } finally {
+            setLoading(false)
         }
+    }
+
+    useEffect(() => {
         fetchData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [status, page, limit, search])
 
     const handleChangeSearch = (e) => {
@@ -64,6 +73,30 @@ export default function CartasPermiso() {
     const handleChangeStatus = (e) => {
         setStatus(e.target.value)
         setPage(1)
+    }
+
+    const handleDelete = (letter) => {
+        Swal.fire({
+            position: 'center',
+            icon: 'question',
+            title: '¿Eliminar esta carta de permiso?',
+            html: `Folio ${letter.folio}. Esto no podrá revertirse.`,
+            showConfirmButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Si, eliminar',
+            cancelButtonText: 'No, espera'
+        }).then(async (result) => {
+            if (!result.isConfirmed) return
+            try {
+                const { data } = await axios.delete(`${server}api/v1/letters/${letter._id}`, { headers: authHeader() })
+                if (data.success) {
+                    Swal.fire('Eliminada', 'La carta de permiso fue eliminada.', 'success')
+                    fetchData()
+                }
+            } catch (error) {
+                Swal.fire('Algo salió mal', error?.response?.data?.message || error.message, 'error')
+            }
+        })
     }
 
     return (
@@ -81,6 +114,7 @@ export default function CartasPermiso() {
                             <option value='pendiente_aprobacion'>Pendiente de aprobación final</option>
                             <option value='aprobado'>Aprobado</option>
                             <option value='rechazado'>Rechazado</option>
+                            <option value='cancelada'>Cancelada</option>
                         </Input>
                     </CardFooter>
 
@@ -106,9 +140,16 @@ export default function CartasPermiso() {
                                                 <p><span className="text-gray-500">Competencia:</span> {letter.nombreCompetencia}</p>
                                                 <p><span className="text-gray-500">Asociación:</span> {letter.user?.asociacion?.nombre}</p>
                                             </div>
-                                            <Button className="mt-3 w-full bg-curious-blue-500 hover:bg-curious-blue-600 text-white" size="sm" tag={Link} to={`/gestion/view/cartas-permiso/${letter._id}`}>
-                                                <FaRegFolderOpen className="inline mr-1" /> Ver
-                                            </Button>
+                                            <div className="flex gap-2 mt-3">
+                                                <Button className="flex-1 bg-curious-blue-500 hover:bg-curious-blue-600 text-white" size="sm" tag={Link} to={`/gestion/view/cartas-permiso/${letter._id}`}>
+                                                    <FaRegFolderOpen className="inline mr-1" /> Ver
+                                                </Button>
+                                                {isAdmin && (
+                                                    <Button className="bg-red-500 hover:bg-red-600 text-white" size="sm" onClick={() => handleDelete(letter)}>
+                                                        <FaTrash />
+                                                    </Button>
+                                                )}
+                                            </div>
                                         </Card>
                                     )
                                 })}
@@ -121,7 +162,7 @@ export default function CartasPermiso() {
                                 <table className="min-w-full text-sm">
                                     <thead>
                                         <tr>
-                                            {['FOLIO', 'PATINADOR', 'ASOCIACIÓN', 'COMPETENCIA', 'ESTATUS', 'VER'].map((h) => (
+                                            {['FOLIO', 'PATINADOR', 'ASOCIACIÓN', 'COMPETENCIA', 'ESTATUS', 'VER', ...(isAdmin ? ['ELIMINAR'] : [])].map((h) => (
                                                 <th key={h} className="px-1 py-2">{h}</th>
                                             ))}
                                         </tr>
@@ -141,6 +182,13 @@ export default function CartasPermiso() {
                                                             <FaRegFolderOpen />
                                                         </Button>
                                                     </td>
+                                                    {isAdmin && (
+                                                        <td className="px-4 py-2">
+                                                            <Button className="bg-red-500 hover:bg-red-600 text-white" size="sm" onClick={() => handleDelete(letter)}>
+                                                                <FaTrash />
+                                                            </Button>
+                                                        </td>
+                                                    )}
                                                 </tr>
                                             )
                                         })}
