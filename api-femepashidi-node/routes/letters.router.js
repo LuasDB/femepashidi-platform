@@ -29,10 +29,18 @@ router.post('/', upload('letters').single('archivo'), async (req, res,next) => {
 router.get('/', authenticate, requireRole(ROLES), async (req, res, next) => {
   try {
     const associationId = req.auth.role === 'presidente_asociacion' ? req.auth.associationId : undefined
-    const data = await letters.getAll({ associationId, status: req.query.status })
+    const { page, limit, search = '', status } = req.query
+    const paginatedData = await letters.getAll({
+      associationId,
+      status,
+      search,
+      page:parseInt(page),
+      limit:parseInt(limit),
+    })
     res.status(200).json({
       success:true,
-      data,
+      data: paginatedData.letters,
+      total: paginatedData.total,
     })
   } catch (error) {
     next(error)

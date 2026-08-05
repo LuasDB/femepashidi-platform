@@ -122,7 +122,7 @@ const FormularioCartasPermiso = ({data,onClose}) => {
         {
             user && (
                 <Row >
-        <Col md="12">
+        <Col xs="12">
             <Card>
                 <CardHeader>
                     
@@ -131,25 +131,25 @@ const FormularioCartasPermiso = ({data,onClose}) => {
                 <CardBody>
                     <Form onSubmit={handleSubmit} id='formulario'>
                     <Row>
-                        <Col md='5'>
+                        <Col xs='12' md='5'>
                             <Label for="">{(<div className=''><span className='span'>Nombre:</span>{`${user.nombre} ${user.apellido_paterno} ${user.apellido_materno}`}</div>)}</Label>
                         </Col>
                     </Row>
                     <Row>
-                        <Col md='5'>
+                        <Col xs='12' md='5'>
                             <Label for="">{<div className=''><span className='span'>CURP:</span>{user.curp}</div>}</Label>
                         </Col>
-                        
+
                     </Row>
                     <Row>
-                        <Col md='5'>
+                        <Col xs='12' md='5'>
                             <Label for="">{<div className=''><span className='span'>Asociacion:</span> {`${user.asociacion.nombre}`}</div>}</Label>
-                        </Col>                      
+                        </Col>
                     </Row>
                     <Row>
-                        <Col md='5'>
+                        <Col xs='12' md='5'>
                             <Label for="">{<div className=''><span className='span'>Ultimo nivel aprobado:</span>{user && user.nivel_actual}</div>}</Label>
-                        </Col>                      
+                        </Col>
                     </Row>
                     <FormGroup>
                         <Label for="nivelCompeticion"><span className='span'>Nivel a competir:</span>
@@ -198,10 +198,10 @@ const FormularioCartasPermiso = ({data,onClose}) => {
                     <h2 className="title"> Competencia a la que deseas asistir </h2>
                     <FormGroup>
                         <Row >
-                            <Col md="4">
+                            <Col xs="12" md="4">
                                 <Label for="nombreCompetencia"><span className='span'>Nombre de la competencia:</span></Label>
                             </Col>
-                            <Col md="7">
+                            <Col xs="12" md="7">
                                 <Input type="text" name="nombreCompetencia" id="nombreCompetencia"  onChange={handleChange}
                                 className={ errorInput.nombreCompetencia ==='Campo obligatorio' ? 'input-error' : 'nada'} />
                             </Col>
@@ -211,10 +211,10 @@ const FormularioCartasPermiso = ({data,onClose}) => {
                     </FormGroup>
                     <FormGroup>
                         <Row >
-                            <Col md="4">
+                            <Col xs="12" md="4">
                                 <Label for="domicilioCompetencia"><span className='span'>Domicilio:</span></Label>
                             </Col>
-                            <Col md="7">
+                            <Col xs="12" md="7">
                                 <Input type="text" name="domicilioCompetencia" id="domicilioCompetencia"  onChange={handleChange}
                                 className={ errorInput.domicilioCompetencia ==='Campo obligatorio' ? 'input-error' : 'nada'} />
                             </Col>
@@ -222,10 +222,10 @@ const FormularioCartasPermiso = ({data,onClose}) => {
                     </FormGroup>
                     <FormGroup>
                         <Row >
-                            <Col md="4">
+                            <Col xs="12" md="4">
                                 <Label for="ciudadEstadoCompetencia"><span className='span'>Ciudad y estado:</span></Label>
                             </Col>
-                            <Col md="7">
+                            <Col xs="12" md="7">
                                 <Input type="text" name="ciudadEstadoCompetencia" id="ciudadEstadoCompetencia"  onChange={handleChange}
                                 className={ errorInput.ciudadEstadoCompetencia ==='Campo obligatorio' ? 'input-error' : 'nada'} />
                             </Col>
@@ -233,10 +233,10 @@ const FormularioCartasPermiso = ({data,onClose}) => {
                     </FormGroup>
                     <FormGroup>
                         <Row >
-                            <Col md="4">
+                            <Col xs="12" md="4">
                                 <Label for="paisCompetencia"><span className='span'>País:</span></Label>
                             </Col>
-                            <Col md="7">
+                            <Col xs="12" md="7">
                                 <Input type="select" name="paisCompetencia" id="paisCompetencia"  onChange={handleChange}
                                 className={ errorInput.paisCompetencia ==='Campo obligatorio' ? 'input-error' : 'nada'} >
                                     <option value="">Pais de la Competencia:</option>
@@ -310,10 +310,10 @@ const FormularioCartasPermiso = ({data,onClose}) => {
                     </FormGroup>
                     <FormGroup>
                         <Row >
-                            <Col md="4">
+                            <Col xs="12" md="4">
                                 <Label for="fechaInicialCompetencia"><span className='span'>Fecha inicial de competencia:</span></Label>
                             </Col>
-                            <Col md="7">
+                            <Col xs="12" md="7">
                                 <Input type="date" name="fechaInicialCompetencia" id="fechaInicialCompetencia"  onChange={handleChange}
                                 className={ errorInput.fechaInicialCompetencia ==='Campo obligatorio' ? 'input-error' : 'nada'} />
                             </Col>
@@ -321,10 +321,10 @@ const FormularioCartasPermiso = ({data,onClose}) => {
                     </FormGroup>
                     <FormGroup>
                         <Row >
-                            <Col md="4">
+                            <Col xs="12" md="4">
                                 <Label for="fechaFinalCompetencia"><span className='span'>Fecha Final de competencia:</span></Label>
                             </Col>
-                            <Col md="7">
+                            <Col xs="12" md="7">
                                 <Input type="date" name="fechaFinalCompetencia" id="fechaFinalCompetencia"  onChange={handleChange}
                                 className={ errorInput.fechaFinalCompetencia ==='Campo obligatorio' ? 'input-error' : 'nada'} />
                             </Col>
@@ -332,10 +332,10 @@ const FormularioCartasPermiso = ({data,onClose}) => {
                     </FormGroup>
                     <FormGroup>
                         <Row >
-                            <Col md="4">
+                            <Col xs="12" md="4">
                                 <Label for="archivo"><span className='span'>Archivo de la convocatoria:</span></Label>
                             </Col>
-                            <Col md="7">
+                            <Col xs="12" md="7">
                                 <Input type="file" name="archivo" id="archivo"  onChange={handleChangeFile}
                                 className={ selectedFile ? '' : 'input-error'} />
                             </Col>
@@ -343,10 +343,10 @@ const FormularioCartasPermiso = ({data,onClose}) => {
                     </FormGroup>
                     <FormGroup>
                         <Row >
-                            <Col md="4">
+                            <Col xs="12" md="4">
                                 <Label for="comentariosCompetencia"><span className='span'>Comentarios adicionales:</span></Label>
                             </Col>
-                            <Col md="7">
+                            <Col xs="12" md="7">
                                 <Input type="text" name="comentariosCompetencia" id="comentariosCompetencia"  onChange={handleChange}
                                 className={ errorInput.comentariosCompetencia ==='Campo obligatorio' ? 'input-error' : 'nada'} />
                             </Col>

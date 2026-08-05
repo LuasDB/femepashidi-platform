@@ -297,7 +297,7 @@ class Skaters{
           from:config.emailSupport,
           to:skater.correo,
           subject:'Aceptación de registro en plataforma FEMEPASHIDI',
-          data:{name:`${skater.nombre} ${skater.apellido_paterno}`},
+          data:{name:`${skater.nombre} ${skater.apellido_paterno}`,loginLink:`${config.urlApp}/cuenta/login`},
           templateEmail:'approveSkater',
           attachments:[
             {

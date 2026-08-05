@@ -1,9 +1,11 @@
 import express from 'express'
 import Account from '../services/account.service.js'
+import Letters from '../services/letters.service.js'
 import { authenticate, requireAccount, requireRole } from '../middlewares/authenticate.js'
 
 const router = express.Router()
 const account = new Account()
+const letters = new Letters()
 
 router.post('/login', async (req, res, next) => {
   try {
@@ -36,6 +38,17 @@ router.post('/set-password', async (req, res, next) => {
 router.get('/me', authenticate, requireAccount, async (req, res, next) => {
   try {
     const data = await account.getMe(req.auth.accountId)
+    res.status(200).json({ success: true, data })
+  } catch (error) {
+    next(error)
+  }
+})
+
+// Cartas de permiso del propio patinador logeado, para la sección
+// /cuenta/cartas-permiso (lista con estatus + descarga de la carta aprobada).
+router.get('/me/letters', authenticate, requireAccount, async (req, res, next) => {
+  try {
+    const data = await letters.getAllByAccount(req.auth.accountId)
     res.status(200).json({ success: true, data })
   } catch (error) {
     next(error)

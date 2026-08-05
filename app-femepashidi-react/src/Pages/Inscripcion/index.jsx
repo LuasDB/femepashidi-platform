@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Camera } from 'lucide-react'; 
+import { Camera, CalendarX2 } from 'lucide-react';
 import { Row, Col, Input,FormGroup,Label} from "reactstrap"
 import './styles.css';
 import axios from "axios"
@@ -9,6 +9,7 @@ import Swal from "sweetalert2"
 import {obtenerCategoria} from "../../Functions/funciones.js"
 import { competitionLevels,categoriesByCompetition } from "./../../Utils/lists.js"
 import SkaterAccountGate from "../../Components/SkaterAccountGate"
+import CenteredSpinner from "../../Components/CenteredSpinner"
 
 
 const InscripcionCompetencia = () => {
@@ -32,31 +33,32 @@ const InscripcionCompetencia = () => {
 
     const [newFoto, setNewFoto] = useState(null);
     const [previewFoto, setPreviewFoto] = useState(null);
+    const [noEvents, setNoEvents] = useState(false)
+    const [checkingEvents, setCheckingEvents] = useState(true)
     const navigator = useNavigate()
 
     const fetchEvents = async()=>{
             try {
                 const { data } = await axios.get(`${server}api/v1/events`)
-                
+
                 if(data.success){
                     const activeEvents = data.data.filter(item=>item.status === 'Activo')
                     console.log(activeEvents)
 
                     if(activeEvents.length === 0){
-                        Swal.fire('¡Aun no hay competencias!','Revisa nuestras fechas para poder inscribirte','info')
-                        .then(()=>{
-                            navigator('/cuenta')
-                        })
+                        setNoEvents(true)
                     }else{
                     setEvents(activeEvents)
 
                     }
-                    
+
                 }
             } catch (error) {
                 console.log(error)
+            } finally {
+                setCheckingEvents(false)
             }
-        
+
     }
     const handleSkaterSelected = (skaterData)=>{
         const verificacion = skaterData?.verificacion;
@@ -226,7 +228,17 @@ const InscripcionCompetencia = () => {
                 ← Volver a mi cuenta
             </button>
         </div>
-        {!isRegister&&(<div>
+        {checkingEvents && (<CenteredSpinner />)}
+
+        {!checkingEvents && noEvents && (
+            <div className='flex flex-col items-center justify-center text-center py-16 px-4'>
+                <CalendarX2 className='w-16 h-16 text-amber-500 mb-4' strokeWidth={1.5} />
+                <h2 className='text-xl font-bold text-gray-800 mb-2'>¡Aún no hay competencias!</h2>
+                <p className='text-gray-500 max-w-sm'>Revisa nuestras fechas más adelante para poder inscribirte a una competencia.</p>
+            </div>
+        )}
+
+        {!checkingEvents && !noEvents && !isRegister&&(<div>
             <SkaterAccountGate onSkaterSelected={handleSkaterSelected} />
         </div>)}
         {isRegister && (

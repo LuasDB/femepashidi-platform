@@ -99,7 +99,7 @@ export default function CuentaNavBar() {
         <div className=''>
             <Navbar color="light" light expand="md" className='rounded-xl shadow mt-4 mb-2'>
                 <NavbarBrand className='flex flex-row text-sm md:text-lg items-center space-x-4'>
-                    <img src='https://www.femepashidi.com.mx/inicio/img/images/logo_fede.png' alt='LOGO FEMEPASHIDI' className='w-16' />
+                    <img src='/femepashidi.svg' alt='LOGO FEMEPASHIDI' className='w-16' />
                     <h1 className='text-dark'>Mi cuenta FEMEPASHIDI</h1>
                 </NavbarBrand>
                 <Nav className="ml-auto items-center" navbar>

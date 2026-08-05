@@ -6,3 +6,12 @@
     border-color: red;
     border: 1px solid red !important;
 }
+
+/* Mobile: cada fila label+input se apila (col-12); sin esto quedaban pegados
+   uno contra otro sin espacio. En md+ el grid de Bootstrap ya los separa
+   horizontalmente y esta regla no aplica. */
+@media (max-width: 767.98px) {
+    #formulario .row > .col-12:first-child {
+        margin-bottom: 0.35rem;
+    }
+}

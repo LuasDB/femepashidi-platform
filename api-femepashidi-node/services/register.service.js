@@ -126,7 +126,7 @@ class Register{
     }
   }
 
-  async findByEvent(event,associationId,status){
+  async findByEvent(event,{ associationId, status, page, limit, search } = {}){
     try {
 
       const filtro = {'event.nombre':event}
@@ -146,12 +146,30 @@ class Register{
         filtro.status = status
       }
 
-      const findByEvent = await db
-      .collection('register')
-      .find(filtro)
-      .toArray()
+      // Mismo criterio de búsqueda que skaters.service.js#getSkatersWithPagination.
+      if(search){
+        filtro.$or = [
+          {'user.nombre':{ $regex:search, $options:'i' }},
+          {'user.apellido_paterno':{ $regex:search, $options:'i' }},
+          {'user.curp':{ $regex:search, $options:'i' }},
+        ]
+      }
 
-      return findByEvent
+      const collection = db.collection('register')
+      const total = await collection.countDocuments(filtro)
+
+      // limit es opcional: sin él se regresa la lista completa del evento, tal
+      // como la necesitan ExportToExcel/GenerateXml (Views/Inscripciones), que
+      // exportan todos los registros del evento sin importar la página/búsqueda
+      // que esté viendo la tabla en pantalla.
+      let cursor = collection.find(filtro)
+      if (limit) {
+        const skip = (page - 1) * limit
+        cursor = cursor.skip(skip).limit(limit)
+      }
+      const registers = await cursor.toArray()
+
+      return { total, registers }
     } catch (error) {
       if(Boom.isBoom(error)){
         throw error

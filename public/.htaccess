@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Ruta antigua "/inicio" -> nueva ruta raiz "/"
+  RewriteRule ^inicio/?$ / [R=301,L]
+</IfModule>

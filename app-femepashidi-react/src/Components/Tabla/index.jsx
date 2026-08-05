@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import {server} from './../../db/server.js'
 import Swal from "sweetalert2";
+import Paginacion from '../Paginacion'
 
 
 export function Tabla(props) {
@@ -334,11 +335,16 @@ export function TablaPatinadores(props) {
 }
 
 export function TablaInscripciones(props) {
-    
-  const { path,data,encabezados,title,collection,server,handleSelectedEvent,selectedEvent,isSelected,status,handleChangeStatus } = props
+
+  const {
+    path,data,encabezados,title,collection,server,
+    handleSelectedEvent,selectedEvent,isSelected,
+    status,handleChangeStatus,
+    search,onSearchChange,
+    page,limit,total,onPageChange,
+  } = props
 
   const [filtered, setFiltered] = useState(data || []);
-  const [searchValue, setSearchValue] = useState('');
   const [isFirst, setIsFirst] = useState(true);
   const [eventsList,setEventsList] = useState([])
 
@@ -369,16 +375,6 @@ export function TablaInscripciones(props) {
       }
   }, [data]);
 
-  const handleChangeSearch = (e)=>{
-      const world = e.target.value
-      setSearchValue(world)
-    
-      setFiltered(data.filter(item=>
-              item.data[0].toLowerCase().includes(world.toLowerCase()) || 
-              item.data[1].toLowerCase().includes(world.toLowerCase()) ))
-              
-     
-  }
   const stylesStatusBg = (status)=>{
     if(status === 'Preinscrito'){
       return 'bg-yellow-100 border-2 border-yellow-400 text-center rounded-2 text-yellow-500'
@@ -445,7 +441,7 @@ export function TablaInscripciones(props) {
     </CardHeader>
     {isSelected && (
       <CardFooter className="flex flex-col sm:flex-row gap-3">
-        <Input type="text" placeholder="Buscar por..." onChange={handleChangeSearch} value={searchValue} />
+        <Input type="text" placeholder="Buscar por..." onChange={onSearchChange} value={search} />
         <Input type="select" onChange={handleChangeStatus} value={status} className="sm:max-w-xs">
           <option value=''>Todos</option>
           <option value='Preinscrito'>En espera de aprobación</option>
@@ -485,6 +481,7 @@ export function TablaInscripciones(props) {
             </div>
           </Card>
         ))}
+        {isSelected && (<Paginacion page={page} limit={limit} total={total} onPageChange={onPageChange} />)}
       </div>
 
       {/* Desktop: tabla */}
@@ -522,6 +519,7 @@ export function TablaInscripciones(props) {
             ))}
           </tbody>
         </table>
+        {isSelected && (<Paginacion page={page} limit={limit} total={total} onPageChange={onPageChange} />)}
       </div>
     </CardBody>
         </Card>

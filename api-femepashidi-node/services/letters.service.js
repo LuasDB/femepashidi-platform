@@ -458,7 +458,7 @@ class Letters {
   // `status` sigue el flujo de dos etapas: pendiente_asociacion (aún no la
   // toca la asociación) -> rechazado_asociacion / pendiente_aprobacion ->
   // aprobado / rechazado (decisión final de la federación).
-  async getAll({ associationId, status } = {}) {
+  async getAll({ associationId, status, page, limit, search } = {}) {
     try {
       const filtro = {}
 
@@ -479,8 +479,44 @@ class Letters {
         filtro.aprobado = false
       }
 
-      const letters = await db.collection('letters')
+      // Mismo criterio de búsqueda que skaters.service.js#getSkatersWithPagination.
+      if (search) {
+        filtro.$or = [
+          { folio: { $regex: search, $options: 'i' } },
+          { 'user.nombre': { $regex: search, $options: 'i' } },
+          { 'user.apellido_paterno': { $regex: search, $options: 'i' } },
+          { nombreCompetencia: { $regex: search, $options: 'i' } },
+        ]
+      }
+
+      const collection = db.collection('letters')
+      const total = await collection.countDocuments(filtro)
+
+      const skip = (page - 1) * limit
+      const letters = await collection
         .find(filtro)
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(limit)
+        .toArray()
+
+      return { total, letters }
+    } catch (error) {
+      if (Boom.isBoom(error)) {
+        throw error;
+      }
+      throw Boom.badImplementation('No se pudo obtener el listado de cartas');
+    }
+  }
+
+  // Self-service: cartas del propio patinador logeado en /cuenta (colección
+  // `accounts`), distinto del listado admin/asociación de getAll(). `user`
+  // dentro de la carta se guarda tal cual llegó del frontend (ya serializado
+  // a JSON), así que accountId queda como string, no ObjectId.
+  async getAllByAccount(accountId) {
+    try {
+      const letters = await db.collection('letters')
+        .find({ 'user.accountId': accountId })
         .sort({ createdAt: -1 })
         .toArray()
 

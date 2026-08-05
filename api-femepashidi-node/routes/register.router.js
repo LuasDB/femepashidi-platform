@@ -55,10 +55,18 @@ router.get('/:id',async(req,res,next)=>{
 router.get('/event/:event',authenticate,requireRole(['admin','presidente_asociacion']),async(req,res,next)=>{
   try {
     const associationId = req.auth.role === 'presidente_asociacion' ? req.auth.associationId : undefined
-    const users = await registro.findByEvent(req.params.event,associationId,req.query.status)
+    const { page, limit, search = '', status } = req.query
+    const paginatedData = await registro.findByEvent(req.params.event,{
+      associationId,
+      status,
+      search,
+      page:parseInt(page),
+      limit:parseInt(limit),
+    })
     res.status(200).json({
       success:true,
-      data:users
+      data:paginatedData.registers,
+      total:paginatedData.total
     });
   } catch (error) {
     next(error);

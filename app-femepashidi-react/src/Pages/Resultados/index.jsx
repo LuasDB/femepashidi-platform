@@ -33,17 +33,17 @@ export default function Resultados(){
             <Row className='pt-5' >
                     <Col md={4} className='flex justify-center'>
                     <Link>
-                    <img src="https://www.femepashidi.com.mx/inicio/img/images/comite.png" alt="Logo 1" style={{ width: '80px' }} onClick={()=>window.open('http://femepashidi.com.mx/inicio')}/>
-                    
+                    <img src="https://www.femepashidi.com.mx/img/images/comite.png" alt="Logo 1" style={{ width: '80px' }} onClick={()=>window.open('https://www.femepashidi.com.mx/')}/>
+
                     </Link></Col>
                     <Col md={4} className='flex justify-center'>
                     <Link>
-                    <img src="https://www.femepashidi.com.mx/inicio//img/images/logo_fede.png" alt="Logo 1" style={{ width: '100px' }} onClick={()=>window.open('http://femepashidi.com.mx/inicio')}/>
+                    <img src="https://www.femepashidi.com.mx/img/images/logo_fede.png" alt="Logo 1" style={{ width: '100px' }} onClick={()=>window.open('https://www.femepashidi.com.mx/')}/>
                     </Link>
                     </Col>
                     <Col md={4} className='flex justify-center'>
                     <Link>
-                    <img src="https://www.femepashidi.com.mx/inicio/img/images/isu.png" alt="Logo 1" style={{ width: '80px' }} onClick={()=>window.open('http://femepashidi.com.mx/inicio')}/>
+                    <img src="https://www.femepashidi.com.mx/img/images/isu.png" alt="Logo 1" style={{ width: '80px' }} onClick={()=>window.open('https://www.femepashidi.com.mx/')}/>
                     </Link>
                     </Col>
             </Row>

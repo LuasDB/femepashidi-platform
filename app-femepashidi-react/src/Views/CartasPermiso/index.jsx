@@ -4,6 +4,7 @@ import { Card, CardBody, CardFooter, CardHeader, Label, Input, Button } from 're
 import { FaRegFolderOpen } from 'react-icons/fa'
 import axios from 'axios'
 import CenteredSpinner from '../../Components/CenteredSpinner'
+import Paginacion from '../../Components/Paginacion'
 import { server } from '../../db/server'
 
 const authHeader = () => ({
@@ -25,17 +26,26 @@ export default function CartasPermiso() {
     const [letters, setLetters] = useState([])
     const [loading, setLoading] = useState(true)
     const [status, setStatus] = useState('')
+    //Para la paginación
+    const [page, setPage] = useState(1)
+    const [limit, setLimit] = useState(10)
+    const [total, setTotal] = useState(0)
+    const [search, setSearch] = useState('')
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 setLoading(true)
                 const { data } = await axios.get(`${server}api/v1/letters`, {
-                    params: { status },
+                    params: { status, page, limit, search },
                     headers: authHeader()
                 })
                 if (data.success) {
                     setLetters(data.data)
+                    setTotal(data.total)
+                } else {
+                    setLetters([])
+                    setTotal(0)
                 }
             } catch (error) {
                 console.error(error)
@@ -44,7 +54,17 @@ export default function CartasPermiso() {
             }
         }
         fetchData()
-    }, [status])
+    }, [status, page, limit, search])
+
+    const handleChangeSearch = (e) => {
+        setSearch(e.target.value)
+        setPage(1)
+    }
+
+    const handleChangeStatus = (e) => {
+        setStatus(e.target.value)
+        setPage(1)
+    }
 
     return (
         <div className='flex flex-col basis-4 scroll-y'>
@@ -53,7 +73,8 @@ export default function CartasPermiso() {
             {!loading && (
                 <div>
                     <CardFooter className='mb-4 flex flex-col sm:flex-row gap-3'>
-                        <Input type="select" onChange={(e) => setStatus(e.target.value)} value={status} className='sm:max-w-xs'>
+                        <Input type="text" placeholder="Buscar por..." onChange={handleChangeSearch} value={search} />
+                        <Input type="select" onChange={handleChangeStatus} value={status} className='sm:max-w-xs'>
                             <option value=''>Todos</option>
                             <option value='pendiente_asociacion'>Pendiente de asociación</option>
                             <option value='rechazado_asociacion'>Rechazado por asociación</option>
@@ -92,6 +113,7 @@ export default function CartasPermiso() {
                                     )
                                 })}
                                 {letters.length === 0 && (<p className="text-center text-gray-500 py-4">Sin cartas de permiso</p>)}
+                                <Paginacion page={page} limit={limit} total={total} onPageChange={setPage} />
                             </div>
 
                             {/* Desktop: tabla */}
@@ -125,6 +147,7 @@ export default function CartasPermiso() {
                                     </tbody>
                                 </table>
                                 {letters.length === 0 && (<p className="text-center text-gray-500 py-4">Sin cartas de permiso</p>)}
+                                <Paginacion page={page} limit={limit} total={total} onPageChange={setPage} />
                             </div>
                         </CardBody>
                     </Card>
