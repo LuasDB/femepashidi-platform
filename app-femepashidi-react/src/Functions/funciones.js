@@ -423,7 +423,7 @@ function formatoDosDigitos(numero) {
 function obtenerCategoria(fechaNacimiento, nivel, isAdult=false) {
   
   const fecha = new Date(fechaNacimiento);
-  const cutoffDate = new Date('2025-07-01');
+  const cutoffDate = new Date('2026-07-01');
 
   const edadAlCorte = cutoffDate.getFullYear() - fecha.getFullYear() - (
     cutoffDate < new Date(cutoffDate.getFullYear(), fecha.getMonth(), fecha.getDate()) ? 1 : 0
@@ -435,28 +435,28 @@ function obtenerCategoria(fechaNacimiento, nivel, isAdult=false) {
   // Rangos normales (no adultos)
   const rangos = {
     'PRE-INFANTIL': [
-      new Date('2021-07-01').getTime(),
-      new Date('2025-06-30').getTime()
+      new Date('2022-07-01').getTime(),
+      new Date('2026-06-30').getTime()
     ],
     'INFANTIL A': [
-      new Date('2018-07-01').getTime(),
-      new Date('2021-06-30').getTime()
+      new Date('2019-07-01').getTime(),
+      new Date('2022-06-30').getTime()
     ],
     'INFANTIL B': [
-      new Date('2015-07-01').getTime(),
-      new Date('2018-06-30').getTime()
+      new Date('2016-07-01').getTime(),
+      new Date('2019-06-30').getTime()
     ],
     'JUVENIL A': [
-      new Date('2011-07-01').getTime(),
-      new Date('2015-06-30').getTime()
+      new Date('2012-07-01').getTime(),
+      new Date('2016-06-30').getTime()
     ],
     'JUVENIL B': [
-      new Date('2007-07-01').getTime(),
-      new Date('2011-06-30').getTime()
+      new Date('2008-07-01').getTime(),
+      new Date('2012-06-30').getTime()
     ],
     'MAYOR': [
-      new Date('1997-07-01').getTime(),
-      new Date('2007-06-30').getTime()
+      new Date('1998-07-01').getTime(),
+      new Date('2008-06-30').getTime()
     ]
   };
 
@@ -525,8 +525,8 @@ function obtenerCategoria(fechaNacimiento, nivel, isAdult=false) {
         }
       }
 
-      // Si nació antes del 1 de julio 1997 y no es adulto → general
-      if (time < new Date('1997-07-01').getTime()) {
+      // Si nació antes del 1 de julio 1998 y no es adulto → general
+      if (time < new Date('1998-07-01').getTime()) {
         return 'ADULTO';
       }
     }
