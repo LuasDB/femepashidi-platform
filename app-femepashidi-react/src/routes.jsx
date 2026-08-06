@@ -25,6 +25,7 @@ import CartasPermiso from './Views/CartasPermiso';
 import CartaPermiso from './Views/CartaPermiso';
 import GenerateXml from './Components/GenerateXml';
 import ExamUpdates from './Components/ExamUpdates'
+import CategoriasConfig from './Pages/CategoriasConfig';
 
 
 const routes=[
@@ -123,6 +124,14 @@ const routes=[
         component: <CartasPermiso />,
         type:'menu',
         users:'all'
+    },
+    {
+        path: "categorias",
+        name: "Categorías",
+        icon: <FaBook />,
+        component: <CategoriasConfig />,
+        type:'menu',
+        users:'admin'
     },
 
    //FORMULARIOS

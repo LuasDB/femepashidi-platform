@@ -7,6 +7,7 @@ import axios from "axios"
 import { server,urlApp } from "../../db/server"
 import Swal from "sweetalert2"
 import {obtenerCategoria} from "../../Functions/funciones.js"
+import { fetchCategoryConfig } from "../../Functions/categoryConfig.js"
 import { competitionLevels,categoriesByCompetition } from "./../../Utils/lists.js"
 import SkaterAccountGate from "../../Components/SkaterAccountGate"
 import CenteredSpinner from "../../Components/CenteredSpinner"
@@ -35,6 +36,7 @@ const InscripcionCompetencia = () => {
     const [previewFoto, setPreviewFoto] = useState(null);
     const [noEvents, setNoEvents] = useState(false)
     const [checkingEvents, setCheckingEvents] = useState(true)
+    const [categoryConfig, setCategoryConfig] = useState(null)
     const navigator = useNavigate()
 
     const fetchEvents = async()=>{
@@ -79,7 +81,7 @@ const InscripcionCompetencia = () => {
         setIsRegister(true)
         const user = {
             ...skaterData,
-            categoria: obtenerCategoria(skaterData.fecha_nacimiento, skaterData.nivel_actual,skaterData.nivel_actual.toLowerCase().includes('adulto'))
+            categoria: obtenerCategoria(skaterData.fecha_nacimiento, skaterData.nivel_actual,skaterData.nivel_actual.toLowerCase().includes('adulto'), categoryConfig)
         }
 
         setFormData(user)
@@ -98,6 +100,7 @@ const InscripcionCompetencia = () => {
     }
     useEffect(() => {
         fetchEvents()
+        fetchCategoryConfig().then(setCategoryConfig)
     }, []);
 
     const handleChange = (e)=>{

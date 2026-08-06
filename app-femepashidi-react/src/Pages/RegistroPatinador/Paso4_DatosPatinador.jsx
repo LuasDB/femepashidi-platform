@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { obtenerCategoria } from "../../Functions/funciones";
+import { fetchCategoryConfig } from "../../Functions/categoryConfig";
 import {listadoNiveles } from './../../Utils/lists.js'
 
 
 
 const Paso4_DatosPatinador = ({ nextStep, prevStep, handleChange, values ,associations,setFormData}) => {
 
+    const [categoryConfig, setCategoryConfig] = useState(null);
+
+    useEffect(() => {
+        fetchCategoryConfig().then(setCategoryConfig);
+    }, []);
 
     const continueStep = e => {
         e.preventDefault();
@@ -19,7 +25,7 @@ const Paso4_DatosPatinador = ({ nextStep, prevStep, handleChange, values ,associ
 
    const handleNivelCategoria = (level) => {
   const fechaNacimiento = values.fecha_nacimiento;
-  const nuevaCategoria = fechaNacimiento ? obtenerCategoria(fechaNacimiento, level) : '';
+  const nuevaCategoria = fechaNacimiento ? obtenerCategoria(fechaNacimiento, level, false, categoryConfig) : '';
 
       // Si puedes acceder directamente a setFormData
       setFormData(prev => ({

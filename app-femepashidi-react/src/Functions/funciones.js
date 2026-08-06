@@ -420,45 +420,45 @@ function formatoDosDigitos(numero) {
   return String(numero).padStart(2, '0');
 }
 
-function obtenerCategoria(fechaNacimiento, nivel, isAdult=false) {
-  
+// Tabla de categorías vigente a partir del 1 de julio de 2026 (temporada
+// 2026/2027), según CATEGORIAS.pdf. Se usa como respaldo cuando no se pasa
+// `config` (por ejemplo, si aún no cargó la configuración desde la API) o
+// como semilla de lo que el admin ve en el formulario la primera vez.
+const DEFAULT_CATEGORY_CONFIG = {
+  vigenteDesde: '2026-07-01',
+  rangos: [
+    { categoria: 'PRE-INFANTIL', inicio: '2022-07-01', fin: '2026-06-30' },
+    { categoria: 'INFANTIL A', inicio: '2019-07-01', fin: '2022-06-30' },
+    { categoria: 'INFANTIL B', inicio: '2016-07-01', fin: '2019-06-30' },
+    { categoria: 'JUVENIL A', inicio: '2012-07-01', fin: '2016-06-30' },
+    { categoria: 'JUVENIL B', inicio: '2008-07-01', fin: '2012-06-30' },
+    { categoria: 'MAYOR', inicio: '1998-07-01', fin: '2008-06-30' }
+  ],
+  nivelesISU: [
+    { nivel: 'NOVICIOS', minEdad: 10, maxEdad: 16, nombreISU: 'NOVICIOS (ADVANCED NOVICE) ISU', nombreAbierto: 'NOVICIOS ABIERTO' },
+    { nivel: 'AVANZADOS 1', minEdad: 13, maxEdad: 19, nombreISU: 'AVANZADOS 1 (JUNIOR) ISU', nombreAbierto: 'AVANZADOS 1 ABIERTO' },
+    { nivel: 'AVANZADOS 2', minEdad: 17, maxEdad: null, nombreISU: 'AVANZADOS 2 (SENIOR) ISU', nombreAbierto: 'AVANZADOS 2 ABIERTO' }
+  ]
+};
+
+function obtenerCategoria(fechaNacimiento, nivel, isAdult=false, config=null) {
+
+  const { vigenteDesde, rangos: rangosConfig, nivelesISU } = config || DEFAULT_CATEGORY_CONFIG;
+
   const fecha = new Date(fechaNacimiento);
-  const cutoffDate = new Date('2026-07-01');
+  const cutoffDate = new Date(vigenteDesde);
 
   const edadAlCorte = cutoffDate.getFullYear() - fecha.getFullYear() - (
     cutoffDate < new Date(cutoffDate.getFullYear(), fecha.getMonth(), fecha.getDate()) ? 1 : 0
   );
-  console.log(edadAlCorte);
 
   const time = fecha.getTime();
 
-  // Rangos normales (no adultos)
-  const rangos = {
-    'PRE-INFANTIL': [
-      new Date('2022-07-01').getTime(),
-      new Date('2026-06-30').getTime()
-    ],
-    'INFANTIL A': [
-      new Date('2019-07-01').getTime(),
-      new Date('2022-06-30').getTime()
-    ],
-    'INFANTIL B': [
-      new Date('2016-07-01').getTime(),
-      new Date('2019-06-30').getTime()
-    ],
-    'JUVENIL A': [
-      new Date('2012-07-01').getTime(),
-      new Date('2016-06-30').getTime()
-    ],
-    'JUVENIL B': [
-      new Date('2008-07-01').getTime(),
-      new Date('2012-06-30').getTime()
-    ],
-    'MAYOR': [
-      new Date('1998-07-01').getTime(),
-      new Date('2008-06-30').getTime()
-    ]
-  };
+  // Rangos normales (no adultos), armados a partir de la configuración
+  const rangos = {};
+  for (const { categoria, inicio, fin } of rangosConfig) {
+    rangos[categoria] = [new Date(inicio).getTime(), new Date(fin).getTime()];
+  }
 
   // Rangos adultos según documento
   const rangosAdultos = {
@@ -483,7 +483,6 @@ function obtenerCategoria(fechaNacimiento, nivel, isAdult=false) {
       new Date('1957-06-30').getTime()
     ]
   };
-    console.log('IsAdult:',isAdult)
 
   if (isAdult) {
     // Competidor adulto → buscar en rangos adultos
@@ -497,25 +496,14 @@ function obtenerCategoria(fechaNacimiento, nivel, isAdult=false) {
       }
     }
   } else {
-    console.log('[NIVELES ISU]')
-    // Niveles ISU
-    if (nivel === 'NOVICIOS') {
-      if (edadAlCorte >= 10 && edadAlCorte < 16) {
-        return 'NOVICIOS (ADVANCED NOVICE) ISU';
-      }else{
-        return 'NOVICIOS ABIERTO';
-      }
-    } else if (nivel === 'AVANZADOS 1') {
-      if (edadAlCorte >= 13 && edadAlCorte < 19) {
-        return 'AVANZADOS 1 (JUNIOR) ISU';
-      }else{
-        return 'AVANZADOS 1 ABIERTO';
-      }
-    } else if (nivel === 'AVANZADOS 2') {
-      if (edadAlCorte >= 17) {
-        return 'AVANZADOS 2 (SENIOR) ISU';
-      }else{
-        return 'AVANZADOS 2 ABIERTO';
+    // Niveles ISU (edad de corte según config)
+    const bracketISU = nivelesISU.find(n => n.nivel === nivel);
+    if (bracketISU) {
+      const { minEdad, maxEdad, nombreISU, nombreAbierto } = bracketISU;
+      if (edadAlCorte >= minEdad && (maxEdad === null || edadAlCorte < maxEdad)) {
+        return nombreISU;
+      } else {
+        return nombreAbierto;
       }
     } else {
       // Otras categorías juveniles
@@ -525,8 +513,9 @@ function obtenerCategoria(fechaNacimiento, nivel, isAdult=false) {
         }
       }
 
-      // Si nació antes del 1 de julio 1998 y no es adulto → general
-      if (time < new Date('1998-07-01').getTime()) {
+      // Si nació antes del inicio de MAYOR y no es adulto → general
+      const mayor = rangosConfig.find(r => r.categoria === 'MAYOR');
+      if (mayor && time < new Date(mayor.inicio).getTime()) {
         return 'ADULTO';
       }
     }
@@ -534,10 +523,8 @@ function obtenerCategoria(fechaNacimiento, nivel, isAdult=false) {
 
   return 'Sin categoría aplicable';
 }
-console.log(obtenerCategoria('2005-11-11','AVANZADOS 1'))
 
-
-export { 
+export {
   ordenarPorNombre,
   formatoFecha,
   formatoNumeroMX,
@@ -553,5 +540,6 @@ export {
   formatoDosDigitos,
   obtenerEtiqueta,
   generateUID,
-  obtenerCategoria
+  obtenerCategoria,
+  DEFAULT_CATEGORY_CONFIG
 }

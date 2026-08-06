@@ -7,6 +7,7 @@ import { server } from "../../db/server"
 import Swal from "sweetalert2"
 import './styles.css'
 import {obtenerCategoria} from "../../Functions/funciones.js"
+import { fetchCategoryConfig } from "../../Functions/categoryConfig.js"
 import SkaterAccountGate from "../../Components/SkaterAccountGate"
 
 const competitionLevels = {
@@ -66,6 +67,7 @@ export default function RegistroInscripcion(){
     const [selectedCompetitionType,setSelectedCompetitionType] = useState('')
     const [isConfirmed,setIsConfirmed] = useState(false)
     const [isCategory,setIsCategory] = useState(false)
+    const [categoryConfig, setCategoryConfig] = useState(null)
 
 
     useEffect(()=>{
@@ -75,7 +77,7 @@ export default function RegistroInscripcion(){
                 console.log(data)
                 if(data.success){
                     setEvents(data.data.filter(item=>item.status === 'Activo'))
-                    
+
                 }
             } catch (error) {
                 console.log(error)
@@ -83,6 +85,7 @@ export default function RegistroInscripcion(){
         }
 
         fetchEvents()
+        fetchCategoryConfig().then(setCategoryConfig)
 
     },[])
 
@@ -103,7 +106,7 @@ export default function RegistroInscripcion(){
         setIsRegister(true)
         const user = {
             ...skaterData,
-            categoria: obtenerCategoria(skaterData.fecha_nacimiento, skaterData.nivel_actual)
+            categoria: obtenerCategoria(skaterData.fecha_nacimiento, skaterData.nivel_actual, false, categoryConfig)
         }
         setFormData(user)
 

@@ -10,6 +10,7 @@ import resultsRouter from './results.router.js'
 import lettersRouter from './letters.router.js'
 import galleryRouter from './gallery.router.js'
 import notificationsRouter from './notifications.router.js'
+import categoryConfigRouter from './categoryConfig.router.js'
 
 
 const router = express.Router()
@@ -28,6 +29,7 @@ const AppRouter = (app,io) => {
   router.use('/letters',lettersRouter)
   router.use('/gallery',galleryRouter)
   router.use('/notifications',notificationsRouter)
+  router.use('/category-config',categoryConfigRouter)
 
   //Agregar las rutas necesarias
 
