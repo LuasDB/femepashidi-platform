@@ -25,7 +25,8 @@ const Paso4_DatosPatinador = ({ nextStep, prevStep, handleChange, values ,associ
 
    const handleNivelCategoria = (level) => {
   const fechaNacimiento = values.fecha_nacimiento;
-  const nuevaCategoria = fechaNacimiento ? obtenerCategoria(fechaNacimiento, level, false, categoryConfig) : '';
+  const isAdult = level.toLowerCase().includes('adulto');
+  const nuevaCategoria = fechaNacimiento ? obtenerCategoria(fechaNacimiento, level, isAdult, categoryConfig) : '';
 
       // Si puedes acceder directamente a setFormData
       setFormData(prev => ({

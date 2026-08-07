@@ -460,27 +460,27 @@ function obtenerCategoria(fechaNacimiento, nivel, isAdult=false, config=null) {
     rangos[categoria] = [new Date(inicio).getTime(), new Date(fin).getTime()];
   }
 
-  // Rangos adultos según documento
+  // Rangos adultos según documento (temporada 2026/2027)
   const rangosAdultos = {
     'CLASS I': [
-      new Date('1987-07-01').getTime(),
-      new Date('1997-06-30').getTime()
+      new Date('1988-07-01').getTime(),
+      new Date('1998-06-30').getTime()
     ],
     'CLASS II': [
-      new Date('1977-07-01').getTime(),
-      new Date('1987-06-30').getTime()
+      new Date('1978-07-01').getTime(),
+      new Date('1988-06-30').getTime()
     ],
     'CLASS III': [
-      new Date('1967-07-01').getTime(),
-      new Date('1977-06-30').getTime()
+      new Date('1968-07-01').getTime(),
+      new Date('1978-06-30').getTime()
     ],
     'CLASS IV': [
-      new Date('1957-07-01').getTime(),
-      new Date('1967-06-30').getTime()
+      new Date('1958-07-01').getTime(),
+      new Date('1968-06-30').getTime()
     ],
     'CLASS V': [
-      0, // antes de 1957-06-30
-      new Date('1957-06-30').getTime()
+      0, // antes de 1958-06-30
+      new Date('1958-06-30').getTime()
     ]
   };
 

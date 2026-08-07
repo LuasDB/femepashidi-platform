@@ -168,6 +168,11 @@ export default function Servicio(){
     
     return (
         <>
+            <div className='w-full flex justify-start p-2'>
+                <button type="button" onClick={() => navigate('/gestion/patinadores')} className='text-sm text-blue-500 hover:underline bg-transparent border-0 cursor-pointer'>
+                    ← Volver a la lista de patinadores
+                </button>
+            </div>
             {loading && (<CenteredSpinner />)}
             {!loading && (<div>
             <Card className='m-1 rounded-xl shadow mt-0  p-8 overflow-x-auto bg-white' >
@@ -176,7 +181,7 @@ export default function Servicio(){
                 <FaEdit />
             </Link>
             <MdDelete className='text-red-500 hover:text-red-700' onClick={handleDelete}/>
-            
+
             </div>
             {/* https://femepashidi.siradiacion.com.mx/images/users/ */}
                 <CardTitle className="flex font-bold"> {user.curp} </CardTitle>

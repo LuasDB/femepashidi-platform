@@ -145,3 +145,18 @@ const showPdf = (pdf)=>{
 function isMobileDevice() {
   return /Mobi|Android/i.test(navigator.userAgent);
 }
+
+/****************************************************************************************************************
+ * Cierre del modal de PDF (comunicados). Se conecta aquí, independiente de la
+ * galería de fotos, para que la 'X' funcione aunque la galería tarde en
+ * cargar o falle su fetch.
+ * ***********************************************************************************************************/
+const modalPdf = n('myModalPdf');
+n('close_modalPdf').onclick = () => {
+  modalPdf.style.display = "none";
+};
+window.addEventListener('click', (event) => {
+  if (event.target === modalPdf) {
+    modalPdf.style.display = "none";
+  }
+});

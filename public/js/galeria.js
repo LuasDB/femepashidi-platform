@@ -84,7 +84,6 @@ const getFotos = async()=>{
 
     // Obtener el modal
  const modal = document.getElementById("myModal");
- const modalPdf =document.getElementById("myModalPdf");
 
 
 
@@ -104,25 +103,18 @@ const getFotos = async()=>{
 
  // Obtener el span que cierra el modal
   const span = document.getElementById('close_modal');
-  const spanPdf = document.getElementById("close_modalPdf")
 // Cerrar el modal al hacer clic en el span
 span.onclick = function() {
    modal.style.display = "none";
-   modalPdf.style.display = "none";
  }
- spanPdf.onclick = function() {
-
-  modalPdf.style.display = "none";
-}
 
 
 
  // Cerrar el modal al hacer clic fuera de la imagen
  window.onclick = function(event) {
   console.log('EVENTO DE MODAL')
-   if (event.target === modal || event.target === modalPdf ) {
+   if (event.target === modal) {
      modal.style.display = "none";
-     modalPdf.style.display = "none";
    }
  }
 
