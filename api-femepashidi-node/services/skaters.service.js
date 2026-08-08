@@ -16,6 +16,8 @@ const notifications = new Notifications()
 // identity data tied to the CURP or require review to change.
 const SELF_SERVICE_FIELDS = ['telefono', 'correo', 'lugar_nacimiento']
 
+const DOCUMENT_TYPES = ['actaNacimiento', 'curpDoc']
+
 class Skaters{
   constructor(){}
 
@@ -43,6 +45,43 @@ class Skaters{
         throw error
       }
       throw Boom.badImplementation('Somethink was wrong! ')
+    }
+  }
+
+  // Autoservicio: el patinador sube su propia acta/CURP desde /cuenta, un
+  // documento a la vez, después de que la migración que limpió `documentos`
+  // (uploads-private/ se perdía en cada redeploy antes de que viviera dentro
+  // del volumen persistente) los dejó sin nada cargado. Un tipo ya cargado no
+  // se puede volver a mandar por aquí: el frontend solo enseña el input para
+  // el que falta, y aquí se refuerza esa misma regla.
+  async uploadOwnDocuments(curp, files){
+    try {
+      const skater = await db.collection('skaters').findOne({curp})
+      if(!skater){
+        throw Boom.notFound('The CURP was not found')
+      }
+
+      const updates = {}
+      for(const tipo of DOCUMENT_TYPES){
+        const file = files?.[tipo]?.[0]
+        if(!file) continue
+        if(skater.documentos?.[tipo]?.path){
+          throw Boom.conflict('Ya tienes ese documento cargado')
+        }
+        updates[`documentos.${tipo}`] = file
+      }
+
+      if(Object.keys(updates).length === 0){
+        throw Boom.badRequest('No se recibió ningún documento')
+      }
+
+      await db.collection('skaters').updateOne({curp}, {$set:updates})
+      return await db.collection('skaters').findOne({curp})
+    } catch (error) {
+      if(Boom.isBoom(error)){
+        throw error
+      }
+      throw Boom.badImplementation('No se pudieron guardar los documentos')
     }
   }
 
@@ -424,3 +463,4 @@ class Skaters{
 
 
 export default Skaters
+export { DOCUMENT_TYPES }

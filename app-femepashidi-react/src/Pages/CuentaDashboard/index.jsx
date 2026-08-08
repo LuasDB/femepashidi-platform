@@ -5,11 +5,17 @@ import { Camera } from 'lucide-react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import CenteredSpinner from '../../Components/CenteredSpinner'
+import DocumentViewer from '../../Components/DocumentViewer'
 import { server } from '../../db/server'
 import { formatoFecha } from '../../Functions/funciones'
 import { AccountAuthContext } from '../../Context/AccountAuthContext'
 
 const defaultSkaterPhoto = `${server}uploads/skaters/user.png`
+
+const DOCUMENT_FIELDS = [
+    { tipo: 'actaNacimiento', label: 'Acta de nacimiento' },
+    { tipo: 'curpDoc', label: 'CURP' },
+]
 
 const authHeader = () => ({
     Authorization: `Bearer ${localStorage.getItem('skaterToken')}`
@@ -25,6 +31,8 @@ export default function CuentaDashboard() {
     const [saving, setSaving] = useState(false)
     const [newFoto, setNewFoto] = useState(null)
     const [previewFoto, setPreviewFoto] = useState(defaultSkaterPhoto)
+    const [documentFiles, setDocumentFiles] = useState({ actaNacimiento: null, curpDoc: null })
+    const [uploadingDoc, setUploadingDoc] = useState({ actaNacimiento: false, curpDoc: false })
 
     useEffect(() => {
         const fetchMe = async () => {
@@ -91,6 +99,31 @@ export default function CuentaDashboard() {
         }
     }
 
+    const handleUploadDocument = async (tipo) => {
+        const file = documentFiles[tipo]
+        if (!file) return
+        setUploadingDoc(prev => ({ ...prev, [tipo]: true }))
+        try {
+            const formPayload = new FormData()
+            formPayload.append(tipo, file)
+
+            const { data } = await axios.post(
+                `${server}api/v1/skaters/me/${skater.curp}/documentos`,
+                formPayload,
+                { headers: authHeader() }
+            )
+            if (data.success) {
+                setSkater(data.data)
+                setDocumentFiles(prev => ({ ...prev, [tipo]: null }))
+                Swal.fire('Listo', 'Documento subido correctamente', 'success')
+            }
+        } catch (error) {
+            Swal.fire('Algo salió mal', error.response?.data?.message || 'No se pudo subir el documento', 'error')
+        } finally {
+            setUploadingDoc(prev => ({ ...prev, [tipo]: false }))
+        }
+    }
+
     if (loading) return <CenteredSpinner />
 
     return (
@@ -102,6 +135,7 @@ export default function CuentaDashboard() {
             )}
 
             {skater && (
+                <>
                 <div className='rounded-xl shadow-lg overflow-hidden border border-gray-200 bg-white'>
                     <div className='bg-gradient-to-r from-gray-700 to-gray-900 text-white p-4'>
                         <h2 className='text-xl font-bold'>Credencial del Participante</h2>
@@ -179,6 +213,40 @@ export default function CuentaDashboard() {
                         </div>
                     </div>
                 </div>
+
+                <div className='mt-6 rounded-xl shadow-lg overflow-hidden border border-gray-200 bg-white'>
+                    <div className='bg-gradient-to-r from-gray-700 to-gray-900 text-white p-4'>
+                        <h2 className='text-xl font-bold'>Documentos</h2>
+                    </div>
+                    <div className='p-4 sm:p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-6'>
+                        {DOCUMENT_FIELDS.map(({ tipo, label }) => (
+                            <div key={tipo}>
+                                <Label className='text-gray-500'>{label}</Label>
+                                {skater.documentos?.[tipo]?.path ? (
+                                    <div>
+                                        <DocumentViewer curp={skater.curp} tipo={tipo} label={`Ver ${label}`} self />
+                                    </div>
+                                ) : (
+                                    <div className='flex flex-col sm:flex-row gap-2'>
+                                        <Input
+                                            type='file'
+                                            accept='application/pdf,image/*'
+                                            onChange={(e) => setDocumentFiles(prev => ({ ...prev, [tipo]: e.target.files[0] || null }))}
+                                        />
+                                        <Button
+                                            className='bg-blue-600 w-full sm:w-auto shrink-0'
+                                            disabled={!documentFiles[tipo] || uploadingDoc[tipo]}
+                                            onClick={() => handleUploadDocument(tipo)}
+                                        >
+                                            {uploadingDoc[tipo] ? 'Subiendo...' : 'Subir'}
+                                        </Button>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                </>
             )}
         </div>
     )

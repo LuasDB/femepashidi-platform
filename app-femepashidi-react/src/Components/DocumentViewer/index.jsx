@@ -4,15 +4,17 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import { server } from '../../db/server'
 
-const authHeader = () => ({
-    Authorization: `Bearer ${localStorage.getItem('token')}`
+const authHeader = (self) => ({
+    Authorization: `Bearer ${localStorage.getItem(self ? 'skaterToken' : 'token')}`
 })
 
 // Botón + modal para ver un documento de identidad (acta de nacimiento, CURP)
 // sin exponer un link de descarga: se trae como blob autenticado y se
 // muestra inline. No hay garantía real contra una captura de pantalla, pero
 // sí se evita un link reutilizable/descargable y el menú contextual normal.
-export default function DocumentViewer({ curp, tipo, label }) {
+// `self`: el propio patinador viendo su documento desde /cuenta (token y ruta
+// de self-service) en vez de admin/presidente desde el detalle de /gestion.
+export default function DocumentViewer({ curp, tipo, label, self = false }) {
     const [open, setOpen] = useState(false)
     const [loading, setLoading] = useState(false)
     const [blobUrl, setBlobUrl] = useState(null)
@@ -28,9 +30,10 @@ export default function DocumentViewer({ curp, tipo, label }) {
     const handleOpen = async () => {
         setLoading(true)
         try {
+            const basePath = self ? `skaters/me/${curp}` : `skaters/${curp}`
             const res = await axios.get(
-                `${server}api/v1/skaters/${curp}/documentos/${tipo}`,
-                { headers: authHeader(), responseType: 'blob' }
+                `${server}api/v1/${basePath}/documentos/${tipo}`,
+                { headers: authHeader(self), responseType: 'blob' }
             )
             setContentType(res.data.type)
             setBlobUrl(URL.createObjectURL(res.data))

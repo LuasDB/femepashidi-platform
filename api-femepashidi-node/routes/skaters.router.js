@@ -1,7 +1,7 @@
 import express from 'express'
 import fs from 'fs'
 import Boom from '@hapi/boom'
-import Skaters from '../services/skaters.service.js'
+import Skaters, { DOCUMENT_TYPES } from '../services/skaters.service.js'
 import uploadFiles from '../middlewares/multer-upload-files.js'
 import upload, { uploadSkaterRegistration } from '../configurations/multer-config.js'
 import {
@@ -12,10 +12,29 @@ import {
   requireSkaterAssociationAccess,
 } from '../middlewares/authenticate.js'
 
-const DOCUMENT_TYPES = ['actaNacimiento', 'curpDoc']
-
 const router = express.Router()
 const skaters = new Skaters()
+
+// Compartido por el visor admin/presidente y el self-service del propio
+// patinador: mismo streaming autenticado, solo cambia quién puede llegar aquí.
+const sendSkaterDocument = (skater, tipo, res) => {
+  if(!DOCUMENT_TYPES.includes(tipo)){
+    throw Boom.notFound('Tipo de documento no válido')
+  }
+
+  const doc = skater.documentos?.[tipo]
+  if(!doc?.path || !fs.existsSync(doc.path)){
+    throw Boom.notFound('Este patinador no tiene ese documento cargado')
+  }
+
+  res.set({
+    'Content-Type': doc.mimetype || 'application/octet-stream',
+    'Content-Disposition': 'inline',
+    'Cache-Control': 'no-store',
+    'X-Content-Type-Options': 'nosniff',
+  })
+  fs.createReadStream(doc.path).pipe(res)
+}
 
 // Autoservicio: un patinador (o la cuenta vinculada a él) viendo/editando su propia información.
 // Rutas separadas de GET/PATCH /:curp, que siguen abiertas hoy porque las usan
@@ -54,6 +73,58 @@ router.patch(
         data:updateOne
       })
     } catch (error) {
+      next(error)
+    }
+  }
+)
+
+// Autoservicio: el propio patinador viendo su acta/CURP, mismo streaming
+// autenticado que usa admin/presidente en /:curp/documentos/:tipo más abajo.
+router.get(
+  '/me/:curp/documentos/:tipo',
+  authenticate,
+  requireAccount,
+  requireSkaterOwnership,
+  async(req, res, next)=>{
+    try {
+      sendSkaterDocument(req.skater, req.params.tipo, res)
+    } catch (error) {
+      next(error)
+    }
+  }
+)
+
+// Autoservicio: el propio patinador sube su acta/CURP (uno o ambos a la vez)
+// cuando `documentos` viene vacío — típicamente tras la migración que limpió
+// el campo por los archivos perdidos en redeploys previos a que uploads/private/
+// viviera dentro del volumen persistente. Un tipo ya cargado no se puede
+// reemplazar por aquí (ver Skaters.uploadOwnDocuments).
+router.post(
+  '/me/:curp/documentos',
+  authenticate,
+  requireAccount,
+  requireSkaterOwnership,
+  uploadSkaterRegistration().fields([
+    { name: 'actaNacimiento', maxCount: 1 },
+    { name: 'curpDoc', maxCount: 1 },
+  ]),
+  async(req, res, next)=>{
+    try {
+      const updated = await skaters.uploadOwnDocuments(req.skater.curp, req.files)
+      res.status(200).json({
+        success:true,
+        message:'Documentos guardados',
+        data:updated
+      })
+    } catch (error) {
+      // Multer ya escribió el/los archivo(s) a disco antes de llegar aquí; si
+      // uploadOwnDocuments los rechaza (p. ej. conflicto por ya tener ese tipo
+      // cargado) no deben quedar huérfanos en uploads/private/.
+      for(const file of Object.values(req.files || {}).flat()){
+        if(file?.path && fs.existsSync(file.path)){
+          fs.unlinkSync(file.path)
+        }
+      }
       next(error)
     }
   }
@@ -180,23 +251,7 @@ router.get(
   requireSkaterAssociationAccess,
   async(req, res, next)=>{
     try {
-      const { tipo } = req.params
-      if(!DOCUMENT_TYPES.includes(tipo)){
-        throw Boom.notFound('Tipo de documento no válido')
-      }
-
-      const doc = req.skater.documentos?.[tipo]
-      if(!doc?.path || !fs.existsSync(doc.path)){
-        throw Boom.notFound('Este patinador no tiene ese documento cargado')
-      }
-
-      res.set({
-        'Content-Type': doc.mimetype || 'application/octet-stream',
-        'Content-Disposition': 'inline',
-        'Cache-Control': 'no-store',
-        'X-Content-Type-Options': 'nosniff',
-      })
-      fs.createReadStream(doc.path).pipe(res)
+      sendSkaterDocument(req.skater, req.params.tipo, res)
     } catch (error) {
       next(error)
     }
