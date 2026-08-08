@@ -361,7 +361,16 @@ class Skaters{
 
   async delete(curp){
     try {
+      const skater = await db.collection('skaters').findOne({curp})
       const deleteOne = await db.collection('skaters').deleteOne({curp})
+
+      // Se borra también la cuenta vinculada: registerWithAccount rechaza el
+      // registro si ya existe una cuenta con ese correo, así que dejarla viva
+      // impediría volver a inscribirse con el mismo correo.
+      if(skater?.accountId){
+        await db.collection('accounts').deleteOne({_id:skater.accountId})
+      }
+
       return deleteOne
     } catch (error) {
       if(Boom.isBoom(error)){

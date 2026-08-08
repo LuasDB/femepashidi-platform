@@ -9,7 +9,7 @@ import Cotizador from './../Cotizador'
 
 import { server } from './../../db/server'
 import { ordenarPorNombre,formatoFolios,fechaHoraActual } from './../../Functions/funciones'
-import { listadoNiveles } from './../../Utils/lists.js'
+import { listadoNiveles, categoriesByCompetition } from './../../Utils/lists.js'
 
 const authHeader = () => ({
     Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -552,7 +552,12 @@ export function FormUsers(){
                         <Col md={4}>
                             <FormGroup>
                                 <Label for="categoria" >Categoria</Label>
-                                <Input type="text" name="categoria" id="categoria" placeholder="" onChange={handleChange} className={`${formError.categoria === 'empty' ? 'border-red-600' : ''} `} value={formData.categoria}/>
+                                <Input type="select" name="categoria" id="categoria" placeholder="" onChange={handleChange} className={`${formError.categoria === 'empty' ? 'border-red-600' : ''} `} value={formData.categoria}>
+                                    <option value=''>--Selecciona--</option>
+                                    {categoriesByCompetition['Nacional']?.map((categoria,index)=>(
+                                        <option value={categoria} key={`${index}--cat`}>{categoria}</option>
+                                    ))}
+                                </Input>
                             </FormGroup>
                         </Col>
                         <Col md={4}>
