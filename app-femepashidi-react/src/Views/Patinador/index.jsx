@@ -151,7 +151,7 @@ export default function Servicio(){
         }).then(async(result)=>{
             if(result.isConfirmed){
                 try {
-                    const { data } = await axios.delete(`${server}api/v1/skaters/${curp}`)
+                    const { data } = await axios.delete(`${server}api/v1/skaters/${curp}`, { headers: authHeader() })
                     if(data.success){
                         Swal.fire('Elemento eliminado',data.message,'success').then(response=>{
                             if(response.isConfirmed){
@@ -180,7 +180,9 @@ export default function Servicio(){
             <Link to={`/gestion/forms/usuarios/${curp}`}>
                 <FaEdit />
             </Link>
-            <MdDelete className='text-red-500 hover:text-red-700' onClick={handleDelete}/>
+            {isAdmin && (
+                <MdDelete className='text-red-500 hover:text-red-700' onClick={handleDelete}/>
+            )}
 
             </div>
             {/* https://femepashidi.siradiacion.com.mx/images/users/ */}

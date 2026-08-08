@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { TablaInscripciones } from '../../Components/Tabla'
 import CenteredSpinner  from '../../Components/CenteredSpinner'
 import ExportToExcel from './../../Components/ExportToExcel'
+import { AuthContext } from '../../Context/AuthContext'
 
 import { server } from '../../db/server'
 import { ordenarPorNombre,ordenarPorItem, formatoFecha,formatoNombre } from '../../Functions/funciones'
@@ -124,6 +125,11 @@ const useFetchDataTables = ({collection,server})=>{
 }
 
 export default function Inscripciones(){
+    const { user } = useContext(AuthContext)
+    // El presidente de asociación no debe poder exportar a Excel/XML,
+    // solo el admin.
+    const isAdmin = user?.role === 'admin'
+
     const {
         data,exportData,loading,handleSelectedEvent,selectedEvent,isSelected,status,handleChangeStatus,
         page,limit,total,setPage,search,handleChangeSearch,
@@ -143,7 +149,7 @@ export default function Inscripciones(){
 
 
 
-        {exportData && selectedEvent && (<ExportToExcel data={exportData} fileName={selectedEvent}/>)}
+        {isAdmin && exportData && selectedEvent && (<ExportToExcel data={exportData} fileName={selectedEvent}/>)}
 
         {!loading && (<div>
         <p>{selectedEvent}</p>
@@ -169,7 +175,7 @@ export default function Inscripciones(){
             />
         </div>)}
 
-        {exportData && selectedEvent && (<GenerateXml data={exportData} />)}
+        {isAdmin && exportData && selectedEvent && (<GenerateXml data={exportData} />)}
 
         </div>
     </>

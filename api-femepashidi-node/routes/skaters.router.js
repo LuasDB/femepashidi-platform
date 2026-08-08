@@ -202,18 +202,26 @@ router.get(
   }
 )
 
-router.patch('/:curp',async(req, res, next)=>{
-  try {
-    const updateOne = await skaters.updateOneByCurp(req.params.curp,req.body)
-    res.status(200).json({
-      success:true,
-      message:'Registro actualizado',
-      data:updateOne
-    })
-  } catch (error) {
-    next(error)
+// Edición desde el panel /gestion (admin y presidente de asociación). El
+// presidente solo puede editar patinadores de su propia asociación.
+router.patch(
+  '/:curp',
+  authenticate,
+  requireRole(['admin','presidente_asociacion']),
+  requireSkaterAssociationAccess,
+  async(req, res, next)=>{
+    try {
+      const updateOne = await skaters.updateOneByCurp(req.params.curp,req.body)
+      res.status(200).json({
+        success:true,
+        message:'Registro actualizado',
+        data:updateOne
+      })
+    } catch (error) {
+      next(error)
+    }
   }
-})
+)
 
 router.patch('/update/verification',async(req, res, next)=>{
   try {
@@ -241,18 +249,24 @@ router.patch('/update/createat',async(req, res, next)=>{
   }
 })
 
-router.delete('/:curp',async(req, res, next)=>{
-  try {
-    const deleteOne = await skaters.delete(req.params.curp)
-    res.status(200).json({
-      success:true,
-      message:'Registro Eliminado',
-      data:deleteOne
-    })
-  } catch (error) {
-    next(error)
+// Solo admin puede eliminar patinadores; el presidente de asociación no.
+router.delete(
+  '/:curp',
+  authenticate,
+  requireRole(['admin']),
+  async(req, res, next)=>{
+    try {
+      const deleteOne = await skaters.delete(req.params.curp)
+      res.status(200).json({
+        success:true,
+        message:'Registro Eliminado',
+        data:deleteOne
+      })
+    } catch (error) {
+      next(error)
+    }
   }
-})
+)
 
 
 
