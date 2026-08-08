@@ -151,6 +151,11 @@ const startServer = async ()=>{
     app.use(logErrors)
     app.use(errorHandler)
 
+    // uploads/private/ vive dentro del mismo volumen persistente que uploads/
+    // (Railway solo permite un volumen por servicio) pero NUNCA debe quedar
+    // accesible vía static; los documentos de identidad solo se sirven por
+    // GET /skaters/:curp/documentos/:tipo, autenticado.
+    app.use('/uploads/private', (req, res) => res.sendStatus(404))
     app.use('/uploads', express.static('uploads'))
 
 

@@ -30,10 +30,13 @@ const upload = (collection)=>{
   return multer(options)
 }
 
-// Campos que, a diferencia de la foto de credencial, no deben quedar bajo
-// `uploads/` (servido públicamente por express.static en server.js). Se
-// guardan en `uploads-private/`, fuera de esa carpeta pública, y solo se
+// Campos que, a diferencia de la foto de credencial, no deben quedar
+// accesibles vía `express.static('uploads')` en server.js. Se guardan en
+// `uploads/private/`, bloqueado explícitamente ahí (ver server.js), y solo se
 // entregan mediante el endpoint autenticado GET /skaters/:curp/documentos/:tipo.
+// Va dentro de `uploads/` (y no en un folder hermano tipo `uploads-private/`)
+// porque Railway solo permite montar un volumen persistente por servicio, y
+// ese volumen ya está montado en `uploads/`.
 const PRIVATE_FIELDS = ['actaNacimiento', 'curpDoc']
 
 // Multer usado solo por el registro de patinadores: enruta cada campo del
@@ -41,7 +44,7 @@ const PRIVATE_FIELDS = ['actaNacimiento', 'curpDoc']
 // (documentos de identidad), en vez de mandar todo al mismo folder.
 const uploadSkaterRegistration = () => {
   const publicPath = 'uploads/skaters'
-  const privatePath = 'uploads-private/skaters-docs'
+  const privatePath = 'uploads/private/skaters-docs'
   for(const dir of [publicPath, privatePath]){
     if(!fs.existsSync(dir)){
       fs.mkdirSync(dir,{recursive:true})

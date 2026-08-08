@@ -166,12 +166,13 @@ router.patch(
 )
 
 // Visor de documentos de identidad (acta de nacimiento, CURP) para
-// admin/presidente de asociación. A propósito NO vive bajo /uploads (público):
-// se guardan en uploads-private/ (ver configurations/multer-config.js) y solo
-// se sirven aquí, autenticados y acotados a la propia asociación del
-// presidente. `Content-Disposition: inline` + sin exponer un link descargable
-// en el frontend son la mitigación real; un usuario decidido siempre puede
-// hacer una captura de pantalla, eso no se puede evitar desde el navegador.
+// admin/presidente de asociación. Se guardan en uploads/private/ (dentro del
+// volumen persistente montado en uploads/, ver configurations/multer-config.js
+// y el bloqueo explícito en server.js) y solo se sirven aquí, autenticados y
+// acotados a la propia asociación del presidente. `Content-Disposition: inline`
+// + sin exponer un link descargable en el frontend son la mitigación real; un
+// usuario decidido siempre puede hacer una captura de pantalla, eso no se
+// puede evitar desde el navegador.
 router.get(
   '/:curp/documentos/:tipo',
   authenticate,
