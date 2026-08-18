@@ -38,7 +38,37 @@ class Skaters{
         throw Boom.badRequest('No hay datos válidos para actualizar')
       }
 
+      if(updates.correo){
+        updates.correo = updates.correo.toLowerCase().trim()
+      }
+
+      const skater = await db.collection('skaters').findOne({curp})
+      if(!skater){
+        throw Boom.notFound('El patinador no existe')
+      }
+
+      // El correo también es el email de login (accounts.email). Sin este
+      // paso, cambiar el correo aquí solo actualizaba skaters.correo y dejaba
+      // accounts.email con el valor viejo, desincronizando la cuenta.
+      if(updates.correo && updates.correo !== skater.correo && skater.accountId){
+        const emailTaken = await db.collection('accounts').findOne({
+          email:updates.correo,
+          _id:{ $ne:skater.accountId },
+        })
+        if(emailTaken){
+          throw Boom.conflict('Ya existe una cuenta con ese correo')
+        }
+      }
+
       const updateOne = await db.collection('skaters').updateOne({curp},{$set:updates})
+
+      if(updates.correo && updates.correo !== skater.correo && skater.accountId){
+        await db.collection('accounts').updateOne(
+          { _id:skater.accountId },
+          { $set:{ email:updates.correo, updatedAt:new Date() } }
+        )
+      }
+
       return updateOne
     } catch (error) {
       if(Boom.isBoom(error)){

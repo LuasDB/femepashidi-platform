@@ -8,6 +8,14 @@ import { server } from './../db/server'
 
 const AuthContext = createContext()
 
+const TOKEN_KEY = 'token'
+const LOGIN_PATH = '/login'
+
+// jwtDecode solo decodifica, no valida vigencia: sin este chequeo un token
+// vencido se queda "logeado" en el estado hasta que una llamada a la API
+// regrese 401.
+const isExpired = (decoded) => !decoded?.exp || decoded.exp * 1000 <= Date.now()
+
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true); // Para manejar el estado de carga
@@ -36,20 +44,24 @@ const AuthProvider = ({ children }) => {
     };
 
     const logout = () => {
-        localStorage.removeItem('token');
+        localStorage.removeItem(TOKEN_KEY);
         setUser(null);
     };
 
     useEffect(() => {
         const initializeUser = () => {
-            const token = localStorage.getItem('token');
+            const token = localStorage.getItem(TOKEN_KEY);
             if (token) {
                 try {
                     const decoded = jwtDecode(token);
-                    console.log('Funciona!', decoded);
-                    setUser(decoded);
+                    if (isExpired(decoded)) {
+                        localStorage.removeItem(TOKEN_KEY);
+                        setUser(null);
+                    } else {
+                        setUser(decoded);
+                    }
                 } catch (error) {
-                    console.error('Error decoding token', error);
+                    localStorage.removeItem(TOKEN_KEY);
                     setUser(null);
                 }
             } else {
@@ -59,6 +71,28 @@ const AuthProvider = ({ children }) => {
         };
 
         initializeUser();
+    }, []);
+
+    // Si el token vence mientras la app ya está abierta, la siguiente llamada
+    // protegida responde 401: se limpia el token y se manda de vuelta a
+    // /login en vez de dejarlo vencido en localStorage.
+    useEffect(() => {
+        const interceptorId = axios.interceptors.response.use(
+            (response) => response,
+            (error) => {
+                const storedToken = localStorage.getItem(TOKEN_KEY);
+                const authHeader = error.config?.headers?.Authorization;
+                if (error.response?.status === 401 && storedToken && authHeader === `Bearer ${storedToken}`) {
+                    localStorage.removeItem(TOKEN_KEY);
+                    setUser(null);
+                    if (window.location.pathname !== LOGIN_PATH) {
+                        window.location.href = LOGIN_PATH;
+                    }
+                }
+                return Promise.reject(error);
+            }
+        );
+        return () => axios.interceptors.response.eject(interceptorId);
     }, []);
 
     return (

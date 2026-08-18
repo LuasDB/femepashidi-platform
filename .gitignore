@@ -1,5 +1,8 @@
 /historico
 
+# Dependencias (en cualquier carpeta): nunca deben subirse al repo.
+node_modules/
+
 # Variables de entorno (en cualquier carpeta): nunca deben subirse al repo.
 .env
 .env.*
