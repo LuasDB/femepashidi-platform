@@ -258,6 +258,30 @@ router.get(
   }
 )
 
+// Rechazo de un documento puntual (acta o CURP), no de todo el registro:
+// borra el archivo del servidor, guarda el motivo y deja el input de
+// re-carga disponible en /cuenta. Mismo guard que /:curp/approve y el visor
+// de documentos.
+router.patch(
+  '/:curp/documentos/:tipo/reject',
+  authenticate,
+  requireRole(['admin','presidente_asociacion']),
+  requireSkaterAssociationAccess,
+  async(req, res, next)=>{
+    try {
+      const { motivo } = req.body
+      const updated = await skaters.rejectDocument(req.skater.curp, req.params.tipo, motivo)
+      res.status(200).json({
+        success:true,
+        message:'Documento rechazado',
+        data:updated
+      })
+    } catch (error) {
+      next(error)
+    }
+  }
+)
+
 // Edición desde el panel /gestion (admin y presidente de asociación). El
 // presidente solo puede editar patinadores de su propia asociación.
 router.patch(

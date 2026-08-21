@@ -1,5 +1,6 @@
 import Boom from "@hapi/boom"
 import bcrypt from "bcrypt"
+import fs from "fs"
 import { db } from "../db/mongoClient.js"
 import { sendMail } from './../utils/sendMail.js'
 import path from "path"
@@ -17,6 +18,7 @@ const notifications = new Notifications()
 const SELF_SERVICE_FIELDS = ['telefono', 'correo', 'lugar_nacimiento']
 
 const DOCUMENT_TYPES = ['actaNacimiento', 'curpDoc']
+const DOCUMENT_LABELS = { actaNacimiento: 'acta de nacimiento', curpDoc: 'CURP' }
 
 class Skaters{
   constructor(){}
@@ -79,11 +81,11 @@ class Skaters{
   }
 
   // Autoservicio: el patinador sube su propia acta/CURP desde /cuenta, un
-  // documento a la vez, después de que la migración que limpió `documentos`
-  // (uploads-private/ se perdía en cada redeploy antes de que viviera dentro
-  // del volumen persistente) los dejó sin nada cargado. Un tipo ya cargado no
-  // se puede volver a mandar por aquí: el frontend solo enseña el input para
-  // el que falta, y aquí se refuerza esa misma regla.
+  // documento a la vez. Un tipo ya cargado y vigente no se puede volver a
+  // mandar por aquí (el frontend solo enseña el input para el que falta o fue
+  // rechazado); si el documento fue rechazado (ver rejectDocument, que ya
+  // dejó `path:null`) sí se acepta, y sustituye por completo el subdocumento
+  // anterior, borrando junto con él el motivo/estatus del rechazo.
   async uploadOwnDocuments(curp, files){
     try {
       const skater = await db.collection('skaters').findOne({curp})
@@ -92,13 +94,18 @@ class Skaters{
       }
 
       const updates = {}
+      const reuploadedLabels = []
       for(const tipo of DOCUMENT_TYPES){
         const file = files?.[tipo]?.[0]
         if(!file) continue
-        if(skater.documentos?.[tipo]?.path){
+        const existing = skater.documentos?.[tipo]
+        if(existing?.path){
           throw Boom.conflict('Ya tienes ese documento cargado')
         }
         updates[`documentos.${tipo}`] = file
+        if(existing?.rechazado){
+          reuploadedLabels.push(DOCUMENT_LABELS[tipo])
+        }
       }
 
       if(Object.keys(updates).length === 0){
@@ -106,12 +113,123 @@ class Skaters{
       }
 
       await db.collection('skaters').updateOne({curp}, {$set:updates})
+
+      // Si lo que subió corrige un rechazo, la asociación tiene que enterarse
+      // para volver a revisarlo (mismo patrón que letters.create la avisa de
+      // una solicitud nueva): sin esto, el documento corregido se queda
+      // esperando en silencio hasta que alguien entre a revisar por su cuenta.
+      if(reuploadedLabels.length && skater.asociacion?._id){
+        await notifications.create({
+          audience:'association',
+          associationId:skater.asociacion._id,
+          type:'document_reuploaded',
+          title:'Documento reenviado para revisión',
+          message:`${skater.nombre} ${skater.apellido_paterno} volvió a subir: ${reuploadedLabels.join(', ')}.`,
+          link:`/gestion/view/patinadores/${curp}`,
+        })
+      }
+
       return await db.collection('skaters').findOne({curp})
     } catch (error) {
       if(Boom.isBoom(error)){
         throw error
       }
       throw Boom.badImplementation('No se pudieron guardar los documentos')
+    }
+  }
+
+  // Rechazo de un documento puntual (no de todo el registro): a diferencia de
+  // aprove(), que decide sobre el registro completo, esto deja que
+  // asociación/admin invaliden solo el acta o solo el CURP con un motivo
+  // concreto. El archivo se borra del disco de inmediato (no debe quedar
+  // basura en uploads/private/ por documentos que ya nadie puede ver ni
+  // volver a servir) y `path:null` es justo lo que uploadOwnDocuments lee
+  // como "puede volver a subirlo": el permiso de re-carga es implícito, no un
+  // campo aparte que alguien tenga que activar.
+  async rejectDocument(curp, tipo, motivo){
+    try {
+      if(!DOCUMENT_TYPES.includes(tipo)){
+        throw Boom.badRequest('Tipo de documento no válido')
+      }
+      if(!motivo?.trim()){
+        throw Boom.badData('El motivo del rechazo es necesario')
+      }
+
+      const skater = await db.collection('skaters').findOne({curp})
+      if(!skater){
+        throw Boom.notFound('The CURP was not found')
+      }
+
+      const doc = skater.documentos?.[tipo]
+      if(!doc?.path){
+        throw Boom.notFound('Este patinador no tiene ese documento cargado')
+      }
+
+      if(fs.existsSync(doc.path)){
+        fs.unlinkSync(doc.path)
+      }
+
+      const motivoRechazo = motivo.trim()
+      const updateData = {
+        [`documentos.${tipo}`]: {
+          path: null,
+          rechazado: true,
+          motivoRechazo,
+          rechazadoAt: new Date(),
+        },
+      }
+
+      // Un documento de identidad inválido invalida la aprobación completa:
+      // no debe seguir apareciendo "Aprobado" mientras uno de los dos
+      // documentos está rechazado.
+      if(skater.verificacion){
+        updateData.verificacion = false
+      }
+
+      await db.collection('skaters').updateOne({curp}, {$set:updateData})
+
+      if(skater.accountId){
+        const label = DOCUMENT_LABELS[tipo]
+        await notifications.create({
+          audience:'skater',
+          accountId:skater.accountId,
+          type:'document_rejected',
+          title:'Documento rechazado',
+          message:`Tu ${label} fue rechazado: ${motivoRechazo}. Ya puedes volver a subirlo desde tu cuenta.`,
+          link:'/cuenta',
+        })
+
+        // La campana es fácil de no ver a tiempo; el correo es el segundo
+        // canal para que el patinador se entere y corrija antes de la fecha
+        // límite de inscripción, igual que aprove() ya hace para el registro
+        // completo.
+        await sendMail({
+          from:config.emailSupport,
+          to:skater.correo,
+          subject:'Documento rechazado - FEMEPASHIDI',
+          data:{
+            name:`${skater.nombre} ${skater.apellido_paterno}`,
+            documentLabel:label,
+            motivo:motivoRechazo,
+            loginLink:`${config.urlApp}/cuenta/login`,
+          },
+          templateEmail:'documentRejected',
+          attachments:[
+            {
+              filename:'encabezado',
+              path:path.join('emails/encabezado.png'),
+              cid:'encabezado'
+            }
+          ]
+        })
+      }
+
+      return await db.collection('skaters').findOne({curp})
+    } catch (error) {
+      if(Boom.isBoom(error)){
+        throw error
+      }
+      throw Boom.badImplementation('No se pudo rechazar el documento')
     }
   }
 

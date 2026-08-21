@@ -219,31 +219,40 @@ export default function CuentaDashboard() {
                         <h2 className='text-xl font-bold'>Documentos</h2>
                     </div>
                     <div className='p-4 sm:p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-6'>
-                        {DOCUMENT_FIELDS.map(({ tipo, label }) => (
-                            <div key={tipo}>
-                                <Label className='text-gray-500'>{label}</Label>
-                                {skater.documentos?.[tipo]?.path ? (
-                                    <div>
-                                        <DocumentViewer curp={skater.curp} tipo={tipo} label={`Ver ${label}`} self />
-                                    </div>
-                                ) : (
-                                    <div className='flex flex-col sm:flex-row gap-2'>
-                                        <Input
-                                            type='file'
-                                            accept='application/pdf,image/*'
-                                            onChange={(e) => setDocumentFiles(prev => ({ ...prev, [tipo]: e.target.files[0] || null }))}
-                                        />
-                                        <Button
-                                            className='bg-blue-600 w-full sm:w-auto shrink-0'
-                                            disabled={!documentFiles[tipo] || uploadingDoc[tipo]}
-                                            onClick={() => handleUploadDocument(tipo)}
-                                        >
-                                            {uploadingDoc[tipo] ? 'Subiendo...' : 'Subir'}
-                                        </Button>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+                        {DOCUMENT_FIELDS.map(({ tipo, label }) => {
+                            const doc = skater.documentos?.[tipo]
+                            return (
+                                <div key={tipo}>
+                                    <Label className='text-gray-500'>{label}</Label>
+                                    {doc?.rechazado && !doc?.path && (
+                                        <div className='mb-2 p-2 rounded bg-red-50 border border-red-200 text-sm'>
+                                            <p className='font-semibold text-red-700'>Rechazado, vuelve a subirlo</p>
+                                            <p className='text-red-600'>{doc.motivoRechazo}</p>
+                                        </div>
+                                    )}
+                                    {doc?.path ? (
+                                        <div>
+                                            <DocumentViewer curp={skater.curp} tipo={tipo} label={`Ver ${label}`} self />
+                                        </div>
+                                    ) : (
+                                        <div className='flex flex-col sm:flex-row gap-2'>
+                                            <Input
+                                                type='file'
+                                                accept='application/pdf,image/*'
+                                                onChange={(e) => setDocumentFiles(prev => ({ ...prev, [tipo]: e.target.files[0] || null }))}
+                                            />
+                                            <Button
+                                                className='bg-blue-600 w-full sm:w-auto shrink-0'
+                                                disabled={!documentFiles[tipo] || uploadingDoc[tipo]}
+                                                onClick={() => handleUploadDocument(tipo)}
+                                            >
+                                                {uploadingDoc[tipo] ? 'Subiendo...' : 'Subir'}
+                                            </Button>
+                                        </div>
+                                    )}
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
                 </>

@@ -17,6 +17,11 @@ const authHeader = () => ({
     Authorization: `Bearer ${localStorage.getItem('token')}`
 })
 
+const DOCUMENT_FIELDS = [
+    { tipo: 'actaNacimiento', label: 'acta de nacimiento' },
+    { tipo: 'curpDoc', label: 'CURP' },
+]
+
 // Solo admin (no presidente_asociacion) puede resetear la contraseña de la
 // cuenta de un patinador directamente, sin pasar por el flujo de correo.
 function ResetAccountPassword({ accountId }){
@@ -79,6 +84,7 @@ export default function Servicio(){
     const [isFetched, setIsFetched] = useState(false);
     const [user,setUser] = useState({})
     const [deciding,setDeciding] = useState(false)
+    const [rejectingDoc,setRejectingDoc] = useState(false)
     const navigate = useNavigate()
     const { user: loggedUser } = useContext(AuthContext)
     const isAdmin = loggedUser?.role === 'admin'
@@ -133,6 +139,37 @@ export default function Servicio(){
                 Swal.fire('Algo salió mal', error?.response?.data?.message || error.message, 'error')
             } finally {
                 setDeciding(false)
+            }
+        })
+    }
+
+    const handleRejectDocument = (tipo, label)=>{
+        Swal.fire({
+            title: `Rechazar ${label}`,
+            input: 'textarea',
+            inputLabel: 'Motivo del rechazo',
+            inputPlaceholder: 'Explica qué está mal para que el patinador lo corrija (ej. foto ilegible, documento de otra persona, etc.)',
+            showCancelButton: true,
+            confirmButtonText: 'Rechazar documento',
+            cancelButtonText: 'Cancelar',
+            inputValidator: (value) => !value?.trim() && 'El motivo es necesario'
+        }).then(async(result)=>{
+            if(!result.isConfirmed) return
+            try {
+                setRejectingDoc(true)
+                const { data } = await axios.patch(
+                    `${server}api/v1/skaters/${curp}/documentos/${tipo}/reject`,
+                    { motivo: result.value },
+                    { headers: authHeader() }
+                )
+                if(data.success){
+                    Swal.fire('Listo', 'Se avisó al patinador para que lo vuelva a subir', 'success')
+                    fetchData()
+                }
+            } catch (error) {
+                Swal.fire('Algo salió mal', error?.response?.data?.message || error.message, 'error')
+            } finally {
+                setRejectingDoc(false)
             }
         })
     }
@@ -269,13 +306,27 @@ export default function Servicio(){
                     <CardHeader className="flex flex-col justify-between bg-white">
                         <CardTitle className='font-bold text-curious-blue-900'>Documentos</CardTitle>
                         <p className='text-sm text-gray-500 mb-2'>Solo se pueden ver, no descargar.</p>
-                        <div className='flex flex-col sm:flex-row gap-3'>
-                            {user.documentos.actaNacimiento && (
-                                <DocumentViewer curp={user.curp} tipo='actaNacimiento' label='Ver acta de nacimiento' />
-                            )}
-                            {user.documentos.curpDoc && (
-                                <DocumentViewer curp={user.curp} tipo='curpDoc' label='Ver CURP' />
-                            )}
+                        <div className='flex flex-col gap-3'>
+                            {DOCUMENT_FIELDS.map(({ tipo, label }) => {
+                                const doc = user.documentos?.[tipo]
+                                if(!doc) return null
+                                return (
+                                    <div key={tipo} className='flex flex-col sm:flex-row sm:items-center gap-2'>
+                                        {doc.path ? (
+                                            <>
+                                                <DocumentViewer curp={user.curp} tipo={tipo} label={`Ver ${label}`} />
+                                                <Button color='danger' size='sm' disabled={rejectingDoc} onClick={()=>handleRejectDocument(tipo, label)}>
+                                                    Rechazar
+                                                </Button>
+                                            </>
+                                        ) : doc.rechazado ? (
+                                            <span className='text-sm text-red-600'>
+                                                {label.charAt(0).toUpperCase() + label.slice(1)} rechazado: {doc.motivoRechazo} — esperando que el patinador lo vuelva a subir.
+                                            </span>
+                                        ) : null}
+                                    </div>
+                                )
+                            })}
                         </div>
                     </CardHeader>
                 )}
