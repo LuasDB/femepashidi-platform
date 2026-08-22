@@ -20,6 +20,12 @@ const SELF_SERVICE_FIELDS = ['telefono', 'correo', 'lugar_nacimiento']
 const DOCUMENT_TYPES = ['actaNacimiento', 'curpDoc']
 const DOCUMENT_LABELS = { actaNacimiento: 'acta de nacimiento', curpDoc: 'CURP' }
 
+// Mismo formato que valida Paso1_DatosPersonales.jsx del lado del cliente.
+// Se revalida aquí porque la validación HTML del navegador es evitable
+// (autocompletado, navegadores dentro de apps, POST directo a la API) y ya
+// dejó pasar CURPs corruptos a la base de datos.
+const CURP_REGEX = /^[A-Z][AEIOU][A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[HM](AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[A-Z0-9][0-9]$/
+
 class Skaters{
   constructor(){}
 
@@ -257,8 +263,12 @@ class Skaters{
         throw Boom.badData('La asociación es necesaria')
       }
 
-      const normalizedCurp = curp.toUpperCase()
+      const normalizedCurp = curp.trim().toUpperCase()
       const normalizedEmail = correo.toLowerCase()
+
+      if(!CURP_REGEX.test(normalizedCurp)){
+        throw Boom.badData('El CURP no tiene un formato válido, revísalo e inténtalo de nuevo')
+      }
 
       const existingSkater = await db.collection('skaters').findOne({ curp:normalizedCurp })
       if(existingSkater){
@@ -454,6 +464,15 @@ class Skaters{
 
       newData.asociacion = newAssociation;
       delete newData._id
+      // El formulario de edición del panel precarga TODO el documento (vía
+      // GET /skaters/:curp) y lo reenvía tal cual en el PATCH, incluyendo
+      // accountId. Como HTTP/JSON no tiene tipo ObjectId, ese campo llega
+      // como string y $set lo dejaría así en Mongo, rompiendo la búsqueda
+      // por ObjectId que hace account.service.js -> getMe() (el patinador
+      // deja de poder ver su propia cuenta en /cuenta aunque el login siga
+      // funcionando). accountId nunca se edita desde este formulario, así
+      // que simplemente no se toca.
+      delete newData.accountId
       const updateOne = await db.collection('skaters').updateOne(
         { curp},
         { $set: newData }

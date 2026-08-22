@@ -1,9 +1,22 @@
+import Swal from 'sweetalert2';
 
+// Mismo criterio que valida services/skaters.service.js del lado del
+// servidor: el atributo `pattern` del input de abajo es una primera ayuda
+// visual, pero no basta por sí solo (autocompletado, navegadores dentro de
+// apps, etc. pueden dejarlo pasar), así que se vuelve a checar aquí antes de
+// avanzar de paso.
+const CURP_REGEX = /^[A-Z][AEIOU][A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[HM](AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[A-Z0-9][0-9]$/
 
 const Paso1_DatosPersonales = ({ nextStep, handleChange, values }) => {
     const continueStep = e => {
         e.preventDefault();
-        // Aquí puedes agregar validaciones antes de continuar
+
+        const curp = values.curp.trim().toUpperCase()
+        if(!CURP_REGEX.test(curp)){
+            Swal.fire('CURP inválido', 'Revisa que el CURP tenga los 18 caracteres correctos, tal como aparece en tu acta o documento oficial.', 'warning')
+            return
+        }
+
         nextStep();
     };
 

@@ -291,7 +291,7 @@ export default function Servicio(){
                     <FormGroup className='flex flex-row gap-10'>
                         <div className='w-1/2'> 
                             <span className='text-curious-blue-700'>Asociación</span> 
-                            <h2 className='font-medium text-gray-600'>{user.asociacion.nombre}</h2>
+                            <h2 className='font-medium text-gray-600'>{user.asociacion?.nombre || 'Sin asociación'}</h2>
                         </div>
                         <div className='w-1/2'>
                             <span className='text-curious-blue-700'></span> 

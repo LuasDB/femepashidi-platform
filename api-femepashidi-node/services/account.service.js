@@ -184,7 +184,17 @@ class Account {
       }
 
       // Relación 1:1: cada cuenta tiene a lo más un patinador vinculado.
-      const skater = await db.collection('skaters').findOne({ accountId: new ObjectId(accountId) })
+      // skater.accountId debería ser siempre ObjectId, pero el panel de
+      // admin lo reescribe como string cada vez que reenvía el documento
+      // completo en un PATCH /skaters/:curp (ver updateOneByCurp), así que
+      // se acepta cualquiera de los dos tipos para no dejar sin acceso a
+      // /cuenta a un patinador ya editado desde el panel.
+      const skater = await db.collection('skaters').findOne({
+        $or: [
+          { accountId: new ObjectId(accountId) },
+          { accountId: accountId },
+        ],
+      })
 
       return { account, skater }
     } catch (error) {
