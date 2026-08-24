@@ -451,7 +451,7 @@ class Skaters{
     try {
       console.log('[]')
       console.log(newData)
-      
+
       if (!newData.id_asociacion) {
         throw Boom.badRequest('id_asociacion is required');
       }
@@ -460,6 +460,11 @@ class Skaters{
 
       if (!newAssociation) {
         throw Boom.badRequest('Association not found');
+      }
+
+      const skater = await db.collection('skaters').findOne({ curp })
+      if(!skater){
+        throw Boom.notFound('The CURP was not found');
       }
 
       newData.asociacion = newAssociation;
@@ -473,6 +478,25 @@ class Skaters{
       // funcionando). accountId nunca se edita desde este formulario, así
       // que simplemente no se toca.
       delete newData.accountId
+
+      // Mismo problema que updateOwnData: correo también es accounts.email
+      // (el email de login). Si el admin lo corrige aquí y no se replica,
+      // el patinador se queda con un correo de login que ya no coincide con
+      // el que ve en su perfil, y deja de poder entrar a /cuenta.
+      if(newData.correo){
+        newData.correo = newData.correo.toLowerCase().trim()
+      }
+      const correoCambio = newData.correo && newData.correo !== skater.correo && skater.accountId
+      if(correoCambio){
+        const emailTaken = await db.collection('accounts').findOne({
+          email:newData.correo,
+          _id:{ $ne:skater.accountId },
+        })
+        if(emailTaken){
+          throw Boom.conflict('Ya existe una cuenta con ese correo')
+        }
+      }
+
       const updateOne = await db.collection('skaters').updateOne(
         { curp},
         { $set: newData }
@@ -480,6 +504,13 @@ class Skaters{
 
       if (updateOne.matchedCount === 0) {
         throw Boom.notFound('The CURP was not found');
+      }
+
+      if(correoCambio){
+        await db.collection('accounts').updateOne(
+          { _id:skater.accountId },
+          { $set:{ email:newData.correo, updatedAt:new Date() } }
+        )
       }
 
       return updateOne;
