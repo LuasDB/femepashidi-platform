@@ -1,7 +1,9 @@
-import {useEffect, useState } from 'react'
+import {useContext, useEffect, useState } from 'react'
 import { Card,CardHeader,Button,Label, CardTitle, CardBody, Table, CardText,Row,Col, FormGroup, Input} from "reactstrap";
 import { useParams,useNavigate,Link} from 'react-router-dom';
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaArrowLeft } from "react-icons/fa";
+
+import { AuthContext } from '../../Context/AuthContext';
 
 import CenteredSpinner from '../../Components/CenteredSpinner';
 
@@ -21,6 +23,11 @@ const authHeader = () => ({
 export default function Inscripcion(){
     const { id } = useParams()
     const navigator = useNavigate()
+    const { user: loggedUser } = useContext(AuthContext)
+    // Admin y presidente de asociación revisan varias inscripciones de la misma
+    // competencia: tras aprobar/rechazar necesitan volver al listado con esa
+    // competencia ya seleccionada para seguir con la siguiente.
+    const canReview = loggedUser?.role === 'admin' || loggedUser?.role === 'presidente_asociacion'
     const [loading,setLoading] = useState(true)
     const [isFetched, setIsFetched] = useState(false);
     const [user,setUser] = useState({})
@@ -96,6 +103,13 @@ export default function Inscripcion(){
             {loading && (<CenteredSpinner />)}
 
        {!loading && (<div>
+        {canReview && (
+            <div className='m-1 mb-2'>
+                <Button color='secondary' outline onClick={()=>navigator('/gestion/inscripciones')} className='flex items-center gap-2'>
+                    <FaArrowLeft/> Regresar a la competencia
+                </Button>
+            </div>
+        )}
         <Card className='m-1 rounded-xl shadow mt-0  p-8 overflow-x-auto bg-white' >
         <div className='w-full flex justify-end text-[25px] text-curious-blue-500 cursor-pointer hover:text-curious-blue-600' >
         <FaEdit onClick={handleEdit}/>
@@ -219,6 +233,11 @@ export default function Inscripcion(){
                             <Button color='success' disabled={deciding} onClick={()=>handleDecision('aprobado')}>Aprobar</Button>
                             <Button color='danger' disabled={deciding} onClick={()=>handleDecision('rechazado')}>Rechazar</Button>
                         </>
+                    )}
+                    {canReview && (
+                        <Button color='secondary' outline disabled={deciding} onClick={()=>navigator('/gestion/inscripciones')} className='flex items-center gap-2'>
+                            <FaArrowLeft/> Regresar y revisar otra
+                        </Button>
                     )}
                 </FormGroup>
             </CardHeader>

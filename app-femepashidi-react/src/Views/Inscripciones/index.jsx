@@ -16,6 +16,11 @@ const authHeader = () => ({
     Authorization: `Bearer ${localStorage.getItem('token')}`
 })
 
+// Se recuerda la competencia seleccionada entre navegaciones para que, al
+// entrar al detalle de una inscripción (aprobar/rechazar) y volver, el admin o
+// presidente regrese directamente a la misma competencia sin volver a elegirla.
+const SELECTED_EVENT_KEY = 'inscripciones:selectedEvent'
+
 const useFetchDataTables = ({collection,server})=>{
     const [data,setData]=useState([])
     // Todos los registros del evento sin paginar (ExportToExcel/GenerateXml
@@ -24,8 +29,8 @@ const useFetchDataTables = ({collection,server})=>{
     const [loading,setLoading] = useState(true)
     const [error,setError]=useState(null)
     const [isFetched, setIsFetched] = useState(false);
-    const [selectedEvent,setSelectedEvent] = useState('')
-    const [isSelected,setIsSelected] = useState(false)
+    const [selectedEvent,setSelectedEvent] = useState(()=> sessionStorage.getItem(SELECTED_EVENT_KEY) || '')
+    const [isSelected,setIsSelected] = useState(()=> !!sessionStorage.getItem(SELECTED_EVENT_KEY))
     const [status,setStatus] = useState('')
     //Para la paginación
     const [page, setPage] = useState(1)
@@ -36,9 +41,15 @@ const useFetchDataTables = ({collection,server})=>{
 
     const handleSelectedEvent = (e)=>{
         e.preventDefault()
-        setSelectedEvent(e.target.value)
-        setIsSelected(true)
+        const value = e.target.value
+        setSelectedEvent(value)
+        setIsSelected(!!value)
         setPage(1)
+        if (value) {
+            sessionStorage.setItem(SELECTED_EVENT_KEY, value)
+        } else {
+            sessionStorage.removeItem(SELECTED_EVENT_KEY)
+        }
     }
 
     const handleChangeStatus = (e)=>{
