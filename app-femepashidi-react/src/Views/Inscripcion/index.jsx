@@ -117,7 +117,7 @@ export default function Inscripcion(){
         {/* https://femepashidi.siradiacion.com.mx/images/users/ */}
             <CardTitle className="flex font-bold"> {user.user.curp} </CardTitle>
             <div className="w-40 h-40 md:w-48 md:h-48 rounded-full relative overflow-hidden border-4 border-white shadow-md cursor-pointer">
-            <img src={`${server}${user.user?.img?.path}` || 'https://via.placeholder.com/200'} alt="Foto del patinador" className="w-full h-full object-cover" />
+            <img src={user.user?.img?.path ? `${server}${user.user.img.path}` : 'https://via.placeholder.com/200'} alt="Foto del patinador" className="w-full h-full object-cover" />
             </div>
             
             <CardHeader className="flex flex-col justify-between bg-white">

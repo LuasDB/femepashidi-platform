@@ -282,6 +282,29 @@ router.patch(
   }
 )
 
+// Rechazo de la foto de credencial (no de todo el registro): borra el archivo
+// del servidor, guarda el motivo y deja al patinador volver a subirla desde
+// /cuenta con formato de credencial. Mismo guard que /:curp/documentos/:tipo/reject.
+router.patch(
+  '/:curp/foto/reject',
+  authenticate,
+  requireRole(['admin','presidente_asociacion']),
+  requireSkaterAssociationAccess,
+  async(req, res, next)=>{
+    try {
+      const { motivo } = req.body
+      const updated = await skaters.rejectPhoto(req.skater.curp, motivo)
+      res.status(200).json({
+        success:true,
+        message:'Foto rechazada',
+        data:updated
+      })
+    } catch (error) {
+      next(error)
+    }
+  }
+)
+
 // Edición desde el panel /gestion (admin y presidente de asociación). El
 // presidente solo puede editar patinadores de su propia asociación.
 router.patch(

@@ -88,7 +88,11 @@ export default function CuentaDashboard() {
                 { headers: authHeader() }
             )
             if (data.success) {
-                setSkater(prev => ({ ...prev, ...editValues }))
+                setSkater(prev => ({
+                    ...prev,
+                    ...editValues,
+                    ...(newFoto ? { img: { ...prev.img, rechazado: false, motivoRechazo: null } } : {})
+                }))
                 setNewFoto(null)
                 Swal.fire('Listo', 'Tu información fue actualizada', 'success')
             }
@@ -160,6 +164,21 @@ export default function CuentaDashboard() {
                                 <p className='text-sm text-gray-500'>{skater.curp}</p>
                                 <p className='text-sm text-gray-500'>{skater.asociacion?.nombre}</p>
                             </div>
+
+                            {skater.img?.rechazado && (
+                                <div className='mt-4 w-full p-3 rounded bg-red-50 border border-red-200 text-sm'>
+                                    <p className='font-semibold text-red-700'>Tu foto fue rechazada, sube una nueva</p>
+                                    <p className='text-red-600 mb-2'>{skater.img.motivoRechazo}</p>
+                                    <p className='text-red-700 font-medium'>Formato de credencial:</p>
+                                    <ul className='list-disc list-inside text-red-600'>
+                                        <li>Rostro de frente y centrado, tipo pasaporte.</li>
+                                        <li>Fondo liso y claro, sin objetos ni otras personas.</li>
+                                        <li>Buena luz, sin gorra ni lentes oscuros.</li>
+                                        <li>Foto reciente y nítida (JPG o PNG).</li>
+                                    </ul>
+                                    <p className='text-red-600 mt-2'>Usa el ícono de la cámara sobre tu foto para elegir la nueva y presiona <strong>Guardar cambios</strong>.</p>
+                                </div>
+                            )}
                         </div>
 
                         <div className='md:col-span-2'>

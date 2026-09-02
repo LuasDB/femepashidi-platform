@@ -85,7 +85,7 @@ const InscripcionCompetencia = () => {
         }
 
         setFormData(user)
-        setPreviewFoto(user?.img?`${server}${user?.img?.path}`:`${server}uploads/skaters/user.png`)
+        setPreviewFoto(user?.img?.path?`${server}${user.img.path}`:`${server}uploads/skaters/user.png`)
         setOriginalLevel({
             nivel_actual:user.nivel_actual,
             categoria:user.categoria

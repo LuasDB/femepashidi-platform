@@ -77,6 +77,20 @@ class Skaters{
         )
       }
 
+      // Si la foto que reemplaza corrige un rechazo previo (ver rejectPhoto,
+      // que dejó `img.rechazado:true`), la asociación tiene que enterarse para
+      // volver a revisarla — mismo patrón que uploadOwnDocuments con acta/CURP.
+      if(file && skater.img?.rechazado && skater.asociacion?._id){
+        await notifications.create({
+          audience:'association',
+          associationId:skater.asociacion._id,
+          type:'photo_reuploaded',
+          title:'Foto reenviada para revisión',
+          message:`${skater.nombre} ${skater.apellido_paterno} volvió a subir su foto de credencial.`,
+          link:`/gestion/view/patinadores/${skater.curp}`,
+        })
+      }
+
       return updateOne
     } catch (error) {
       if(Boom.isBoom(error)){
@@ -236,6 +250,81 @@ class Skaters{
         throw error
       }
       throw Boom.badImplementation('No se pudo rechazar el documento')
+    }
+  }
+
+  // Rechazo de la foto de credencial (skaters.img). Mismo mecanismo que
+  // rejectDocument: se borra el archivo del disco (uploads/skaters/, servido
+  // como estático — no debe quedar una foto inválida accesible por URL), se
+  // guarda el motivo y `path:null` es lo que updateOwnData/el frontend leen
+  // como "puede/debe volver a subirla". A diferencia de un documento de
+  // identidad, una foto mal encuadrada no invalida la aprobación del registro,
+  // así que `verificacion` no se toca; solo se le pide al patinador corregirla.
+  async rejectPhoto(curp, motivo){
+    try {
+      if(!motivo?.trim()){
+        throw Boom.badData('El motivo del rechazo es necesario')
+      }
+
+      const skater = await db.collection('skaters').findOne({curp})
+      if(!skater){
+        throw Boom.notFound('The CURP was not found')
+      }
+
+      if(!skater.img?.path){
+        throw Boom.notFound('Este patinador no tiene una foto cargada')
+      }
+
+      if(fs.existsSync(skater.img.path)){
+        fs.unlinkSync(skater.img.path)
+      }
+
+      const motivoRechazo = motivo.trim()
+      await db.collection('skaters').updateOne({curp}, {$set:{
+        img:{
+          path: null,
+          rechazado: true,
+          motivoRechazo,
+          rechazadoAt: new Date(),
+        },
+      }})
+
+      if(skater.accountId){
+        await notifications.create({
+          audience:'skater',
+          accountId:skater.accountId,
+          type:'photo_rejected',
+          title:'Foto rechazada',
+          message:`Tu foto de credencial fue rechazada: ${motivoRechazo}. Vuelve a subir una foto con formato de credencial desde tu cuenta.`,
+          link:'/cuenta',
+        })
+
+        await sendMail({
+          from:config.emailSupport,
+          to:skater.correo,
+          subject:'Foto rechazada - FEMEPASHIDI',
+          data:{
+            name:`${skater.nombre} ${skater.apellido_paterno}`,
+            motivo:motivoRechazo,
+            loginLink:`${config.urlApp}/cuenta/login`,
+          },
+          templateEmail:'photoRejected',
+          attachments:[
+            {
+              filename:'encabezado',
+              path:path.join('emails/encabezado.png'),
+              cid:'encabezado'
+            }
+          ]
+        })
+      }
+
+      return await db.collection('skaters').findOne({curp})
+    } catch (error) {
+      if(Boom.isBoom(error)){
+        throw error
+      }
+      throw Boom.badImplementation('No se pudo rechazar la foto')
     }
   }
 

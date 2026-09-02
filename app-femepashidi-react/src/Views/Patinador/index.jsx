@@ -85,6 +85,7 @@ export default function Servicio(){
     const [user,setUser] = useState({})
     const [deciding,setDeciding] = useState(false)
     const [rejectingDoc,setRejectingDoc] = useState(false)
+    const [rejectingPhoto,setRejectingPhoto] = useState(false)
     const navigate = useNavigate()
     const { user: loggedUser } = useContext(AuthContext)
     const isAdmin = loggedUser?.role === 'admin'
@@ -174,6 +175,37 @@ export default function Servicio(){
         })
     }
 
+    const handleRejectPhoto = ()=>{
+        Swal.fire({
+            title: 'Rechazar foto de credencial',
+            input: 'textarea',
+            inputLabel: 'Motivo del rechazo',
+            inputPlaceholder: 'Explica qué está mal para que el patinador suba una nueva (ej. no es formato credencial, fondo con objetos, sin rostro de frente, foto borrosa, etc.)',
+            showCancelButton: true,
+            confirmButtonText: 'Rechazar foto',
+            cancelButtonText: 'Cancelar',
+            inputValidator: (value) => !value?.trim() && 'El motivo es necesario'
+        }).then(async(result)=>{
+            if(!result.isConfirmed) return
+            try {
+                setRejectingPhoto(true)
+                const { data } = await axios.patch(
+                    `${server}api/v1/skaters/${curp}/foto/reject`,
+                    { motivo: result.value },
+                    { headers: authHeader() }
+                )
+                if(data.success){
+                    Swal.fire('Listo', 'Se avisó al patinador para que suba una nueva foto con formato de credencial', 'success')
+                    fetchData()
+                }
+            } catch (error) {
+                Swal.fire('Algo salió mal', error?.response?.data?.message || error.message, 'error')
+            } finally {
+                setRejectingPhoto(false)
+            }
+        })
+    }
+
     const handleDelete = async()=>{
 
         Swal.fire({
@@ -226,7 +258,18 @@ export default function Servicio(){
                 <CardTitle className="flex font-bold"> {user.curp} </CardTitle>
                 <p className="text-sm text-curious-blue-700 font-semibold mb-2">No. Competidor: {user.numero_competidor || 'Pendiente de asignar'}</p>
                  <div className="w-40 h-40 md:w-48 md:h-48 rounded-full relative overflow-hidden border-4 border-white shadow-md cursor-pointer">
-                    <img src={user?.img ? `${server}${user?.img?.path}`: imgUser} alt="Foto del patinador" className="w-full h-full object-cover" />
+                    <img src={user?.img?.path ? `${server}${user.img.path}` : imgUser} alt="Foto del patinador" className="w-full h-full object-cover" />
+                </div>
+                <div className='mt-2'>
+                    {user?.img?.path ? (
+                        <Button color='danger' size='sm' disabled={rejectingPhoto} onClick={handleRejectPhoto}>
+                            Rechazar foto
+                        </Button>
+                    ) : user?.img?.rechazado ? (
+                        <span className='text-sm text-red-600'>
+                            Foto rechazada: {user.img.motivoRechazo} — esperando que el patinador suba una nueva.
+                        </span>
+                    ) : null}
                 </div>
                 <CardHeader className="flex flex-col justify-between bg-white">
                     <CardTitle className='font-bold text-curious-blue-900'> </CardTitle>
