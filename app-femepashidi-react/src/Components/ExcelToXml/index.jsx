@@ -62,6 +62,7 @@ export default function ExceltToXml(){
             count: index + 1,
             content: {
               user: {
+                numero_competidor: String(row[0] ?? "").trim(),
                 nombre: rowData["Nombre"]?.trim() || "",
                 apellido_paterno: rowData["Apellido_Paterno"]?.trim() || "",
                 apellido_materno: rowData["Apellido_Materno"]?.trim() || "",
@@ -74,7 +75,7 @@ export default function ExceltToXml(){
               nivel_actual: rowData["Nivel"]?.trim() || "",
               categoria: rowData["Categoria"]?.trim() || "",
             },
-            data: ["", ``, "", "", "aprobado"],
+            data: ["", "", "", "", "", "aprobado"],
             codigoCompetencia: codigoValor
           };
 
