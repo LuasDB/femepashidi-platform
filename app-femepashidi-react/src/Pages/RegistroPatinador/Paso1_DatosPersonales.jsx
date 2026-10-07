@@ -5,7 +5,10 @@ import Swal from 'sweetalert2';
 // visual, pero no basta por sí solo (autocompletado, navegadores dentro de
 // apps, etc. pueden dejarlo pasar), así que se vuelve a checar aquí antes de
 // avanzar de paso.
-const CURP_REGEX = /^[A-Z][AEIOU][A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[HM](AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[A-Z0-9][0-9]$/
+// La segunda letra normalmente es una vocal, pero RENAPO la sustituye por
+// "X" cuando las primeras 4 letras formarían una palabra inconveniente
+// (p. ej. CACA, COJO, etc.), así que también se acepta aquí.
+const CURP_REGEX = /^[A-Z][AEIOUX][A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[HM](AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[A-Z0-9][0-9]$/
 
 const Paso1_DatosPersonales = ({ nextStep, handleChange, values }) => {
     const continueStep = e => {
@@ -38,7 +41,7 @@ const Paso1_DatosPersonales = ({ nextStep, handleChange, values }) => {
             value={values.curp}
             required
             maxLength="18"
-            pattern="^[A-Z][AEIOU][A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[HM](AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z-LT]{3}[A-Z0-9][0-9]$"
+            pattern="^[A-Z][AEIOUX][A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[HM](AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[A-Z0-9][0-9]$"
             title="Ingresa un CURP válido."
             />
 

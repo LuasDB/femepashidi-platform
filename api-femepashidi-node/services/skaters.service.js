@@ -24,7 +24,10 @@ const DOCUMENT_LABELS = { actaNacimiento: 'acta de nacimiento', curpDoc: 'CURP' 
 // Se revalida aquí porque la validación HTML del navegador es evitable
 // (autocompletado, navegadores dentro de apps, POST directo a la API) y ya
 // dejó pasar CURPs corruptos a la base de datos.
-const CURP_REGEX = /^[A-Z][AEIOU][A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[HM](AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[A-Z0-9][0-9]$/
+// La segunda letra normalmente es una vocal, pero RENAPO la sustituye por
+// "X" cuando las primeras 4 letras formarían una palabra inconveniente
+// (p. ej. CACA, COJO, etc.), así que también se acepta aquí.
+const CURP_REGEX = /^[A-Z][AEIOUX][A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[HM](AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[A-Z0-9][0-9]$/
 
 class Skaters{
   constructor(){}
